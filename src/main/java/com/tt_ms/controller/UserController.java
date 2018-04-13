@@ -34,7 +34,6 @@ public class UserController extends BaseController{
             if(i==1){
                 try {
                     t.join();
-                    //test for git
                     log.info(Thread.currentThread().getName()+ String.valueOf(i));
                 }catch (Exception e){
                     e.printStackTrace();
