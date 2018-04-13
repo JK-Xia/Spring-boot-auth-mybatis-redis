@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>TT_MS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>TT_MS</name>
+	<description>project of TT_MS</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -85,6 +85,26 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.15</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.18</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+
 
 	</dependencies>
 

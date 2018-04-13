@@ -1,40 +1,33 @@
 package com.tt_ms.controller;
 
-import com.tt_ms.domain.User;
-import com.tt_ms.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import java.net.InetAddress;
 
 /**
  * Created by mm on 2018/4/9.
  */
-
+@Slf4j
 @RestController
 @RequestMapping("/")
-public class BaseController {
+public class BaseController  {
+    //+ IpUtils.getIpAddr(request)
+    private int serverPort;
+    private String host ;
+    private HttpServletRequest request;
 
-    @Autowired
-    private IUserService userService;
 
-    //测试用例
-    @RequestMapping("/hello")
-    public String sayHello(){
-        return "hello,first blood";
-    }
+    public String getServerPort(){
+        InetAddress address = null;
+        try {
+            address = InetAddress.getLocalHost();
+        }catch (Exception e){
+            log.error(e.getMessage());
+        }
 
-    @RequestMapping("/hello/{name}")
-    public String helloTo(@PathVariable String name){
-        return "hello,first blood and " + name;
-    }
-
-    @RequestMapping("/findUser/{username}")
-    public String findUser(@PathVariable String username){
-        User user = new User();
-        user.setName(username);
-        user.setPassword("123456");
-        User dbUser = userService.findUser(user);
-        return dbUser.toString();
+        return String.valueOf(address.toString() );
     }
 }

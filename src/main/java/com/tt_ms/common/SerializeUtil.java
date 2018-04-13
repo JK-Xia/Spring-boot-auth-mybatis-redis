@@ -1,4 +1,4 @@
-package com.tt_ms.common.redis;
+package com.tt_ms.common;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

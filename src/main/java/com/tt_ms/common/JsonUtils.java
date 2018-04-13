@@ -1,4 +1,4 @@
-package com.tt_ms.common.redis;
+package com.tt_ms.common;
 
 
 import com.alibaba.fastjson.JSON;

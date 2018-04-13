@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
  * Created by mm on 2018/4/9.
  */
 @Component
-public interface UserDao {
+public interface PermissonDao {
     User findUser(User user);
 }

@@ -2,7 +2,7 @@ package com.tt_ms.service.impl;
 
 
 import com.tt_ms.common.redis.IRedisService;
-import com.tt_ms.common.redis.JsonUtils;
+import com.tt_ms.common.JsonUtils;
 import com.tt_ms.dao.UserDao;
 import com.tt_ms.domain.User;
 import com.tt_ms.service.IUserService;
@@ -27,11 +27,11 @@ public class UserService implements IUserService{
 
     @Override
     public User findUser(User user){
-        User catchUser =JsonUtils.toBean(redisService.get(user.getName()),User.class);
+        User catchUser =JsonUtils.toBean(redisService.get(user.getUserName()),User.class);
         if(StringUtils.isEmpty(catchUser)){
             User dbUser = userDao.findUser(user);
             if(!StringUtils.isEmpty(dbUser)){
-                redisService.set(dbUser.getName(),JsonUtils.toJSONString(dbUser));
+                redisService.set(dbUser.getUserName(),JsonUtils.toJSONString(dbUser));
                 return dbUser;
             }
             return null;
