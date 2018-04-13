@@ -29,6 +29,7 @@ public class UserController extends BaseController{
         UsernamePasswordToken token = new UsernamePasswordToken(username, password,rememberMe);
         MyThread t = new MyThread();
         t.run();
+        //sdasd
         for(int i = 0; i < 10; i++){
             log.info(Thread.currentThread().getName()+ String.valueOf(i));
             if(i==1){
