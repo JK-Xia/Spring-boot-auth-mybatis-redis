@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.TT_PreOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.TT_PreOrder" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="Preorder_number" property="preorderNumber" jdbcType="VARCHAR" />
+    <result column="Cus_ID" property="cusId" jdbcType="VARCHAR" />
+    <result column="Cus_name" property="cusName" jdbcType="VARCHAR" />
+    <result column="Identify_type" property="identifyType" jdbcType="VARCHAR" />
+    <result column="Identify_id" property="identifyId" jdbcType="VARCHAR" />
+    <result column="mobilephone" property="mobilephone" jdbcType="CHAR" />
+    <result column="Cus_type" property="cusType" jdbcType="VARCHAR" />
+    <result column="Invoice_cus_name" property="invoiceCusName" jdbcType="VARCHAR" />
+    <result column="car_demio_name" property="carDemioName" jdbcType="VARCHAR" />
+    <result column="Car_model_name" property="carModelName" jdbcType="VARCHAR" />
+    <result column="configure" property="configure" jdbcType="VARCHAR" />
+    <result column="In_color" property="inColor" jdbcType="VARCHAR" />
+    <result column="Out_color" property="outColor" jdbcType="VARCHAR" />
+    <result column="Intention_level" property="intentionLevel" jdbcType="VARCHAR" />
+    <result column="Buyway_first" property="buywayFirst" jdbcType="BIT" />
+    <result column="Buyway_loyal" property="buywayLoyal" jdbcType="BIT" />
+    <result column="Buyway_displace" property="buywayDisplace" jdbcType="BIT" />
+    <result column="Buyway_Big_cus" property="buywayBigCus" jdbcType="BIT" />
+    <result column="Origin_Place" property="originPlace" jdbcType="VARCHAR" />
+    <result column="Buy_account" property="buyAccount" jdbcType="INTEGER" />
+    <result column="License_plate_ property" property="licensePlateProperty" jdbcType="VARCHAR" />
+    <result column="License_plate_getway" property="licensePlateGetway" jdbcType="VARCHAR" />
+    <result column="Sale_price" property="salePrice" jdbcType="DECIMAL" />
+    <result column="Prepaid_amount" property="prepaidAmount" jdbcType="DECIMAL" />
+    <result column="Invoice_price" property="invoicePrice" jdbcType="DECIMAL" />
+    <result column="Pay_way" property="payWay" jdbcType="VARCHAR" />
+    <result column="Pay_rest_money_day" property="payRestMoneyDay" jdbcType="TIMESTAMP" />
+    <result column="Expected_arrival_time" property="expectedArrivalTime" jdbcType="TIMESTAMP" />
+    <result column="Get_car_date" property="getCarDate" jdbcType="TIMESTAMP" />
+    <result column="Added_Insurance" property="addedInsurance" jdbcType="BIT" />
+    <result column="Added_jz" property="addedJz" jdbcType="BIT" />
+    <result column="Added_remark1" property="addedRemark1" jdbcType="VARCHAR" />
+    <result column="Added_remark2" property="addedRemark2" jdbcType="VARCHAR" />
+    <result column="Added_remark3" property="addedRemark3" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="Divided_net_price" property="dividedNetPrice" jdbcType="DECIMAL" />
+    <result column="Divided_Loan_amount" property="dividedLoanAmount" jdbcType="DECIMAL" />
+    <result column="Divided_first_pay" property="dividedFirstPay" jdbcType="DECIMAL" />
+    <result column="Divided_glass_insurance" property="dividedGlassInsurance" jdbcType="DECIMAL" />
+    <result column="Divided_cus_mortgage" property="dividedCusMortgage" jdbcType="DECIMAL" />
+    <result column="Divided_Secured_mortgage" property="dividedSecuredMortgage" jdbcType="DECIMAL" />
+    <result column="Divided_company_name" property="dividedCompanyName" jdbcType="VARCHAR" />
+    <result column="Divided_Secured_company_name" property="dividedSecuredCompanyName" jdbcType="VARCHAR" />
+    <result column="Insurance_Collected_Amount" property="insuranceCollectedAmount" jdbcType="DECIMAL" />
+    <result column="Extended_warranty_amount" property="extendedWarrantyAmount" jdbcType="DECIMAL" />
+    <result column="Purchase_tax" property="purchaseTax" jdbcType="DECIMAL" />
+    <result column="License_plate_amount" property="licensePlateAmount" jdbcType="DECIMAL" />
+    <result column="Discount_amount" property="discountAmount" jdbcType="DECIMAL" />
+    <result column="Renewal_deposit" property="renewalDeposit" jdbcType="DECIMAL" />
+    <result column="jz_amount" property="jzAmount" jdbcType="DECIMAL" />
+    <result column="Total_amount" property="totalAmount" jdbcType="DECIMAL" />
+    <result column="Salesman_name" property="salesmanName" jdbcType="VARCHAR" />
+    <result column="Operator_name" property="operatorName" jdbcType="VARCHAR" />
+    <result column="Last_Submit_time" property="lastSubmitTime" jdbcType="TIMESTAMP" />
+    <result column="salesAdmin_check_flag" property="salesadminCheckFlag" jdbcType="BIT" />
+    <result column="salesAdmin_check_remark" property="salesadminCheckRemark" jdbcType="VARCHAR" />
+    <result column="salesAdmin_name" property="salesadminName" jdbcType="VARCHAR" />
+    <result column="salesAdmin_check_date" property="salesadminCheckDate" jdbcType="TIMESTAMP" />
+    <result column="Assign_Car_Flag" property="assignCarFlag" jdbcType="BIT" />
+    <result column="Chassis_number" property="chassisNumber" jdbcType="VARCHAR" />
+    <result column="Engine_number" property="engineNumber" jdbcType="VARCHAR" />
+    <result column="Assign_Car_man" property="assignCarMan" jdbcType="VARCHAR" />
+    <result column="Assign_Car_date" property="assignCarDate" jdbcType="TIMESTAMP" />
+    <result column="Take_back_car_flag" property="takeBackCarFlag" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, Preorder_number, Cus_ID, Cus_name, Identify_type, Identify_id, mobilephone, Cus_type, 
+    Invoice_cus_name, car_demio_name, Car_model_name, configure, In_color, Out_color, 
+    Intention_level, Buyway_first, Buyway_loyal, Buyway_displace, Buyway_Big_cus, Origin_Place, 
+    Buy_account, "License_plate_ property", License_plate_getway, Sale_price, Prepaid_amount, 
+    Invoice_price, Pay_way, Pay_rest_money_day, Expected_arrival_time, Get_car_date, 
+    Added_Insurance, Added_jz, Added_remark1, Added_remark2, Added_remark3, remark, Divided_net_price, 
+    Divided_Loan_amount, Divided_first_pay, Divided_glass_insurance, Divided_cus_mortgage, 
+    Divided_Secured_mortgage, Divided_company_name, Divided_Secured_company_name, Insurance_Collected_Amount, 
+    Extended_warranty_amount, Purchase_tax, License_plate_amount, Discount_amount, Renewal_deposit, 
+    jz_amount, Total_amount, Salesman_name, Operator_name, Last_Submit_time, salesAdmin_check_flag, 
+    salesAdmin_check_remark, salesAdmin_name, salesAdmin_check_date, Assign_Car_Flag, 
+    Chassis_number, Engine_number, Assign_Car_man, Assign_Car_date, Take_back_car_flag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TT_PreOrder
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TT_PreOrder
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.TT_PreOrder" >
+    insert into TT_PreOrder (id, Preorder_number, Cus_ID, 
+      Cus_name, Identify_type, Identify_id, 
+      mobilephone, Cus_type, Invoice_cus_name, 
+      car_demio_name, Car_model_name, configure, 
+      In_color, Out_color, Intention_level, 
+      Buyway_first, Buyway_loyal, Buyway_displace, 
+      Buyway_Big_cus, Origin_Place, Buy_account, 
+      "License_plate_ property", License_plate_getway, 
+      Sale_price, Prepaid_amount, Invoice_price, 
+      Pay_way, Pay_rest_money_day, Expected_arrival_time, 
+      Get_car_date, Added_Insurance, Added_jz, 
+      Added_remark1, Added_remark2, Added_remark3, 
+      remark, Divided_net_price, Divided_Loan_amount, 
+      Divided_first_pay, Divided_glass_insurance, 
+      Divided_cus_mortgage, Divided_Secured_mortgage, 
+      Divided_company_name, Divided_Secured_company_name, 
+      Insurance_Collected_Amount, Extended_warranty_amount, 
+      Purchase_tax, License_plate_amount, Discount_amount, 
+      Renewal_deposit, jz_amount, Total_amount, 
+      Salesman_name, Operator_name, Last_Submit_time, 
+      salesAdmin_check_flag, salesAdmin_check_remark, 
+      salesAdmin_name, salesAdmin_check_date, 
+      Assign_Car_Flag, Chassis_number, Engine_number, 
+      Assign_Car_man, Assign_Car_date, Take_back_car_flag
+      )
+    values (#{id,jdbcType=VARCHAR}, #{preorderNumber,jdbcType=VARCHAR}, #{cusId,jdbcType=VARCHAR}, 
+      #{cusName,jdbcType=VARCHAR}, #{identifyType,jdbcType=VARCHAR}, #{identifyId,jdbcType=VARCHAR}, 
+      #{mobilephone,jdbcType=CHAR}, #{cusType,jdbcType=VARCHAR}, #{invoiceCusName,jdbcType=VARCHAR}, 
+      #{carDemioName,jdbcType=VARCHAR}, #{carModelName,jdbcType=VARCHAR}, #{configure,jdbcType=VARCHAR}, 
+      #{inColor,jdbcType=VARCHAR}, #{outColor,jdbcType=VARCHAR}, #{intentionLevel,jdbcType=VARCHAR}, 
+      #{buywayFirst,jdbcType=BIT}, #{buywayLoyal,jdbcType=BIT}, #{buywayDisplace,jdbcType=BIT}, 
+      #{buywayBigCus,jdbcType=BIT}, #{originPlace,jdbcType=VARCHAR}, #{buyAccount,jdbcType=INTEGER}, 
+      #{licensePlateProperty,jdbcType=VARCHAR}, #{licensePlateGetway,jdbcType=VARCHAR}, 
+      #{salePrice,jdbcType=DECIMAL}, #{prepaidAmount,jdbcType=DECIMAL}, #{invoicePrice,jdbcType=DECIMAL}, 
+      #{payWay,jdbcType=VARCHAR}, #{payRestMoneyDay,jdbcType=TIMESTAMP}, #{expectedArrivalTime,jdbcType=TIMESTAMP}, 
+      #{getCarDate,jdbcType=TIMESTAMP}, #{addedInsurance,jdbcType=BIT}, #{addedJz,jdbcType=BIT}, 
+      #{addedRemark1,jdbcType=VARCHAR}, #{addedRemark2,jdbcType=VARCHAR}, #{addedRemark3,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{dividedNetPrice,jdbcType=DECIMAL}, #{dividedLoanAmount,jdbcType=DECIMAL}, 
+      #{dividedFirstPay,jdbcType=DECIMAL}, #{dividedGlassInsurance,jdbcType=DECIMAL}, 
+      #{dividedCusMortgage,jdbcType=DECIMAL}, #{dividedSecuredMortgage,jdbcType=DECIMAL}, 
+      #{dividedCompanyName,jdbcType=VARCHAR}, #{dividedSecuredCompanyName,jdbcType=VARCHAR}, 
+      #{insuranceCollectedAmount,jdbcType=DECIMAL}, #{extendedWarrantyAmount,jdbcType=DECIMAL}, 
+      #{purchaseTax,jdbcType=DECIMAL}, #{licensePlateAmount,jdbcType=DECIMAL}, #{discountAmount,jdbcType=DECIMAL}, 
+      #{renewalDeposit,jdbcType=DECIMAL}, #{jzAmount,jdbcType=DECIMAL}, #{totalAmount,jdbcType=DECIMAL}, 
+      #{salesmanName,jdbcType=VARCHAR}, #{operatorName,jdbcType=VARCHAR}, #{lastSubmitTime,jdbcType=TIMESTAMP}, 
+      #{salesadminCheckFlag,jdbcType=BIT}, #{salesadminCheckRemark,jdbcType=VARCHAR}, 
+      #{salesadminName,jdbcType=VARCHAR}, #{salesadminCheckDate,jdbcType=TIMESTAMP}, 
+      #{assignCarFlag,jdbcType=BIT}, #{chassisNumber,jdbcType=VARCHAR}, #{engineNumber,jdbcType=VARCHAR}, 
+      #{assignCarMan,jdbcType=VARCHAR}, #{assignCarDate,jdbcType=TIMESTAMP}, #{takeBackCarFlag,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.TT_PreOrder" >
+    insert into TT_PreOrder
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="preorderNumber != null" >
+        Preorder_number,
+      </if>
+      <if test="cusId != null" >
+        Cus_ID,
+      </if>
+      <if test="cusName != null" >
+        Cus_name,
+      </if>
+      <if test="identifyType != null" >
+        Identify_type,
+      </if>
+      <if test="identifyId != null" >
+        Identify_id,
+      </if>
+      <if test="mobilephone != null" >
+        mobilephone,
+      </if>
+      <if test="cusType != null" >
+        Cus_type,
+      </if>
+      <if test="invoiceCusName != null" >
+        Invoice_cus_name,
+      </if>
+      <if test="carDemioName != null" >
+        car_demio_name,
+      </if>
+      <if test="carModelName != null" >
+        Car_model_name,
+      </if>
+      <if test="configure != null" >
+        configure,
+      </if>
+      <if test="inColor != null" >
+        In_color,
+      </if>
+      <if test="outColor != null" >
+        Out_color,
+      </if>
+      <if test="intentionLevel != null" >
+        Intention_level,
+      </if>
+      <if test="buywayFirst != null" >
+        Buyway_first,
+      </if>
+      <if test="buywayLoyal != null" >
+        Buyway_loyal,
+      </if>
+      <if test="buywayDisplace != null" >
+        Buyway_displace,
+      </if>
+      <if test="buywayBigCus != null" >
+        Buyway_Big_cus,
+      </if>
+      <if test="originPlace != null" >
+        Origin_Place,
+      </if>
+      <if test="buyAccount != null" >
+        Buy_account,
+      </if>
+      <if test="licensePlateProperty != null" >
+        "License_plate_ property",
+      </if>
+      <if test="licensePlateGetway != null" >
+        License_plate_getway,
+      </if>
+      <if test="salePrice != null" >
+        Sale_price,
+      </if>
+      <if test="prepaidAmount != null" >
+        Prepaid_amount,
+      </if>
+      <if test="invoicePrice != null" >
+        Invoice_price,
+      </if>
+      <if test="payWay != null" >
+        Pay_way,
+      </if>
+      <if test="payRestMoneyDay != null" >
+        Pay_rest_money_day,
+      </if>
+      <if test="expectedArrivalTime != null" >
+        Expected_arrival_time,
+      </if>
+      <if test="getCarDate != null" >
+        Get_car_date,
+      </if>
+      <if test="addedInsurance != null" >
+        Added_Insurance,
+      </if>
+      <if test="addedJz != null" >
+        Added_jz,
+      </if>
+      <if test="addedRemark1 != null" >
+        Added_remark1,
+      </if>
+      <if test="addedRemark2 != null" >
+        Added_remark2,
+      </if>
+      <if test="addedRemark3 != null" >
+        Added_remark3,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="dividedNetPrice != null" >
+        Divided_net_price,
+      </if>
+      <if test="dividedLoanAmount != null" >
+        Divided_Loan_amount,
+      </if>
+      <if test="dividedFirstPay != null" >
+        Divided_first_pay,
+      </if>
+      <if test="dividedGlassInsurance != null" >
+        Divided_glass_insurance,
+      </if>
+      <if test="dividedCusMortgage != null" >
+        Divided_cus_mortgage,
+      </if>
+      <if test="dividedSecuredMortgage != null" >
+        Divided_Secured_mortgage,
+      </if>
+      <if test="dividedCompanyName != null" >
+        Divided_company_name,
+      </if>
+      <if test="dividedSecuredCompanyName != null" >
+        Divided_Secured_company_name,
+      </if>
+      <if test="insuranceCollectedAmount != null" >
+        Insurance_Collected_Amount,
+      </if>
+      <if test="extendedWarrantyAmount != null" >
+        Extended_warranty_amount,
+      </if>
+      <if test="purchaseTax != null" >
+        Purchase_tax,
+      </if>
+      <if test="licensePlateAmount != null" >
+        License_plate_amount,
+      </if>
+      <if test="discountAmount != null" >
+        Discount_amount,
+      </if>
+      <if test="renewalDeposit != null" >
+        Renewal_deposit,
+      </if>
+      <if test="jzAmount != null" >
+        jz_amount,
+      </if>
+      <if test="totalAmount != null" >
+        Total_amount,
+      </if>
+      <if test="salesmanName != null" >
+        Salesman_name,
+      </if>
+      <if test="operatorName != null" >
+        Operator_name,
+      </if>
+      <if test="lastSubmitTime != null" >
+        Last_Submit_time,
+      </if>
+      <if test="salesadminCheckFlag != null" >
+        salesAdmin_check_flag,
+      </if>
+      <if test="salesadminCheckRemark != null" >
+        salesAdmin_check_remark,
+      </if>
+      <if test="salesadminName != null" >
+        salesAdmin_name,
+      </if>
+      <if test="salesadminCheckDate != null" >
+        salesAdmin_check_date,
+      </if>
+      <if test="assignCarFlag != null" >
+        Assign_Car_Flag,
+      </if>
+      <if test="chassisNumber != null" >
+        Chassis_number,
+      </if>
+      <if test="engineNumber != null" >
+        Engine_number,
+      </if>
+      <if test="assignCarMan != null" >
+        Assign_Car_man,
+      </if>
+      <if test="assignCarDate != null" >
+        Assign_Car_date,
+      </if>
+      <if test="takeBackCarFlag != null" >
+        Take_back_car_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="preorderNumber != null" >
+        #{preorderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cusId != null" >
+        #{cusId,jdbcType=VARCHAR},
+      </if>
+      <if test="cusName != null" >
+        #{cusName,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyType != null" >
+        #{identifyType,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyId != null" >
+        #{identifyId,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilephone != null" >
+        #{mobilephone,jdbcType=CHAR},
+      </if>
+      <if test="cusType != null" >
+        #{cusType,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceCusName != null" >
+        #{invoiceCusName,jdbcType=VARCHAR},
+      </if>
+      <if test="carDemioName != null" >
+        #{carDemioName,jdbcType=VARCHAR},
+      </if>
+      <if test="carModelName != null" >
+        #{carModelName,jdbcType=VARCHAR},
+      </if>
+      <if test="configure != null" >
+        #{configure,jdbcType=VARCHAR},
+      </if>
+      <if test="inColor != null" >
+        #{inColor,jdbcType=VARCHAR},
+      </if>
+      <if test="outColor != null" >
+        #{outColor,jdbcType=VARCHAR},
+      </if>
+      <if test="intentionLevel != null" >
+        #{intentionLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="buywayFirst != null" >
+        #{buywayFirst,jdbcType=BIT},
+      </if>
+      <if test="buywayLoyal != null" >
+        #{buywayLoyal,jdbcType=BIT},
+      </if>
+      <if test="buywayDisplace != null" >
+        #{buywayDisplace,jdbcType=BIT},
+      </if>
+      <if test="buywayBigCus != null" >
+        #{buywayBigCus,jdbcType=BIT},
+      </if>
+      <if test="originPlace != null" >
+        #{originPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="buyAccount != null" >
+        #{buyAccount,jdbcType=INTEGER},
+      </if>
+      <if test="licensePlateProperty != null" >
+        #{licensePlateProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="licensePlateGetway != null" >
+        #{licensePlateGetway,jdbcType=VARCHAR},
+      </if>
+      <if test="salePrice != null" >
+        #{salePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="prepaidAmount != null" >
+        #{prepaidAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="invoicePrice != null" >
+        #{invoicePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="payWay != null" >
+        #{payWay,jdbcType=VARCHAR},
+      </if>
+      <if test="payRestMoneyDay != null" >
+        #{payRestMoneyDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expectedArrivalTime != null" >
+        #{expectedArrivalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="getCarDate != null" >
+        #{getCarDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="addedInsurance != null" >
+        #{addedInsurance,jdbcType=BIT},
+      </if>
+      <if test="addedJz != null" >
+        #{addedJz,jdbcType=BIT},
+      </if>
+      <if test="addedRemark1 != null" >
+        #{addedRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="addedRemark2 != null" >
+        #{addedRemark2,jdbcType=VARCHAR},
+      </if>
+      <if test="addedRemark3 != null" >
+        #{addedRemark3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="dividedNetPrice != null" >
+        #{dividedNetPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedLoanAmount != null" >
+        #{dividedLoanAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedFirstPay != null" >
+        #{dividedFirstPay,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedGlassInsurance != null" >
+        #{dividedGlassInsurance,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedCusMortgage != null" >
+        #{dividedCusMortgage,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedSecuredMortgage != null" >
+        #{dividedSecuredMortgage,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedCompanyName != null" >
+        #{dividedCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="dividedSecuredCompanyName != null" >
+        #{dividedSecuredCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="insuranceCollectedAmount != null" >
+        #{insuranceCollectedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="extendedWarrantyAmount != null" >
+        #{extendedWarrantyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="purchaseTax != null" >
+        #{purchaseTax,jdbcType=DECIMAL},
+      </if>
+      <if test="licensePlateAmount != null" >
+        #{licensePlateAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="discountAmount != null" >
+        #{discountAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="renewalDeposit != null" >
+        #{renewalDeposit,jdbcType=DECIMAL},
+      </if>
+      <if test="jzAmount != null" >
+        #{jzAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="totalAmount != null" >
+        #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="salesmanName != null" >
+        #{salesmanName,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorName != null" >
+        #{operatorName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastSubmitTime != null" >
+        #{lastSubmitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="salesadminCheckFlag != null" >
+        #{salesadminCheckFlag,jdbcType=BIT},
+      </if>
+      <if test="salesadminCheckRemark != null" >
+        #{salesadminCheckRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="salesadminName != null" >
+        #{salesadminName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesadminCheckDate != null" >
+        #{salesadminCheckDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="assignCarFlag != null" >
+        #{assignCarFlag,jdbcType=BIT},
+      </if>
+      <if test="chassisNumber != null" >
+        #{chassisNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="engineNumber != null" >
+        #{engineNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="assignCarMan != null" >
+        #{assignCarMan,jdbcType=VARCHAR},
+      </if>
+      <if test="assignCarDate != null" >
+        #{assignCarDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="takeBackCarFlag != null" >
+        #{takeBackCarFlag,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.TT_PreOrder" >
+    update TT_PreOrder
+    <set >
+      <if test="preorderNumber != null" >
+        Preorder_number = #{preorderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cusId != null" >
+        Cus_ID = #{cusId,jdbcType=VARCHAR},
+      </if>
+      <if test="cusName != null" >
+        Cus_name = #{cusName,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyType != null" >
+        Identify_type = #{identifyType,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyId != null" >
+        Identify_id = #{identifyId,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilephone != null" >
+        mobilephone = #{mobilephone,jdbcType=CHAR},
+      </if>
+      <if test="cusType != null" >
+        Cus_type = #{cusType,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceCusName != null" >
+        Invoice_cus_name = #{invoiceCusName,jdbcType=VARCHAR},
+      </if>
+      <if test="carDemioName != null" >
+        car_demio_name = #{carDemioName,jdbcType=VARCHAR},
+      </if>
+      <if test="carModelName != null" >
+        Car_model_name = #{carModelName,jdbcType=VARCHAR},
+      </if>
+      <if test="configure != null" >
+        configure = #{configure,jdbcType=VARCHAR},
+      </if>
+      <if test="inColor != null" >
+        In_color = #{inColor,jdbcType=VARCHAR},
+      </if>
+      <if test="outColor != null" >
+        Out_color = #{outColor,jdbcType=VARCHAR},
+      </if>
+      <if test="intentionLevel != null" >
+        Intention_level = #{intentionLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="buywayFirst != null" >
+        Buyway_first = #{buywayFirst,jdbcType=BIT},
+      </if>
+      <if test="buywayLoyal != null" >
+        Buyway_loyal = #{buywayLoyal,jdbcType=BIT},
+      </if>
+      <if test="buywayDisplace != null" >
+        Buyway_displace = #{buywayDisplace,jdbcType=BIT},
+      </if>
+      <if test="buywayBigCus != null" >
+        Buyway_Big_cus = #{buywayBigCus,jdbcType=BIT},
+      </if>
+      <if test="originPlace != null" >
+        Origin_Place = #{originPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="buyAccount != null" >
+        Buy_account = #{buyAccount,jdbcType=INTEGER},
+      </if>
+      <if test="licensePlateProperty != null" >
+        "License_plate_ property" = #{licensePlateProperty,jdbcType=VARCHAR},
+      </if>
+      <if test="licensePlateGetway != null" >
+        License_plate_getway = #{licensePlateGetway,jdbcType=VARCHAR},
+      </if>
+      <if test="salePrice != null" >
+        Sale_price = #{salePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="prepaidAmount != null" >
+        Prepaid_amount = #{prepaidAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="invoicePrice != null" >
+        Invoice_price = #{invoicePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="payWay != null" >
+        Pay_way = #{payWay,jdbcType=VARCHAR},
+      </if>
+      <if test="payRestMoneyDay != null" >
+        Pay_rest_money_day = #{payRestMoneyDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expectedArrivalTime != null" >
+        Expected_arrival_time = #{expectedArrivalTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="getCarDate != null" >
+        Get_car_date = #{getCarDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="addedInsurance != null" >
+        Added_Insurance = #{addedInsurance,jdbcType=BIT},
+      </if>
+      <if test="addedJz != null" >
+        Added_jz = #{addedJz,jdbcType=BIT},
+      </if>
+      <if test="addedRemark1 != null" >
+        Added_remark1 = #{addedRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="addedRemark2 != null" >
+        Added_remark2 = #{addedRemark2,jdbcType=VARCHAR},
+      </if>
+      <if test="addedRemark3 != null" >
+        Added_remark3 = #{addedRemark3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="dividedNetPrice != null" >
+        Divided_net_price = #{dividedNetPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedLoanAmount != null" >
+        Divided_Loan_amount = #{dividedLoanAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedFirstPay != null" >
+        Divided_first_pay = #{dividedFirstPay,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedGlassInsurance != null" >
+        Divided_glass_insurance = #{dividedGlassInsurance,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedCusMortgage != null" >
+        Divided_cus_mortgage = #{dividedCusMortgage,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedSecuredMortgage != null" >
+        Divided_Secured_mortgage = #{dividedSecuredMortgage,jdbcType=DECIMAL},
+      </if>
+      <if test="dividedCompanyName != null" >
+        Divided_company_name = #{dividedCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="dividedSecuredCompanyName != null" >
+        Divided_Secured_company_name = #{dividedSecuredCompanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="insuranceCollectedAmount != null" >
+        Insurance_Collected_Amount = #{insuranceCollectedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="extendedWarrantyAmount != null" >
+        Extended_warranty_amount = #{extendedWarrantyAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="purchaseTax != null" >
+        Purchase_tax = #{purchaseTax,jdbcType=DECIMAL},
+      </if>
+      <if test="licensePlateAmount != null" >
+        License_plate_amount = #{licensePlateAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="discountAmount != null" >
+        Discount_amount = #{discountAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="renewalDeposit != null" >
+        Renewal_deposit = #{renewalDeposit,jdbcType=DECIMAL},
+      </if>
+      <if test="jzAmount != null" >
+        jz_amount = #{jzAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="totalAmount != null" >
+        Total_amount = #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="salesmanName != null" >
+        Salesman_name = #{salesmanName,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorName != null" >
+        Operator_name = #{operatorName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastSubmitTime != null" >
+        Last_Submit_time = #{lastSubmitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="salesadminCheckFlag != null" >
+        salesAdmin_check_flag = #{salesadminCheckFlag,jdbcType=BIT},
+      </if>
+      <if test="salesadminCheckRemark != null" >
+        salesAdmin_check_remark = #{salesadminCheckRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="salesadminName != null" >
+        salesAdmin_name = #{salesadminName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesadminCheckDate != null" >
+        salesAdmin_check_date = #{salesadminCheckDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="assignCarFlag != null" >
+        Assign_Car_Flag = #{assignCarFlag,jdbcType=BIT},
+      </if>
+      <if test="chassisNumber != null" >
+        Chassis_number = #{chassisNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="engineNumber != null" >
+        Engine_number = #{engineNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="assignCarMan != null" >
+        Assign_Car_man = #{assignCarMan,jdbcType=VARCHAR},
+      </if>
+      <if test="assignCarDate != null" >
+        Assign_Car_date = #{assignCarDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="takeBackCarFlag != null" >
+        Take_back_car_flag = #{takeBackCarFlag,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.TT_PreOrder" >
+    update TT_PreOrder
+    set Preorder_number = #{preorderNumber,jdbcType=VARCHAR},
+      Cus_ID = #{cusId,jdbcType=VARCHAR},
+      Cus_name = #{cusName,jdbcType=VARCHAR},
+      Identify_type = #{identifyType,jdbcType=VARCHAR},
+      Identify_id = #{identifyId,jdbcType=VARCHAR},
+      mobilephone = #{mobilephone,jdbcType=CHAR},
+      Cus_type = #{cusType,jdbcType=VARCHAR},
+      Invoice_cus_name = #{invoiceCusName,jdbcType=VARCHAR},
+      car_demio_name = #{carDemioName,jdbcType=VARCHAR},
+      Car_model_name = #{carModelName,jdbcType=VARCHAR},
+      configure = #{configure,jdbcType=VARCHAR},
+      In_color = #{inColor,jdbcType=VARCHAR},
+      Out_color = #{outColor,jdbcType=VARCHAR},
+      Intention_level = #{intentionLevel,jdbcType=VARCHAR},
+      Buyway_first = #{buywayFirst,jdbcType=BIT},
+      Buyway_loyal = #{buywayLoyal,jdbcType=BIT},
+      Buyway_displace = #{buywayDisplace,jdbcType=BIT},
+      Buyway_Big_cus = #{buywayBigCus,jdbcType=BIT},
+      Origin_Place = #{originPlace,jdbcType=VARCHAR},
+      Buy_account = #{buyAccount,jdbcType=INTEGER},
+      "License_plate_ property" = #{licensePlateProperty,jdbcType=VARCHAR},
+      License_plate_getway = #{licensePlateGetway,jdbcType=VARCHAR},
+      Sale_price = #{salePrice,jdbcType=DECIMAL},
+      Prepaid_amount = #{prepaidAmount,jdbcType=DECIMAL},
+      Invoice_price = #{invoicePrice,jdbcType=DECIMAL},
+      Pay_way = #{payWay,jdbcType=VARCHAR},
+      Pay_rest_money_day = #{payRestMoneyDay,jdbcType=TIMESTAMP},
+      Expected_arrival_time = #{expectedArrivalTime,jdbcType=TIMESTAMP},
+      Get_car_date = #{getCarDate,jdbcType=TIMESTAMP},
+      Added_Insurance = #{addedInsurance,jdbcType=BIT},
+      Added_jz = #{addedJz,jdbcType=BIT},
+      Added_remark1 = #{addedRemark1,jdbcType=VARCHAR},
+      Added_remark2 = #{addedRemark2,jdbcType=VARCHAR},
+      Added_remark3 = #{addedRemark3,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      Divided_net_price = #{dividedNetPrice,jdbcType=DECIMAL},
+      Divided_Loan_amount = #{dividedLoanAmount,jdbcType=DECIMAL},
+      Divided_first_pay = #{dividedFirstPay,jdbcType=DECIMAL},
+      Divided_glass_insurance = #{dividedGlassInsurance,jdbcType=DECIMAL},
+      Divided_cus_mortgage = #{dividedCusMortgage,jdbcType=DECIMAL},
+      Divided_Secured_mortgage = #{dividedSecuredMortgage,jdbcType=DECIMAL},
+      Divided_company_name = #{dividedCompanyName,jdbcType=VARCHAR},
+      Divided_Secured_company_name = #{dividedSecuredCompanyName,jdbcType=VARCHAR},
+      Insurance_Collected_Amount = #{insuranceCollectedAmount,jdbcType=DECIMAL},
+      Extended_warranty_amount = #{extendedWarrantyAmount,jdbcType=DECIMAL},
+      Purchase_tax = #{purchaseTax,jdbcType=DECIMAL},
+      License_plate_amount = #{licensePlateAmount,jdbcType=DECIMAL},
+      Discount_amount = #{discountAmount,jdbcType=DECIMAL},
+      Renewal_deposit = #{renewalDeposit,jdbcType=DECIMAL},
+      jz_amount = #{jzAmount,jdbcType=DECIMAL},
+      Total_amount = #{totalAmount,jdbcType=DECIMAL},
+      Salesman_name = #{salesmanName,jdbcType=VARCHAR},
+      Operator_name = #{operatorName,jdbcType=VARCHAR},
+      Last_Submit_time = #{lastSubmitTime,jdbcType=TIMESTAMP},
+      salesAdmin_check_flag = #{salesadminCheckFlag,jdbcType=BIT},
+      salesAdmin_check_remark = #{salesadminCheckRemark,jdbcType=VARCHAR},
+      salesAdmin_name = #{salesadminName,jdbcType=VARCHAR},
+      salesAdmin_check_date = #{salesadminCheckDate,jdbcType=TIMESTAMP},
+      Assign_Car_Flag = #{assignCarFlag,jdbcType=BIT},
+      Chassis_number = #{chassisNumber,jdbcType=VARCHAR},
+      Engine_number = #{engineNumber,jdbcType=VARCHAR},
+      Assign_Car_man = #{assignCarMan,jdbcType=VARCHAR},
+      Assign_Car_date = #{assignCarDate,jdbcType=TIMESTAMP},
+      Take_back_car_flag = #{takeBackCarFlag,jdbcType=BIT}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

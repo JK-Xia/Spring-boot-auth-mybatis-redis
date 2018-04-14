@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_salc01Mapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_salc01" >
+    <id column="ccpdm" property="ccpdm" jdbcType="VARCHAR" />
+    <result column="ccxdm" property="ccxdm" jdbcType="VARCHAR" />
+    <result column="ccpmc" property="ccpmc" jdbcType="VARCHAR" />
+    <result column="cpym" property="cpym" jdbcType="CHAR" />
+    <result column="ncbgx" property="ncbgx" jdbcType="SMALLINT" />
+    <result column="ncbdx" property="ncbdx" jdbcType="SMALLINT" />
+    <result column="nsczdj" property="nsczdj" jdbcType="DECIMAL" />
+    <result column="ncbdj" property="ncbdj" jdbcType="DECIMAL" />
+    <result column="nzcjjl" property="nzcjjl" jdbcType="SMALLINT" />
+    <result column="ncgdj" property="ncgdj" jdbcType="DECIMAL" />
+    <result column="nckdj" property="nckdj" jdbcType="DECIMAL" />
+    <result column="nxsdj" property="nxsdj" jdbcType="DECIMAL" />
+    <result column="ltybs" property="ltybs" jdbcType="BIT" />
+    <result column="dtyrq" property="dtyrq" jdbcType="TIMESTAMP" />
+    <result column="lxzbs" property="lxzbs" jdbcType="BIT" />
+    <result column="czcfldm" property="czcfldm" jdbcType="CHAR" />
+    <result column="cysdm" property="cysdm" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ccpdm, ccxdm, ccpmc, cpym, ncbgx, ncbdx, nsczdj, ncbdj, nzcjjl, ncgdj, nckdj, nxsdj, 
+    ltybs, dtyrq, lxzbs, czcfldm, cysdm
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_salc01
+    where ccpdm = #{ccpdm,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from R3_salc01
+    where ccpdm = #{ccpdm,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_salc01" >
+    insert into R3_salc01 (ccpdm, ccxdm, ccpmc, 
+      cpym, ncbgx, ncbdx, 
+      nsczdj, ncbdj, nzcjjl, 
+      ncgdj, nckdj, nxsdj, 
+      ltybs, dtyrq, lxzbs, czcfldm, 
+      cysdm)
+    values (#{ccpdm,jdbcType=VARCHAR}, #{ccxdm,jdbcType=VARCHAR}, #{ccpmc,jdbcType=VARCHAR}, 
+      #{cpym,jdbcType=CHAR}, #{ncbgx,jdbcType=SMALLINT}, #{ncbdx,jdbcType=SMALLINT}, 
+      #{nsczdj,jdbcType=DECIMAL}, #{ncbdj,jdbcType=DECIMAL}, #{nzcjjl,jdbcType=SMALLINT}, 
+      #{ncgdj,jdbcType=DECIMAL}, #{nckdj,jdbcType=DECIMAL}, #{nxsdj,jdbcType=DECIMAL}, 
+      #{ltybs,jdbcType=BIT}, #{dtyrq,jdbcType=TIMESTAMP}, #{lxzbs,jdbcType=BIT}, #{czcfldm,jdbcType=CHAR}, 
+      #{cysdm,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_salc01" >
+    insert into R3_salc01
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ccpdm != null" >
+        ccpdm,
+      </if>
+      <if test="ccxdm != null" >
+        ccxdm,
+      </if>
+      <if test="ccpmc != null" >
+        ccpmc,
+      </if>
+      <if test="cpym != null" >
+        cpym,
+      </if>
+      <if test="ncbgx != null" >
+        ncbgx,
+      </if>
+      <if test="ncbdx != null" >
+        ncbdx,
+      </if>
+      <if test="nsczdj != null" >
+        nsczdj,
+      </if>
+      <if test="ncbdj != null" >
+        ncbdj,
+      </if>
+      <if test="nzcjjl != null" >
+        nzcjjl,
+      </if>
+      <if test="ncgdj != null" >
+        ncgdj,
+      </if>
+      <if test="nckdj != null" >
+        nckdj,
+      </if>
+      <if test="nxsdj != null" >
+        nxsdj,
+      </if>
+      <if test="ltybs != null" >
+        ltybs,
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq,
+      </if>
+      <if test="lxzbs != null" >
+        lxzbs,
+      </if>
+      <if test="czcfldm != null" >
+        czcfldm,
+      </if>
+      <if test="cysdm != null" >
+        cysdm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ccpdm != null" >
+        #{ccpdm,jdbcType=VARCHAR},
+      </if>
+      <if test="ccxdm != null" >
+        #{ccxdm,jdbcType=VARCHAR},
+      </if>
+      <if test="ccpmc != null" >
+        #{ccpmc,jdbcType=VARCHAR},
+      </if>
+      <if test="cpym != null" >
+        #{cpym,jdbcType=CHAR},
+      </if>
+      <if test="ncbgx != null" >
+        #{ncbgx,jdbcType=SMALLINT},
+      </if>
+      <if test="ncbdx != null" >
+        #{ncbdx,jdbcType=SMALLINT},
+      </if>
+      <if test="nsczdj != null" >
+        #{nsczdj,jdbcType=DECIMAL},
+      </if>
+      <if test="ncbdj != null" >
+        #{ncbdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nzcjjl != null" >
+        #{nzcjjl,jdbcType=SMALLINT},
+      </if>
+      <if test="ncgdj != null" >
+        #{ncgdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nckdj != null" >
+        #{nckdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nxsdj != null" >
+        #{nxsdj,jdbcType=DECIMAL},
+      </if>
+      <if test="ltybs != null" >
+        #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lxzbs != null" >
+        #{lxzbs,jdbcType=BIT},
+      </if>
+      <if test="czcfldm != null" >
+        #{czcfldm,jdbcType=CHAR},
+      </if>
+      <if test="cysdm != null" >
+        #{cysdm,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_salc01" >
+    update R3_salc01
+    <set >
+      <if test="ccxdm != null" >
+        ccxdm = #{ccxdm,jdbcType=VARCHAR},
+      </if>
+      <if test="ccpmc != null" >
+        ccpmc = #{ccpmc,jdbcType=VARCHAR},
+      </if>
+      <if test="cpym != null" >
+        cpym = #{cpym,jdbcType=CHAR},
+      </if>
+      <if test="ncbgx != null" >
+        ncbgx = #{ncbgx,jdbcType=SMALLINT},
+      </if>
+      <if test="ncbdx != null" >
+        ncbdx = #{ncbdx,jdbcType=SMALLINT},
+      </if>
+      <if test="nsczdj != null" >
+        nsczdj = #{nsczdj,jdbcType=DECIMAL},
+      </if>
+      <if test="ncbdj != null" >
+        ncbdj = #{ncbdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nzcjjl != null" >
+        nzcjjl = #{nzcjjl,jdbcType=SMALLINT},
+      </if>
+      <if test="ncgdj != null" >
+        ncgdj = #{ncgdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nckdj != null" >
+        nckdj = #{nckdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nxsdj != null" >
+        nxsdj = #{nxsdj,jdbcType=DECIMAL},
+      </if>
+      <if test="ltybs != null" >
+        ltybs = #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq = #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lxzbs != null" >
+        lxzbs = #{lxzbs,jdbcType=BIT},
+      </if>
+      <if test="czcfldm != null" >
+        czcfldm = #{czcfldm,jdbcType=CHAR},
+      </if>
+      <if test="cysdm != null" >
+        cysdm = #{cysdm,jdbcType=CHAR},
+      </if>
+    </set>
+    where ccpdm = #{ccpdm,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_salc01" >
+    update R3_salc01
+    set ccxdm = #{ccxdm,jdbcType=VARCHAR},
+      ccpmc = #{ccpmc,jdbcType=VARCHAR},
+      cpym = #{cpym,jdbcType=CHAR},
+      ncbgx = #{ncbgx,jdbcType=SMALLINT},
+      ncbdx = #{ncbdx,jdbcType=SMALLINT},
+      nsczdj = #{nsczdj,jdbcType=DECIMAL},
+      ncbdj = #{ncbdj,jdbcType=DECIMAL},
+      nzcjjl = #{nzcjjl,jdbcType=SMALLINT},
+      ncgdj = #{ncgdj,jdbcType=DECIMAL},
+      nckdj = #{nckdj,jdbcType=DECIMAL},
+      nxsdj = #{nxsdj,jdbcType=DECIMAL},
+      ltybs = #{ltybs,jdbcType=BIT},
+      dtyrq = #{dtyrq,jdbcType=TIMESTAMP},
+      lxzbs = #{lxzbs,jdbcType=BIT},
+      czcfldm = #{czcfldm,jdbcType=CHAR},
+      cysdm = #{cysdm,jdbcType=CHAR}
+    where ccpdm = #{ccpdm,jdbcType=VARCHAR}
+  </update>
+</mapper>

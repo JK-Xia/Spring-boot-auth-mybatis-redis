@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.TT_cus_LinkManMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.TT_cus_LinkMan" >
+    <id column="Customer_id" property="customerId" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="CHAR" />
+    <result column="relationship" property="relationship" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="mobilephone" property="mobilephone" jdbcType="VARCHAR" />
+    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+    <result column="otherphones" property="otherphones" jdbcType="VARCHAR" />
+    <result column="Is_main_linkman" property="isMainLinkman" jdbcType="BIT" />
+    <result column="Convenient_contact_time" property="convenientContactTime" jdbcType="TIMESTAMP" />
+    <result column="Convenient_contact_way" property="convenientContactWay" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Customer_id, name, sex, relationship, type, mobilephone, telephone, otherphones, 
+    Is_main_linkman, Convenient_contact_time, Convenient_contact_way
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TT_cus_LinkMan
+    where Customer_id = #{customerId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TT_cus_LinkMan
+    where Customer_id = #{customerId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.TT_cus_LinkMan" >
+    insert into TT_cus_LinkMan (Customer_id, name, sex, 
+      relationship, type, mobilephone, 
+      telephone, otherphones, Is_main_linkman, 
+      Convenient_contact_time, Convenient_contact_way
+      )
+    values (#{customerId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, 
+      #{relationship,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{mobilephone,jdbcType=VARCHAR}, 
+      #{telephone,jdbcType=VARCHAR}, #{otherphones,jdbcType=VARCHAR}, #{isMainLinkman,jdbcType=BIT}, 
+      #{convenientContactTime,jdbcType=TIMESTAMP}, #{convenientContactWay,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.TT_cus_LinkMan" >
+    insert into TT_cus_LinkMan
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        Customer_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="relationship != null" >
+        relationship,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="mobilephone != null" >
+        mobilephone,
+      </if>
+      <if test="telephone != null" >
+        telephone,
+      </if>
+      <if test="otherphones != null" >
+        otherphones,
+      </if>
+      <if test="isMainLinkman != null" >
+        Is_main_linkman,
+      </if>
+      <if test="convenientContactTime != null" >
+        Convenient_contact_time,
+      </if>
+      <if test="convenientContactWay != null" >
+        Convenient_contact_way,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="customerId != null" >
+        #{customerId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="relationship != null" >
+        #{relationship,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="mobilephone != null" >
+        #{mobilephone,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="otherphones != null" >
+        #{otherphones,jdbcType=VARCHAR},
+      </if>
+      <if test="isMainLinkman != null" >
+        #{isMainLinkman,jdbcType=BIT},
+      </if>
+      <if test="convenientContactTime != null" >
+        #{convenientContactTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="convenientContactWay != null" >
+        #{convenientContactWay,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.TT_cus_LinkMan" >
+    update TT_cus_LinkMan
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=CHAR},
+      </if>
+      <if test="relationship != null" >
+        relationship = #{relationship,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="mobilephone != null" >
+        mobilephone = #{mobilephone,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        telephone = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="otherphones != null" >
+        otherphones = #{otherphones,jdbcType=VARCHAR},
+      </if>
+      <if test="isMainLinkman != null" >
+        Is_main_linkman = #{isMainLinkman,jdbcType=BIT},
+      </if>
+      <if test="convenientContactTime != null" >
+        Convenient_contact_time = #{convenientContactTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="convenientContactWay != null" >
+        Convenient_contact_way = #{convenientContactWay,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Customer_id = #{customerId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.TT_cus_LinkMan" >
+    update TT_cus_LinkMan
+    set name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=CHAR},
+      relationship = #{relationship,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      mobilephone = #{mobilephone,jdbcType=VARCHAR},
+      telephone = #{telephone,jdbcType=VARCHAR},
+      otherphones = #{otherphones,jdbcType=VARCHAR},
+      Is_main_linkman = #{isMainLinkman,jdbcType=BIT},
+      Convenient_contact_time = #{convenientContactTime,jdbcType=TIMESTAMP},
+      Convenient_contact_way = #{convenientContactWay,jdbcType=VARCHAR}
+    where Customer_id = #{customerId,jdbcType=VARCHAR}
+  </update>
+</mapper>

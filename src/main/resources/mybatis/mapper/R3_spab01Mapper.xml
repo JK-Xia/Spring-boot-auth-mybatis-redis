@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_spab01Mapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_spab01" >
+    <id column="cckdm" property="cckdm" jdbcType="CHAR" />
+    <id column="cbjdm" property="cbjdm" jdbcType="VARCHAR" />
+    <id column="cph" property="cph" jdbcType="CHAR" />
+    <result column="ckqdm" property="ckqdm" jdbcType="CHAR" />
+    <result column="ckwbh" property="ckwbh" jdbcType="CHAR" />
+    <result column="ncbje" property="ncbje" jdbcType="DECIMAL" />
+    <result column="nqcsl" property="nqcsl" jdbcType="DECIMAL" />
+    <result column="nbqrk" property="nbqrk" jdbcType="DECIMAL" />
+    <result column="nbqck" property="nbqck" jdbcType="DECIMAL" />
+    <result column="nkcsl" property="nkcsl" jdbcType="DECIMAL" />
+    <result column="nsqsl" property="nsqsl" jdbcType="DECIMAL" />
+    <result column="nyksl" property="nyksl" jdbcType="DECIMAL" />
+    <result column="nkdsl" property="nkdsl" jdbcType="DECIMAL" />
+    <result column="nsdsl" property="nsdsl" jdbcType="DECIMAL" />
+    <result column="njcsl" property="njcsl" jdbcType="DECIMAL" />
+    <result column="njrsl" property="njrsl" jdbcType="DECIMAL" />
+    <result column="dzhckrq" property="dzhckrq" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cckdm, cbjdm, cph, ckqdm, ckwbh, ncbje, nqcsl, nbqrk, nbqck, nkcsl, nsqsl, nyksl, 
+    nkdsl, nsdsl, njcsl, njrsl, dzhckrq
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.tt_ms.domain.R3_spab01Key" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_spab01
+    where cckdm = #{cckdm,jdbcType=CHAR}
+      and cbjdm = #{cbjdm,jdbcType=VARCHAR}
+      and cph = #{cph,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tt_ms.domain.R3_spab01Key" >
+    delete from R3_spab01
+    where cckdm = #{cckdm,jdbcType=CHAR}
+      and cbjdm = #{cbjdm,jdbcType=VARCHAR}
+      and cph = #{cph,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_spab01" >
+    insert into R3_spab01 (cckdm, cbjdm, cph, 
+      ckqdm, ckwbh, ncbje, nqcsl, 
+      nbqrk, nbqck, nkcsl, 
+      nsqsl, nyksl, nkdsl, 
+      nsdsl, njcsl, njrsl, 
+      dzhckrq)
+    values (#{cckdm,jdbcType=CHAR}, #{cbjdm,jdbcType=VARCHAR}, #{cph,jdbcType=CHAR}, 
+      #{ckqdm,jdbcType=CHAR}, #{ckwbh,jdbcType=CHAR}, #{ncbje,jdbcType=DECIMAL}, #{nqcsl,jdbcType=DECIMAL}, 
+      #{nbqrk,jdbcType=DECIMAL}, #{nbqck,jdbcType=DECIMAL}, #{nkcsl,jdbcType=DECIMAL}, 
+      #{nsqsl,jdbcType=DECIMAL}, #{nyksl,jdbcType=DECIMAL}, #{nkdsl,jdbcType=DECIMAL}, 
+      #{nsdsl,jdbcType=DECIMAL}, #{njcsl,jdbcType=DECIMAL}, #{njrsl,jdbcType=DECIMAL}, 
+      #{dzhckrq,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_spab01" >
+    insert into R3_spab01
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cckdm != null" >
+        cckdm,
+      </if>
+      <if test="cbjdm != null" >
+        cbjdm,
+      </if>
+      <if test="cph != null" >
+        cph,
+      </if>
+      <if test="ckqdm != null" >
+        ckqdm,
+      </if>
+      <if test="ckwbh != null" >
+        ckwbh,
+      </if>
+      <if test="ncbje != null" >
+        ncbje,
+      </if>
+      <if test="nqcsl != null" >
+        nqcsl,
+      </if>
+      <if test="nbqrk != null" >
+        nbqrk,
+      </if>
+      <if test="nbqck != null" >
+        nbqck,
+      </if>
+      <if test="nkcsl != null" >
+        nkcsl,
+      </if>
+      <if test="nsqsl != null" >
+        nsqsl,
+      </if>
+      <if test="nyksl != null" >
+        nyksl,
+      </if>
+      <if test="nkdsl != null" >
+        nkdsl,
+      </if>
+      <if test="nsdsl != null" >
+        nsdsl,
+      </if>
+      <if test="njcsl != null" >
+        njcsl,
+      </if>
+      <if test="njrsl != null" >
+        njrsl,
+      </if>
+      <if test="dzhckrq != null" >
+        dzhckrq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cckdm != null" >
+        #{cckdm,jdbcType=CHAR},
+      </if>
+      <if test="cbjdm != null" >
+        #{cbjdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cph != null" >
+        #{cph,jdbcType=CHAR},
+      </if>
+      <if test="ckqdm != null" >
+        #{ckqdm,jdbcType=CHAR},
+      </if>
+      <if test="ckwbh != null" >
+        #{ckwbh,jdbcType=CHAR},
+      </if>
+      <if test="ncbje != null" >
+        #{ncbje,jdbcType=DECIMAL},
+      </if>
+      <if test="nqcsl != null" >
+        #{nqcsl,jdbcType=DECIMAL},
+      </if>
+      <if test="nbqrk != null" >
+        #{nbqrk,jdbcType=DECIMAL},
+      </if>
+      <if test="nbqck != null" >
+        #{nbqck,jdbcType=DECIMAL},
+      </if>
+      <if test="nkcsl != null" >
+        #{nkcsl,jdbcType=DECIMAL},
+      </if>
+      <if test="nsqsl != null" >
+        #{nsqsl,jdbcType=DECIMAL},
+      </if>
+      <if test="nyksl != null" >
+        #{nyksl,jdbcType=DECIMAL},
+      </if>
+      <if test="nkdsl != null" >
+        #{nkdsl,jdbcType=DECIMAL},
+      </if>
+      <if test="nsdsl != null" >
+        #{nsdsl,jdbcType=DECIMAL},
+      </if>
+      <if test="njcsl != null" >
+        #{njcsl,jdbcType=DECIMAL},
+      </if>
+      <if test="njrsl != null" >
+        #{njrsl,jdbcType=DECIMAL},
+      </if>
+      <if test="dzhckrq != null" >
+        #{dzhckrq,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_spab01" >
+    update R3_spab01
+    <set >
+      <if test="ckqdm != null" >
+        ckqdm = #{ckqdm,jdbcType=CHAR},
+      </if>
+      <if test="ckwbh != null" >
+        ckwbh = #{ckwbh,jdbcType=CHAR},
+      </if>
+      <if test="ncbje != null" >
+        ncbje = #{ncbje,jdbcType=DECIMAL},
+      </if>
+      <if test="nqcsl != null" >
+        nqcsl = #{nqcsl,jdbcType=DECIMAL},
+      </if>
+      <if test="nbqrk != null" >
+        nbqrk = #{nbqrk,jdbcType=DECIMAL},
+      </if>
+      <if test="nbqck != null" >
+        nbqck = #{nbqck,jdbcType=DECIMAL},
+      </if>
+      <if test="nkcsl != null" >
+        nkcsl = #{nkcsl,jdbcType=DECIMAL},
+      </if>
+      <if test="nsqsl != null" >
+        nsqsl = #{nsqsl,jdbcType=DECIMAL},
+      </if>
+      <if test="nyksl != null" >
+        nyksl = #{nyksl,jdbcType=DECIMAL},
+      </if>
+      <if test="nkdsl != null" >
+        nkdsl = #{nkdsl,jdbcType=DECIMAL},
+      </if>
+      <if test="nsdsl != null" >
+        nsdsl = #{nsdsl,jdbcType=DECIMAL},
+      </if>
+      <if test="njcsl != null" >
+        njcsl = #{njcsl,jdbcType=DECIMAL},
+      </if>
+      <if test="njrsl != null" >
+        njrsl = #{njrsl,jdbcType=DECIMAL},
+      </if>
+      <if test="dzhckrq != null" >
+        dzhckrq = #{dzhckrq,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where cckdm = #{cckdm,jdbcType=CHAR}
+      and cbjdm = #{cbjdm,jdbcType=VARCHAR}
+      and cph = #{cph,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_spab01" >
+    update R3_spab01
+    set ckqdm = #{ckqdm,jdbcType=CHAR},
+      ckwbh = #{ckwbh,jdbcType=CHAR},
+      ncbje = #{ncbje,jdbcType=DECIMAL},
+      nqcsl = #{nqcsl,jdbcType=DECIMAL},
+      nbqrk = #{nbqrk,jdbcType=DECIMAL},
+      nbqck = #{nbqck,jdbcType=DECIMAL},
+      nkcsl = #{nkcsl,jdbcType=DECIMAL},
+      nsqsl = #{nsqsl,jdbcType=DECIMAL},
+      nyksl = #{nyksl,jdbcType=DECIMAL},
+      nkdsl = #{nkdsl,jdbcType=DECIMAL},
+      nsdsl = #{nsdsl,jdbcType=DECIMAL},
+      njcsl = #{njcsl,jdbcType=DECIMAL},
+      njrsl = #{njrsl,jdbcType=DECIMAL},
+      dzhckrq = #{dzhckrq,jdbcType=TIMESTAMP}
+    where cckdm = #{cckdm,jdbcType=CHAR}
+      and cbjdm = #{cbjdm,jdbcType=VARCHAR}
+      and cph = #{cph,jdbcType=CHAR}
+  </update>
+</mapper>

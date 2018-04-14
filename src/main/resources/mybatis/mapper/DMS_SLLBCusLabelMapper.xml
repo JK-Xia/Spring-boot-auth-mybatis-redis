@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.DMS_SLLBCusLabelMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.DMS_SLLBCusLabel" >
+    <id column="PKey" property="pkey" jdbcType="BIGINT" />
+    <result column="UID" property="uid" jdbcType="CHAR" />
+    <result column="VCode" property="vcode" jdbcType="VARCHAR" />
+    <result column="VName" property="vname" jdbcType="VARCHAR" />
+    <result column="VDisplayNM" property="vdisplaynm" jdbcType="VARCHAR" />
+    <result column="VDesc" property="vdesc" jdbcType="VARCHAR" />
+    <result column="NType" property="ntype" jdbcType="INTEGER" />
+    <result column="NSort" property="nsort" jdbcType="INTEGER" />
+    <result column="BStop" property="bstop" jdbcType="BIT" />
+    <result column="CreateBy" property="createby" jdbcType="VARCHAR" />
+    <result column="CreateOn" property="createon" jdbcType="TIMESTAMP" />
+    <result column="UpdateBy" property="updateby" jdbcType="VARCHAR" />
+    <result column="UpdateOn" property="updateon" jdbcType="BIGINT" />
+    <result column="NDID" property="ndid" jdbcType="VARCHAR" />
+    <result column="NBID" property="nbid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PKey, UID, VCode, VName, VDisplayNM, VDesc, NType, NSort, BStop, CreateBy, CreateOn, 
+    UpdateBy, UpdateOn, NDID, NBID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from DMS_SLLBCusLabel
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from DMS_SLLBCusLabel
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.DMS_SLLBCusLabel" >
+    insert into DMS_SLLBCusLabel (PKey, UID, VCode, 
+      VName, VDisplayNM, VDesc, 
+      NType, NSort, BStop, CreateBy, 
+      CreateOn, UpdateBy, UpdateOn, 
+      NDID, NBID)
+    values (#{pkey,jdbcType=BIGINT}, #{uid,jdbcType=CHAR}, #{vcode,jdbcType=VARCHAR}, 
+      #{vname,jdbcType=VARCHAR}, #{vdisplaynm,jdbcType=VARCHAR}, #{vdesc,jdbcType=VARCHAR}, 
+      #{ntype,jdbcType=INTEGER}, #{nsort,jdbcType=INTEGER}, #{bstop,jdbcType=BIT}, #{createby,jdbcType=VARCHAR}, 
+      #{createon,jdbcType=TIMESTAMP}, #{updateby,jdbcType=VARCHAR}, #{updateon,jdbcType=BIGINT}, 
+      #{ndid,jdbcType=VARCHAR}, #{nbid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.DMS_SLLBCusLabel" >
+    insert into DMS_SLLBCusLabel
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pkey != null" >
+        PKey,
+      </if>
+      <if test="uid != null" >
+        UID,
+      </if>
+      <if test="vcode != null" >
+        VCode,
+      </if>
+      <if test="vname != null" >
+        VName,
+      </if>
+      <if test="vdisplaynm != null" >
+        VDisplayNM,
+      </if>
+      <if test="vdesc != null" >
+        VDesc,
+      </if>
+      <if test="ntype != null" >
+        NType,
+      </if>
+      <if test="nsort != null" >
+        NSort,
+      </if>
+      <if test="bstop != null" >
+        BStop,
+      </if>
+      <if test="createby != null" >
+        CreateBy,
+      </if>
+      <if test="createon != null" >
+        CreateOn,
+      </if>
+      <if test="updateby != null" >
+        UpdateBy,
+      </if>
+      <if test="updateon != null" >
+        UpdateOn,
+      </if>
+      <if test="ndid != null" >
+        NDID,
+      </if>
+      <if test="nbid != null" >
+        NBID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pkey != null" >
+        #{pkey,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=CHAR},
+      </if>
+      <if test="vcode != null" >
+        #{vcode,jdbcType=VARCHAR},
+      </if>
+      <if test="vname != null" >
+        #{vname,jdbcType=VARCHAR},
+      </if>
+      <if test="vdisplaynm != null" >
+        #{vdisplaynm,jdbcType=VARCHAR},
+      </if>
+      <if test="vdesc != null" >
+        #{vdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="ntype != null" >
+        #{ntype,jdbcType=INTEGER},
+      </if>
+      <if test="nsort != null" >
+        #{nsort,jdbcType=INTEGER},
+      </if>
+      <if test="bstop != null" >
+        #{bstop,jdbcType=BIT},
+      </if>
+      <if test="createby != null" >
+        #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createon != null" >
+        #{createon,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateby != null" >
+        #{updateby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateon != null" >
+        #{updateon,jdbcType=BIGINT},
+      </if>
+      <if test="ndid != null" >
+        #{ndid,jdbcType=VARCHAR},
+      </if>
+      <if test="nbid != null" >
+        #{nbid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.DMS_SLLBCusLabel" >
+    update DMS_SLLBCusLabel
+    <set >
+      <if test="uid != null" >
+        UID = #{uid,jdbcType=CHAR},
+      </if>
+      <if test="vcode != null" >
+        VCode = #{vcode,jdbcType=VARCHAR},
+      </if>
+      <if test="vname != null" >
+        VName = #{vname,jdbcType=VARCHAR},
+      </if>
+      <if test="vdisplaynm != null" >
+        VDisplayNM = #{vdisplaynm,jdbcType=VARCHAR},
+      </if>
+      <if test="vdesc != null" >
+        VDesc = #{vdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="ntype != null" >
+        NType = #{ntype,jdbcType=INTEGER},
+      </if>
+      <if test="nsort != null" >
+        NSort = #{nsort,jdbcType=INTEGER},
+      </if>
+      <if test="bstop != null" >
+        BStop = #{bstop,jdbcType=BIT},
+      </if>
+      <if test="createby != null" >
+        CreateBy = #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createon != null" >
+        CreateOn = #{createon,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateby != null" >
+        UpdateBy = #{updateby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateon != null" >
+        UpdateOn = #{updateon,jdbcType=BIGINT},
+      </if>
+      <if test="ndid != null" >
+        NDID = #{ndid,jdbcType=VARCHAR},
+      </if>
+      <if test="nbid != null" >
+        NBID = #{nbid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.DMS_SLLBCusLabel" >
+    update DMS_SLLBCusLabel
+    set UID = #{uid,jdbcType=CHAR},
+      VCode = #{vcode,jdbcType=VARCHAR},
+      VName = #{vname,jdbcType=VARCHAR},
+      VDisplayNM = #{vdisplaynm,jdbcType=VARCHAR},
+      VDesc = #{vdesc,jdbcType=VARCHAR},
+      NType = #{ntype,jdbcType=INTEGER},
+      NSort = #{nsort,jdbcType=INTEGER},
+      BStop = #{bstop,jdbcType=BIT},
+      CreateBy = #{createby,jdbcType=VARCHAR},
+      CreateOn = #{createon,jdbcType=TIMESTAMP},
+      UpdateBy = #{updateby,jdbcType=VARCHAR},
+      UpdateOn = #{updateon,jdbcType=BIGINT},
+      NDID = #{ndid,jdbcType=VARCHAR},
+      NBID = #{nbid,jdbcType=VARCHAR}
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.TT_preorder_skMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.TT_preorder_sk" >
+    <id column="Preorder_number" property="preorderNumber" jdbcType="VARCHAR" />
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="pay_date" property="payDate" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="Settle_man" property="settleMan" jdbcType="VARCHAR" />
+    <result column="Pay_way" property="payWay" jdbcType="VARCHAR" />
+    <result column="Take_back_flag" property="takeBackFlag" jdbcType="CHAR" />
+    <result column="collected_amount" property="collectedAmount" jdbcType="DECIMAL" />
+    <result column="Check_flag" property="checkFlag" jdbcType="CHAR" />
+    <result column="status" property="status" jdbcType="BIT" />
+    <result column="Pay_bill_number" property="payBillNumber" jdbcType="VARCHAR" />
+    <result column="Bank_info" property="bankInfo" jdbcType="VARCHAR" />
+    <result column="Pay_man" property="payMan" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Preorder_number, ID, pay_date, remark, Settle_man, Pay_way, Take_back_flag, collected_amount, 
+    Check_flag, status, Pay_bill_number, Bank_info, Pay_man
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.tt_ms.domain.TT_preorder_skKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from TT_preorder_sk
+    where Preorder_number = #{preorderNumber,jdbcType=VARCHAR}
+      and ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tt_ms.domain.TT_preorder_skKey" >
+    delete from TT_preorder_sk
+    where Preorder_number = #{preorderNumber,jdbcType=VARCHAR}
+      and ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.TT_preorder_sk" >
+    insert into TT_preorder_sk (Preorder_number, ID, pay_date, 
+      remark, Settle_man, Pay_way, 
+      Take_back_flag, collected_amount, Check_flag, 
+      status, Pay_bill_number, Bank_info, 
+      Pay_man)
+    values (#{preorderNumber,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER}, #{payDate,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR}, #{settleMan,jdbcType=VARCHAR}, #{payWay,jdbcType=VARCHAR}, 
+      #{takeBackFlag,jdbcType=CHAR}, #{collectedAmount,jdbcType=DECIMAL}, #{checkFlag,jdbcType=CHAR}, 
+      #{status,jdbcType=BIT}, #{payBillNumber,jdbcType=VARCHAR}, #{bankInfo,jdbcType=VARCHAR}, 
+      #{payMan,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.TT_preorder_sk" >
+    insert into TT_preorder_sk
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="preorderNumber != null" >
+        Preorder_number,
+      </if>
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="payDate != null" >
+        pay_date,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="settleMan != null" >
+        Settle_man,
+      </if>
+      <if test="payWay != null" >
+        Pay_way,
+      </if>
+      <if test="takeBackFlag != null" >
+        Take_back_flag,
+      </if>
+      <if test="collectedAmount != null" >
+        collected_amount,
+      </if>
+      <if test="checkFlag != null" >
+        Check_flag,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="payBillNumber != null" >
+        Pay_bill_number,
+      </if>
+      <if test="bankInfo != null" >
+        Bank_info,
+      </if>
+      <if test="payMan != null" >
+        Pay_man,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="preorderNumber != null" >
+        #{preorderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="payDate != null" >
+        #{payDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="settleMan != null" >
+        #{settleMan,jdbcType=VARCHAR},
+      </if>
+      <if test="payWay != null" >
+        #{payWay,jdbcType=VARCHAR},
+      </if>
+      <if test="takeBackFlag != null" >
+        #{takeBackFlag,jdbcType=CHAR},
+      </if>
+      <if test="collectedAmount != null" >
+        #{collectedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="checkFlag != null" >
+        #{checkFlag,jdbcType=CHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="payBillNumber != null" >
+        #{payBillNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bankInfo != null" >
+        #{bankInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="payMan != null" >
+        #{payMan,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.TT_preorder_sk" >
+    update TT_preorder_sk
+    <set >
+      <if test="payDate != null" >
+        pay_date = #{payDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="settleMan != null" >
+        Settle_man = #{settleMan,jdbcType=VARCHAR},
+      </if>
+      <if test="payWay != null" >
+        Pay_way = #{payWay,jdbcType=VARCHAR},
+      </if>
+      <if test="takeBackFlag != null" >
+        Take_back_flag = #{takeBackFlag,jdbcType=CHAR},
+      </if>
+      <if test="collectedAmount != null" >
+        collected_amount = #{collectedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="checkFlag != null" >
+        Check_flag = #{checkFlag,jdbcType=CHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="payBillNumber != null" >
+        Pay_bill_number = #{payBillNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bankInfo != null" >
+        Bank_info = #{bankInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="payMan != null" >
+        Pay_man = #{payMan,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Preorder_number = #{preorderNumber,jdbcType=VARCHAR}
+      and ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.TT_preorder_sk" >
+    update TT_preorder_sk
+    set pay_date = #{payDate,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR},
+      Settle_man = #{settleMan,jdbcType=VARCHAR},
+      Pay_way = #{payWay,jdbcType=VARCHAR},
+      Take_back_flag = #{takeBackFlag,jdbcType=CHAR},
+      collected_amount = #{collectedAmount,jdbcType=DECIMAL},
+      Check_flag = #{checkFlag,jdbcType=CHAR},
+      status = #{status,jdbcType=BIT},
+      Pay_bill_number = #{payBillNumber,jdbcType=VARCHAR},
+      Bank_info = #{bankInfo,jdbcType=VARCHAR},
+      Pay_man = #{payMan,jdbcType=VARCHAR}
+    where Preorder_number = #{preorderNumber,jdbcType=VARCHAR}
+      and ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

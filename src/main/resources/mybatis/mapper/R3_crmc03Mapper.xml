@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_crmc03Mapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_crmc03" >
+    <id column="ckhlb" property="ckhlb" jdbcType="CHAR" />
+    <result column="ckhlbsm" property="ckhlbsm" jdbcType="VARCHAR" />
+    <result column="ltybs" property="ltybs" jdbcType="BIT" />
+    <result column="dtyrq" property="dtyrq" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ckhlb, ckhlbsm, ltybs, dtyrq
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_crmc03
+    where ckhlb = #{ckhlb,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from R3_crmc03
+    where ckhlb = #{ckhlb,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_crmc03" >
+    insert into R3_crmc03 (ckhlb, ckhlbsm, ltybs, 
+      dtyrq)
+    values (#{ckhlb,jdbcType=CHAR}, #{ckhlbsm,jdbcType=VARCHAR}, #{ltybs,jdbcType=BIT}, 
+      #{dtyrq,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_crmc03" >
+    insert into R3_crmc03
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ckhlb != null" >
+        ckhlb,
+      </if>
+      <if test="ckhlbsm != null" >
+        ckhlbsm,
+      </if>
+      <if test="ltybs != null" >
+        ltybs,
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ckhlb != null" >
+        #{ckhlb,jdbcType=CHAR},
+      </if>
+      <if test="ckhlbsm != null" >
+        #{ckhlbsm,jdbcType=VARCHAR},
+      </if>
+      <if test="ltybs != null" >
+        #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_crmc03" >
+    update R3_crmc03
+    <set >
+      <if test="ckhlbsm != null" >
+        ckhlbsm = #{ckhlbsm,jdbcType=VARCHAR},
+      </if>
+      <if test="ltybs != null" >
+        ltybs = #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq = #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ckhlb = #{ckhlb,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_crmc03" >
+    update R3_crmc03
+    set ckhlbsm = #{ckhlbsm,jdbcType=VARCHAR},
+      ltybs = #{ltybs,jdbcType=BIT},
+      dtyrq = #{dtyrq,jdbcType=TIMESTAMP}
+    where ckhlb = #{ckhlb,jdbcType=CHAR}
+  </update>
+</mapper>

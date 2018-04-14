@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.TT_preorder_templateMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.TT_preorder_template" >
+    <id column="Serial_number" property="serialNumber" jdbcType="VARCHAR" />
+    <result column="Cus_name" property="cusName" jdbcType="VARCHAR" />
+    <result column="Sales_man" property="salesMan" jdbcType="VARCHAR" />
+    <result column="Collected_way" property="collectedWay" jdbcType="VARCHAR" />
+    <result column="Collected_amount" property="collectedAmount" jdbcType="DECIMAL" />
+    <result column="Receipt_number" property="receiptNumber" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="Pay_man" property="payMan" jdbcType="VARCHAR" />
+    <result column="Collected_type" property="collectedType" jdbcType="INTEGER" />
+    <result column="Bank_info" property="bankInfo" jdbcType="VARCHAR" />
+    <result column="Cashier_code" property="cashierCode" jdbcType="VARCHAR" />
+    <result column="Cashier_name" property="cashierName" jdbcType="VARCHAR" />
+    <result column="Collected_time" property="collectedTime" jdbcType="TIMESTAMP" />
+    <result column="Preorder_number" property="preorderNumber" jdbcType="INTEGER" />
+    <result column="Match_time" property="matchTime" jdbcType="TIMESTAMP" />
+    <result column="operator" property="operator" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Serial_number, Cus_name, Sales_man, Collected_way, Collected_amount, Receipt_number, 
+    remark, Pay_man, Collected_type, Bank_info, Cashier_code, Cashier_name, Collected_time, 
+    Preorder_number, Match_time, operator
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TT_preorder_template
+    where Serial_number = #{serialNumber,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TT_preorder_template
+    where Serial_number = #{serialNumber,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.TT_preorder_template" >
+    insert into TT_preorder_template (Serial_number, Cus_name, Sales_man, 
+      Collected_way, Collected_amount, Receipt_number, 
+      remark, Pay_man, Collected_type, 
+      Bank_info, Cashier_code, Cashier_name, 
+      Collected_time, Preorder_number, Match_time, 
+      operator)
+    values (#{serialNumber,jdbcType=VARCHAR}, #{cusName,jdbcType=VARCHAR}, #{salesMan,jdbcType=VARCHAR}, 
+      #{collectedWay,jdbcType=VARCHAR}, #{collectedAmount,jdbcType=DECIMAL}, #{receiptNumber,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{payMan,jdbcType=VARCHAR}, #{collectedType,jdbcType=INTEGER}, 
+      #{bankInfo,jdbcType=VARCHAR}, #{cashierCode,jdbcType=VARCHAR}, #{cashierName,jdbcType=VARCHAR}, 
+      #{collectedTime,jdbcType=TIMESTAMP}, #{preorderNumber,jdbcType=INTEGER}, #{matchTime,jdbcType=TIMESTAMP}, 
+      #{operator,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.TT_preorder_template" >
+    insert into TT_preorder_template
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="serialNumber != null" >
+        Serial_number,
+      </if>
+      <if test="cusName != null" >
+        Cus_name,
+      </if>
+      <if test="salesMan != null" >
+        Sales_man,
+      </if>
+      <if test="collectedWay != null" >
+        Collected_way,
+      </if>
+      <if test="collectedAmount != null" >
+        Collected_amount,
+      </if>
+      <if test="receiptNumber != null" >
+        Receipt_number,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="payMan != null" >
+        Pay_man,
+      </if>
+      <if test="collectedType != null" >
+        Collected_type,
+      </if>
+      <if test="bankInfo != null" >
+        Bank_info,
+      </if>
+      <if test="cashierCode != null" >
+        Cashier_code,
+      </if>
+      <if test="cashierName != null" >
+        Cashier_name,
+      </if>
+      <if test="collectedTime != null" >
+        Collected_time,
+      </if>
+      <if test="preorderNumber != null" >
+        Preorder_number,
+      </if>
+      <if test="matchTime != null" >
+        Match_time,
+      </if>
+      <if test="operator != null" >
+        operator,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="serialNumber != null" >
+        #{serialNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="cusName != null" >
+        #{cusName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesMan != null" >
+        #{salesMan,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedWay != null" >
+        #{collectedWay,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedAmount != null" >
+        #{collectedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="receiptNumber != null" >
+        #{receiptNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="payMan != null" >
+        #{payMan,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedType != null" >
+        #{collectedType,jdbcType=INTEGER},
+      </if>
+      <if test="bankInfo != null" >
+        #{bankInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="cashierCode != null" >
+        #{cashierCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cashierName != null" >
+        #{cashierName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedTime != null" >
+        #{collectedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="preorderNumber != null" >
+        #{preorderNumber,jdbcType=INTEGER},
+      </if>
+      <if test="matchTime != null" >
+        #{matchTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null" >
+        #{operator,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.TT_preorder_template" >
+    update TT_preorder_template
+    <set >
+      <if test="cusName != null" >
+        Cus_name = #{cusName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesMan != null" >
+        Sales_man = #{salesMan,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedWay != null" >
+        Collected_way = #{collectedWay,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedAmount != null" >
+        Collected_amount = #{collectedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="receiptNumber != null" >
+        Receipt_number = #{receiptNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="payMan != null" >
+        Pay_man = #{payMan,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedType != null" >
+        Collected_type = #{collectedType,jdbcType=INTEGER},
+      </if>
+      <if test="bankInfo != null" >
+        Bank_info = #{bankInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="cashierCode != null" >
+        Cashier_code = #{cashierCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cashierName != null" >
+        Cashier_name = #{cashierName,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedTime != null" >
+        Collected_time = #{collectedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="preorderNumber != null" >
+        Preorder_number = #{preorderNumber,jdbcType=INTEGER},
+      </if>
+      <if test="matchTime != null" >
+        Match_time = #{matchTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null" >
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Serial_number = #{serialNumber,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.TT_preorder_template" >
+    update TT_preorder_template
+    set Cus_name = #{cusName,jdbcType=VARCHAR},
+      Sales_man = #{salesMan,jdbcType=VARCHAR},
+      Collected_way = #{collectedWay,jdbcType=VARCHAR},
+      Collected_amount = #{collectedAmount,jdbcType=DECIMAL},
+      Receipt_number = #{receiptNumber,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      Pay_man = #{payMan,jdbcType=VARCHAR},
+      Collected_type = #{collectedType,jdbcType=INTEGER},
+      Bank_info = #{bankInfo,jdbcType=VARCHAR},
+      Cashier_code = #{cashierCode,jdbcType=VARCHAR},
+      Cashier_name = #{cashierName,jdbcType=VARCHAR},
+      Collected_time = #{collectedTime,jdbcType=TIMESTAMP},
+      Preorder_number = #{preorderNumber,jdbcType=INTEGER},
+      Match_time = #{matchTime,jdbcType=TIMESTAMP},
+      operator = #{operator,jdbcType=VARCHAR}
+    where Serial_number = #{serialNumber,jdbcType=VARCHAR}
+  </update>
+</mapper>

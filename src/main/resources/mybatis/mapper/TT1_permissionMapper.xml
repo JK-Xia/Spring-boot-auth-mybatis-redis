@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.TT1_permissionMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.TT1_permission" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="LABEL" property="label" jdbcType="VARCHAR" />
+    <result column="PARENT_ID" property="parentId" jdbcType="VARCHAR" />
+    <result column="RESOURCE" property="resource" jdbcType="VARCHAR" />
+    <result column="ACT" property="act" jdbcType="VARCHAR" />
+    <result column="IS_MENU_ENABLED" property="isMenuEnabled" jdbcType="INTEGER" />
+    <result column="IS_LEAF" property="isLeaf" jdbcType="INTEGER" />
+    <result column="IS_CONFIGURABLE" property="isConfigurable" jdbcType="INTEGER" />
+    <result column="DEPENDENCIES" property="dependencies" jdbcType="VARCHAR" />
+    <result column="ARGS" property="args" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="PROJECT_ID" property="projectId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, LABEL, PARENT_ID, RESOURCE, ACT, IS_MENU_ENABLED, IS_LEAF, IS_CONFIGURABLE, DEPENDENCIES, 
+    ARGS, REMARK, PROJECT_ID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TT1_permission
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TT1_permission
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.TT1_permission" >
+    insert into TT1_permission (ID, LABEL, PARENT_ID, 
+      RESOURCE, ACT, IS_MENU_ENABLED, 
+      IS_LEAF, IS_CONFIGURABLE, DEPENDENCIES, 
+      ARGS, REMARK, PROJECT_ID
+      )
+    values (#{id,jdbcType=VARCHAR}, #{label,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, 
+      #{resource,jdbcType=VARCHAR}, #{act,jdbcType=VARCHAR}, #{isMenuEnabled,jdbcType=INTEGER}, 
+      #{isLeaf,jdbcType=INTEGER}, #{isConfigurable,jdbcType=INTEGER}, #{dependencies,jdbcType=VARCHAR}, 
+      #{args,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{projectId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.TT1_permission" >
+    insert into TT1_permission
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="label != null" >
+        LABEL,
+      </if>
+      <if test="parentId != null" >
+        PARENT_ID,
+      </if>
+      <if test="resource != null" >
+        RESOURCE,
+      </if>
+      <if test="act != null" >
+        ACT,
+      </if>
+      <if test="isMenuEnabled != null" >
+        IS_MENU_ENABLED,
+      </if>
+      <if test="isLeaf != null" >
+        IS_LEAF,
+      </if>
+      <if test="isConfigurable != null" >
+        IS_CONFIGURABLE,
+      </if>
+      <if test="dependencies != null" >
+        DEPENDENCIES,
+      </if>
+      <if test="args != null" >
+        ARGS,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="projectId != null" >
+        PROJECT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="label != null" >
+        #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="resource != null" >
+        #{resource,jdbcType=VARCHAR},
+      </if>
+      <if test="act != null" >
+        #{act,jdbcType=VARCHAR},
+      </if>
+      <if test="isMenuEnabled != null" >
+        #{isMenuEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="isLeaf != null" >
+        #{isLeaf,jdbcType=INTEGER},
+      </if>
+      <if test="isConfigurable != null" >
+        #{isConfigurable,jdbcType=INTEGER},
+      </if>
+      <if test="dependencies != null" >
+        #{dependencies,jdbcType=VARCHAR},
+      </if>
+      <if test="args != null" >
+        #{args,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="projectId != null" >
+        #{projectId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.TT1_permission" >
+    update TT1_permission
+    <set >
+      <if test="label != null" >
+        LABEL = #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="resource != null" >
+        RESOURCE = #{resource,jdbcType=VARCHAR},
+      </if>
+      <if test="act != null" >
+        ACT = #{act,jdbcType=VARCHAR},
+      </if>
+      <if test="isMenuEnabled != null" >
+        IS_MENU_ENABLED = #{isMenuEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="isLeaf != null" >
+        IS_LEAF = #{isLeaf,jdbcType=INTEGER},
+      </if>
+      <if test="isConfigurable != null" >
+        IS_CONFIGURABLE = #{isConfigurable,jdbcType=INTEGER},
+      </if>
+      <if test="dependencies != null" >
+        DEPENDENCIES = #{dependencies,jdbcType=VARCHAR},
+      </if>
+      <if test="args != null" >
+        ARGS = #{args,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="projectId != null" >
+        PROJECT_ID = #{projectId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.TT1_permission" >
+    update TT1_permission
+    set LABEL = #{label,jdbcType=VARCHAR},
+      PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      RESOURCE = #{resource,jdbcType=VARCHAR},
+      ACT = #{act,jdbcType=VARCHAR},
+      IS_MENU_ENABLED = #{isMenuEnabled,jdbcType=INTEGER},
+      IS_LEAF = #{isLeaf,jdbcType=INTEGER},
+      IS_CONFIGURABLE = #{isConfigurable,jdbcType=INTEGER},
+      DEPENDENCIES = #{dependencies,jdbcType=VARCHAR},
+      ARGS = #{args,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      PROJECT_ID = #{projectId,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
