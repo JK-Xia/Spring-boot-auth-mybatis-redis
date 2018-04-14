@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * Created by mm on 2018/4/9.
+ * Created by mm on 2018/4/9.。
  */
 @Slf4j
 @RestController
@@ -38,7 +38,6 @@ public class UserController extends BaseController{
                 }catch (Exception e){
                     e.printStackTrace();
                 }
-
             }
         }
 
