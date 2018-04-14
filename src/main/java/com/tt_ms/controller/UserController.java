@@ -25,6 +25,7 @@ public class UserController extends BaseController{
 
 
     @RequestMapping(value="/login",method= RequestMethod.POST)
+<<<<<<< HEAD
     public String login(String username, String password,String vcode,Boolean rememberMe,HttpServletRequest request){
         log.info("当前客户端：" + getClientIp(request) +" 的用户 ： " + username+ " 在服务 ：" +getServerIp() + "尝试登录系统..." );
         User dbuser;
@@ -39,6 +40,26 @@ public class UserController extends BaseController{
             userService.setToken(token,dbuser);
             request.getSession().setAttribute("isLogin",true);
             request.getSession().setAttribute("token",token);
+=======
+    public String login(String username, String password,String vcode,Boolean rememberMe){
+        log.info(getServerPort() );
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password,rememberMe);
+        MyThread t = new MyThread();
+        t.run();
+        //sdasd
+        for(int i = 0; i < 10; i++){
+            log.info(Thread.currentThread().getName()+ String.valueOf(i));
+            if(i==1){
+                try {
+                    t.join();
+                    log.info(Thread.currentThread().getName()+ String.valueOf(i));
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+        }
+>>>>>>> ac5e4f97fe7ce3a348748c41d3f91107987e76b1
 
         }catch (Exception e){
             log.error("当前客户端：" + getClientIp(request) +" 的用户 ： " +username+ " 在 ：时间段" + "登录系统失败！" );
