@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_salb02dMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_salb02d" >
+    <id column="crckdbh" property="crckdbh" jdbcType="CHAR" />
+    <id column="cdph" property="cdph" jdbcType="CHAR" />
+    <result column="ccpdm" property="ccpdm" jdbcType="VARCHAR" />
+    <result column="cfdjh" property="cfdjh" jdbcType="VARCHAR" />
+    <result column="chgzh" property="chgzh" jdbcType="VARCHAR" />
+    <result column="nrcdj" property="nrcdj" jdbcType="DECIMAL" />
+    <result column="ncbdj" property="ncbdj" jdbcType="DECIMAL" />
+    <result column="cfph" property="cfph" jdbcType="CHAR" />
+    <result column="cchkm" property="cchkm" jdbcType="CHAR" />
+    <result column="cdfkm" property="cdfkm" jdbcType="CHAR" />
+    <result column="lykfp" property="lykfp" jdbcType="BIT" />
+    <result column="dfprq" property="dfprq" jdbcType="TIMESTAMP" />
+    <result column="nse" property="nse" jdbcType="DECIMAL" />
+    <result column="cfplxdm" property="cfplxdm" jdbcType="CHAR" />
+    <result column="cfdlsh" property="cfdlsh" jdbcType="CHAR" />
+    <result column="csyjmm" property="csyjmm" jdbcType="CHAR" />
+    <result column="dscrq" property="dscrq" jdbcType="TIMESTAMP" />
+    <result column="state" property="state" jdbcType="SMALLINT" />
+    <result column="status" property="status" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    crckdbh, cdph, ccpdm, cfdjh, chgzh, nrcdj, ncbdj, cfph, cchkm, cdfkm, lykfp, dfprq, 
+    nse, cfplxdm, cfdlsh, csyjmm, dscrq, state, status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.tt_ms.domain.R3_salb02dKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_salb02d
+    where crckdbh = #{crckdbh,jdbcType=CHAR}
+      and cdph = #{cdph,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tt_ms.domain.R3_salb02dKey" >
+    delete from R3_salb02d
+    where crckdbh = #{crckdbh,jdbcType=CHAR}
+      and cdph = #{cdph,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_salb02d" >
+    insert into R3_salb02d (crckdbh, cdph, ccpdm, 
+      cfdjh, chgzh, nrcdj, 
+      ncbdj, cfph, cchkm, cdfkm, 
+      lykfp, dfprq, nse, cfplxdm, 
+      cfdlsh, csyjmm, dscrq, 
+      state, status)
+    values (#{crckdbh,jdbcType=CHAR}, #{cdph,jdbcType=CHAR}, #{ccpdm,jdbcType=VARCHAR}, 
+      #{cfdjh,jdbcType=VARCHAR}, #{chgzh,jdbcType=VARCHAR}, #{nrcdj,jdbcType=DECIMAL}, 
+      #{ncbdj,jdbcType=DECIMAL}, #{cfph,jdbcType=CHAR}, #{cchkm,jdbcType=CHAR}, #{cdfkm,jdbcType=CHAR}, 
+      #{lykfp,jdbcType=BIT}, #{dfprq,jdbcType=TIMESTAMP}, #{nse,jdbcType=DECIMAL}, #{cfplxdm,jdbcType=CHAR}, 
+      #{cfdlsh,jdbcType=CHAR}, #{csyjmm,jdbcType=CHAR}, #{dscrq,jdbcType=TIMESTAMP}, 
+      #{state,jdbcType=SMALLINT}, #{status,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_salb02d" >
+    insert into R3_salb02d
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="crckdbh != null" >
+        crckdbh,
+      </if>
+      <if test="cdph != null" >
+        cdph,
+      </if>
+      <if test="ccpdm != null" >
+        ccpdm,
+      </if>
+      <if test="cfdjh != null" >
+        cfdjh,
+      </if>
+      <if test="chgzh != null" >
+        chgzh,
+      </if>
+      <if test="nrcdj != null" >
+        nrcdj,
+      </if>
+      <if test="ncbdj != null" >
+        ncbdj,
+      </if>
+      <if test="cfph != null" >
+        cfph,
+      </if>
+      <if test="cchkm != null" >
+        cchkm,
+      </if>
+      <if test="cdfkm != null" >
+        cdfkm,
+      </if>
+      <if test="lykfp != null" >
+        lykfp,
+      </if>
+      <if test="dfprq != null" >
+        dfprq,
+      </if>
+      <if test="nse != null" >
+        nse,
+      </if>
+      <if test="cfplxdm != null" >
+        cfplxdm,
+      </if>
+      <if test="cfdlsh != null" >
+        cfdlsh,
+      </if>
+      <if test="csyjmm != null" >
+        csyjmm,
+      </if>
+      <if test="dscrq != null" >
+        dscrq,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="crckdbh != null" >
+        #{crckdbh,jdbcType=CHAR},
+      </if>
+      <if test="cdph != null" >
+        #{cdph,jdbcType=CHAR},
+      </if>
+      <if test="ccpdm != null" >
+        #{ccpdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cfdjh != null" >
+        #{cfdjh,jdbcType=VARCHAR},
+      </if>
+      <if test="chgzh != null" >
+        #{chgzh,jdbcType=VARCHAR},
+      </if>
+      <if test="nrcdj != null" >
+        #{nrcdj,jdbcType=DECIMAL},
+      </if>
+      <if test="ncbdj != null" >
+        #{ncbdj,jdbcType=DECIMAL},
+      </if>
+      <if test="cfph != null" >
+        #{cfph,jdbcType=CHAR},
+      </if>
+      <if test="cchkm != null" >
+        #{cchkm,jdbcType=CHAR},
+      </if>
+      <if test="cdfkm != null" >
+        #{cdfkm,jdbcType=CHAR},
+      </if>
+      <if test="lykfp != null" >
+        #{lykfp,jdbcType=BIT},
+      </if>
+      <if test="dfprq != null" >
+        #{dfprq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nse != null" >
+        #{nse,jdbcType=DECIMAL},
+      </if>
+      <if test="cfplxdm != null" >
+        #{cfplxdm,jdbcType=CHAR},
+      </if>
+      <if test="cfdlsh != null" >
+        #{cfdlsh,jdbcType=CHAR},
+      </if>
+      <if test="csyjmm != null" >
+        #{csyjmm,jdbcType=CHAR},
+      </if>
+      <if test="dscrq != null" >
+        #{dscrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=SMALLINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_salb02d" >
+    update R3_salb02d
+    <set >
+      <if test="ccpdm != null" >
+        ccpdm = #{ccpdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cfdjh != null" >
+        cfdjh = #{cfdjh,jdbcType=VARCHAR},
+      </if>
+      <if test="chgzh != null" >
+        chgzh = #{chgzh,jdbcType=VARCHAR},
+      </if>
+      <if test="nrcdj != null" >
+        nrcdj = #{nrcdj,jdbcType=DECIMAL},
+      </if>
+      <if test="ncbdj != null" >
+        ncbdj = #{ncbdj,jdbcType=DECIMAL},
+      </if>
+      <if test="cfph != null" >
+        cfph = #{cfph,jdbcType=CHAR},
+      </if>
+      <if test="cchkm != null" >
+        cchkm = #{cchkm,jdbcType=CHAR},
+      </if>
+      <if test="cdfkm != null" >
+        cdfkm = #{cdfkm,jdbcType=CHAR},
+      </if>
+      <if test="lykfp != null" >
+        lykfp = #{lykfp,jdbcType=BIT},
+      </if>
+      <if test="dfprq != null" >
+        dfprq = #{dfprq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nse != null" >
+        nse = #{nse,jdbcType=DECIMAL},
+      </if>
+      <if test="cfplxdm != null" >
+        cfplxdm = #{cfplxdm,jdbcType=CHAR},
+      </if>
+      <if test="cfdlsh != null" >
+        cfdlsh = #{cfdlsh,jdbcType=CHAR},
+      </if>
+      <if test="csyjmm != null" >
+        csyjmm = #{csyjmm,jdbcType=CHAR},
+      </if>
+      <if test="dscrq != null" >
+        dscrq = #{dscrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=SMALLINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIT},
+      </if>
+    </set>
+    where crckdbh = #{crckdbh,jdbcType=CHAR}
+      and cdph = #{cdph,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_salb02d" >
+    update R3_salb02d
+    set ccpdm = #{ccpdm,jdbcType=VARCHAR},
+      cfdjh = #{cfdjh,jdbcType=VARCHAR},
+      chgzh = #{chgzh,jdbcType=VARCHAR},
+      nrcdj = #{nrcdj,jdbcType=DECIMAL},
+      ncbdj = #{ncbdj,jdbcType=DECIMAL},
+      cfph = #{cfph,jdbcType=CHAR},
+      cchkm = #{cchkm,jdbcType=CHAR},
+      cdfkm = #{cdfkm,jdbcType=CHAR},
+      lykfp = #{lykfp,jdbcType=BIT},
+      dfprq = #{dfprq,jdbcType=TIMESTAMP},
+      nse = #{nse,jdbcType=DECIMAL},
+      cfplxdm = #{cfplxdm,jdbcType=CHAR},
+      cfdlsh = #{cfdlsh,jdbcType=CHAR},
+      csyjmm = #{csyjmm,jdbcType=CHAR},
+      dscrq = #{dscrq,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=SMALLINT},
+      status = #{status,jdbcType=BIT}
+    where crckdbh = #{crckdbh,jdbcType=CHAR}
+      and cdph = #{cdph,jdbcType=CHAR}
+  </update>
+</mapper>

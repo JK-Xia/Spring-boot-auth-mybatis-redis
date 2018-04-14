@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.DMS_sysc90dMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.DMS_sysc90d" >
+    <id column="PKey" property="pkey" jdbcType="BIGINT" />
+    <result column="iD" property="id" jdbcType="CHAR" />
+    <result column="vDict" property="vdict" jdbcType="VARCHAR" />
+    <result column="vDictChild" property="vdictchild" jdbcType="VARCHAR" />
+    <result column="vDictChildName" property="vdictchildname" jdbcType="VARCHAR" />
+    <result column="vExtand" property="vextand" jdbcType="VARCHAR" />
+    <result column="vExtand1" property="vextand1" jdbcType="VARCHAR" />
+    <result column="nSort" property="nsort" jdbcType="INTEGER" />
+    <result column="cStop" property="cstop" jdbcType="BIT" />
+    <result column="dStop" property="dstop" jdbcType="TIMESTAMP" />
+    <result column="ndid" property="ndid" jdbcType="VARCHAR" />
+    <result column="vremark" property="vremark" jdbcType="VARCHAR" />
+    <result column="cdefault" property="cdefault" jdbcType="BIT" />
+    <result column="CreateBy" property="createby" jdbcType="VARCHAR" />
+    <result column="CreateOn" property="createon" jdbcType="TIMESTAMP" />
+    <result column="UpdateBy" property="updateby" jdbcType="VARCHAR" />
+    <result column="UpdateOn" property="updateon" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PKey, iD, vDict, vDictChild, vDictChildName, vExtand, vExtand1, nSort, cStop, dStop, 
+    ndid, vremark, cdefault, CreateBy, CreateOn, UpdateBy, UpdateOn
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from DMS_sysc90d
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from DMS_sysc90d
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.DMS_sysc90d" >
+    insert into DMS_sysc90d (PKey, iD, vDict, 
+      vDictChild, vDictChildName, vExtand, 
+      vExtand1, nSort, cStop, 
+      dStop, ndid, vremark, 
+      cdefault, CreateBy, CreateOn, 
+      UpdateBy, UpdateOn)
+    values (#{pkey,jdbcType=BIGINT}, #{id,jdbcType=CHAR}, #{vdict,jdbcType=VARCHAR}, 
+      #{vdictchild,jdbcType=VARCHAR}, #{vdictchildname,jdbcType=VARCHAR}, #{vextand,jdbcType=VARCHAR}, 
+      #{vextand1,jdbcType=VARCHAR}, #{nsort,jdbcType=INTEGER}, #{cstop,jdbcType=BIT}, 
+      #{dstop,jdbcType=TIMESTAMP}, #{ndid,jdbcType=VARCHAR}, #{vremark,jdbcType=VARCHAR}, 
+      #{cdefault,jdbcType=BIT}, #{createby,jdbcType=VARCHAR}, #{createon,jdbcType=TIMESTAMP}, 
+      #{updateby,jdbcType=VARCHAR}, #{updateon,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.DMS_sysc90d" >
+    insert into DMS_sysc90d
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pkey != null" >
+        PKey,
+      </if>
+      <if test="id != null" >
+        iD,
+      </if>
+      <if test="vdict != null" >
+        vDict,
+      </if>
+      <if test="vdictchild != null" >
+        vDictChild,
+      </if>
+      <if test="vdictchildname != null" >
+        vDictChildName,
+      </if>
+      <if test="vextand != null" >
+        vExtand,
+      </if>
+      <if test="vextand1 != null" >
+        vExtand1,
+      </if>
+      <if test="nsort != null" >
+        nSort,
+      </if>
+      <if test="cstop != null" >
+        cStop,
+      </if>
+      <if test="dstop != null" >
+        dStop,
+      </if>
+      <if test="ndid != null" >
+        ndid,
+      </if>
+      <if test="vremark != null" >
+        vremark,
+      </if>
+      <if test="cdefault != null" >
+        cdefault,
+      </if>
+      <if test="createby != null" >
+        CreateBy,
+      </if>
+      <if test="createon != null" >
+        CreateOn,
+      </if>
+      <if test="updateby != null" >
+        UpdateBy,
+      </if>
+      <if test="updateon != null" >
+        UpdateOn,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pkey != null" >
+        #{pkey,jdbcType=BIGINT},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="vdict != null" >
+        #{vdict,jdbcType=VARCHAR},
+      </if>
+      <if test="vdictchild != null" >
+        #{vdictchild,jdbcType=VARCHAR},
+      </if>
+      <if test="vdictchildname != null" >
+        #{vdictchildname,jdbcType=VARCHAR},
+      </if>
+      <if test="vextand != null" >
+        #{vextand,jdbcType=VARCHAR},
+      </if>
+      <if test="vextand1 != null" >
+        #{vextand1,jdbcType=VARCHAR},
+      </if>
+      <if test="nsort != null" >
+        #{nsort,jdbcType=INTEGER},
+      </if>
+      <if test="cstop != null" >
+        #{cstop,jdbcType=BIT},
+      </if>
+      <if test="dstop != null" >
+        #{dstop,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ndid != null" >
+        #{ndid,jdbcType=VARCHAR},
+      </if>
+      <if test="vremark != null" >
+        #{vremark,jdbcType=VARCHAR},
+      </if>
+      <if test="cdefault != null" >
+        #{cdefault,jdbcType=BIT},
+      </if>
+      <if test="createby != null" >
+        #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createon != null" >
+        #{createon,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateby != null" >
+        #{updateby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateon != null" >
+        #{updateon,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.DMS_sysc90d" >
+    update DMS_sysc90d
+    <set >
+      <if test="id != null" >
+        iD = #{id,jdbcType=CHAR},
+      </if>
+      <if test="vdict != null" >
+        vDict = #{vdict,jdbcType=VARCHAR},
+      </if>
+      <if test="vdictchild != null" >
+        vDictChild = #{vdictchild,jdbcType=VARCHAR},
+      </if>
+      <if test="vdictchildname != null" >
+        vDictChildName = #{vdictchildname,jdbcType=VARCHAR},
+      </if>
+      <if test="vextand != null" >
+        vExtand = #{vextand,jdbcType=VARCHAR},
+      </if>
+      <if test="vextand1 != null" >
+        vExtand1 = #{vextand1,jdbcType=VARCHAR},
+      </if>
+      <if test="nsort != null" >
+        nSort = #{nsort,jdbcType=INTEGER},
+      </if>
+      <if test="cstop != null" >
+        cStop = #{cstop,jdbcType=BIT},
+      </if>
+      <if test="dstop != null" >
+        dStop = #{dstop,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ndid != null" >
+        ndid = #{ndid,jdbcType=VARCHAR},
+      </if>
+      <if test="vremark != null" >
+        vremark = #{vremark,jdbcType=VARCHAR},
+      </if>
+      <if test="cdefault != null" >
+        cdefault = #{cdefault,jdbcType=BIT},
+      </if>
+      <if test="createby != null" >
+        CreateBy = #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createon != null" >
+        CreateOn = #{createon,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateby != null" >
+        UpdateBy = #{updateby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateon != null" >
+        UpdateOn = #{updateon,jdbcType=BIGINT},
+      </if>
+    </set>
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.DMS_sysc90d" >
+    update DMS_sysc90d
+    set iD = #{id,jdbcType=CHAR},
+      vDict = #{vdict,jdbcType=VARCHAR},
+      vDictChild = #{vdictchild,jdbcType=VARCHAR},
+      vDictChildName = #{vdictchildname,jdbcType=VARCHAR},
+      vExtand = #{vextand,jdbcType=VARCHAR},
+      vExtand1 = #{vextand1,jdbcType=VARCHAR},
+      nSort = #{nsort,jdbcType=INTEGER},
+      cStop = #{cstop,jdbcType=BIT},
+      dStop = #{dstop,jdbcType=TIMESTAMP},
+      ndid = #{ndid,jdbcType=VARCHAR},
+      vremark = #{vremark,jdbcType=VARCHAR},
+      cdefault = #{cdefault,jdbcType=BIT},
+      CreateBy = #{createby,jdbcType=VARCHAR},
+      CreateOn = #{createon,jdbcType=TIMESTAMP},
+      UpdateBy = #{updateby,jdbcType=VARCHAR},
+      UpdateOn = #{updateon,jdbcType=BIGINT}
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </update>
+</mapper>

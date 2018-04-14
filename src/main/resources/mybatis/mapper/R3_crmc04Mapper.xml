@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_crmc04Mapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_crmc04" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="ckhdm" property="ckhdm" jdbcType="CHAR" />
+    <result column="ckhmc" property="ckhmc" jdbcType="VARCHAR" />
+    <result column="ccxdm" property="ccxdm" jdbcType="VARCHAR" />
+    <result column="cdph" property="cdph" jdbcType="CHAR" />
+    <result column="cfdjh" property="cfdjh" jdbcType="VARCHAR" />
+    <result column="nxslc" property="nxslc" jdbcType="DECIMAL" />
+    <result column="dscrq" property="dscrq" jdbcType="TIMESTAMP" />
+    <result column="dlzrq" property="dlzrq" jdbcType="TIMESTAMP" />
+    <result column="dzhwxrq" property="dzhwxrq" jdbcType="TIMESTAMP" />
+    <result column="cpzh" property="cpzh" jdbcType="CHAR" />
+    <result column="cysdm" property="cysdm" jdbcType="CHAR" />
+    <result column="clxr" property="clxr" jdbcType="CHAR" />
+    <result column="clxrdh" property="clxrdh" jdbcType="CHAR" />
+    <result column="ccp" property="ccp" jdbcType="CHAR" />
+    <result column="ltybs" property="ltybs" jdbcType="BIT" />
+    <result column="dtyrq" property="dtyrq" jdbcType="TIMESTAMP" />
+    <result column="lbgssc" property="lbgssc" jdbcType="BIT" />
+    <result column="cxsdbh" property="cxsdbh" jdbcType="CHAR" />
+    <result column="lfqfk" property="lfqfk" jdbcType="BIT" />
+    <result column="djdrq" property="djdrq" jdbcType="TIMESTAMP" />
+    <result column="ckhdz" property="ckhdz" jdbcType="VARCHAR" />
+    <result column="cyb" property="cyb" jdbcType="CHAR" />
+    <result column="ckhh" property="ckhh" jdbcType="VARCHAR" />
+    <result column="csh" property="csh" jdbcType="VARCHAR" />
+    <result column="cyhzh" property="cyhzh" jdbcType="VARCHAR" />
+    <result column="csyjmm" property="csyjmm" jdbcType="CHAR" />
+    <result column="ccpdm" property="ccpdm" jdbcType="VARCHAR" />
+    <result column="cfph" property="cfph" jdbcType="CHAR" />
+    <result column="nckdj" property="nckdj" jdbcType="DECIMAL" />
+    <result column="ckhjb" property="ckhjb" jdbcType="CHAR" />
+    <result column="nwxcslj" property="nwxcslj" jdbcType="INTEGER" />
+    <result column="nljje" property="nljje" jdbcType="DECIMAL" />
+    <result column="dscbyrq" property="dscbyrq" jdbcType="TIMESTAMP" />
+    <result column="nbycs" property="nbycs" jdbcType="INTEGER" />
+    <result column="npjbyts" property="npjbyts" jdbcType="INTEGER" />
+    <result column="dtzbyrq" property="dtzbyrq" jdbcType="TIMESTAMP" />
+    <result column="cscdw" property="cscdw" jdbcType="VARCHAR" />
+    <result column="nmfwxcs" property="nmfwxcs" jdbcType="INTEGER" />
+    <result column="ngs" property="ngs" jdbcType="DECIMAL" />
+    <result column="nrpjlc" property="nrpjlc" jdbcType="DECIMAL" />
+    <result column="csqdm" property="csqdm" jdbcType="CHAR" />
+    <result column="csxdm" property="csxdm" jdbcType="CHAR" />
+    <result column="cbz" property="cbz" jdbcType="VARCHAR" />
+    <result column="lscbs" property="lscbs" jdbcType="BIT" />
+    <result column="lbgstb" property="lbgstb" jdbcType="BIT" />
+    <result column="ckhlb" property="ckhlb" jdbcType="CHAR" />
+    <result column="ldyhbs" property="ldyhbs" jdbcType="BIT" />
+    <result column="nbfd" property="nbfd" jdbcType="DECIMAL" />
+    <result column="clxryddh" property="clxryddh" jdbcType="CHAR" />
+    <result column="cdh" property="cdh" jdbcType="CHAR" />
+    <result column="cyddh" property="cyddh" jdbcType="CHAR" />
+    <result column="ckhpjlb" property="ckhpjlb" jdbcType="CHAR" />
+    <result column="dgcrq" property="dgcrq" jdbcType="TIMESTAMP" />
+    <result column="dsbrq" property="dsbrq" jdbcType="TIMESTAMP" />
+    <result column="cfdlsh" property="cfdlsh" jdbcType="CHAR" />
+    <result column="cjszh" property="cjszh" jdbcType="CHAR" />
+    <result column="ctssm" property="ctssm" jdbcType="VARCHAR" />
+    <result column="cfplxdm" property="cfplxdm" jdbcType="CHAR" />
+    <result column="cdkhsph" property="cdkhsph" jdbcType="CHAR" />
+    <result column="cbxgsmc" property="cbxgsmc" jdbcType="CHAR" />
+    <result column="dbxqsrq" property="dbxqsrq" jdbcType="TIMESTAMP" />
+    <result column="dbxjzrq" property="dbxjzrq" jdbcType="TIMESTAMP" />
+    <result column="cclgs" property="cclgs" jdbcType="CHAR" />
+    <result column="lescbs" property="lescbs" jdbcType="BIT" />
+    <result column="nsynx" property="nsynx" jdbcType="DECIMAL" />
+    <result column="cckms" property="cckms" jdbcType="VARCHAR" />
+    <result column="cdjzbh" property="cdjzbh" jdbcType="CHAR" />
+    <result column="cnsms" property="cnsms" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="SMALLINT" />
+    <result column="status" property="status" jdbcType="BIT" />
+  </resultMap>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_crmc04" >
+    insert into R3_crmc04 (id, ckhdm, ckhmc, 
+      ccxdm, cdph, cfdjh, nxslc, 
+      dscrq, dlzrq, dzhwxrq, 
+      cpzh, cysdm, clxr, clxrdh, 
+      ccp, ltybs, dtyrq, lbgssc, 
+      cxsdbh, lfqfk, djdrq, ckhdz, 
+      cyb, ckhh, csh, cyhzh, 
+      csyjmm, ccpdm, cfph, nckdj, 
+      ckhjb, nwxcslj, nljje, 
+      dscbyrq, nbycs, npjbyts, 
+      dtzbyrq, cscdw, nmfwxcs, 
+      ngs, nrpjlc, csqdm, csxdm, 
+      cbz, lscbs, lbgstb, ckhlb, 
+      ldyhbs, nbfd, clxryddh, cdh, 
+      cyddh, ckhpjlb, dgcrq, 
+      dsbrq, cfdlsh, cjszh, ctssm, 
+      cfplxdm, cdkhsph, cbxgsmc, dbxqsrq, 
+      dbxjzrq, cclgs, lescbs, 
+      nsynx, cckms, cdjzbh, 
+      cnsms, state, status)
+    values (#{id,jdbcType=INTEGER}, #{ckhdm,jdbcType=CHAR}, #{ckhmc,jdbcType=VARCHAR}, 
+      #{ccxdm,jdbcType=VARCHAR}, #{cdph,jdbcType=CHAR}, #{cfdjh,jdbcType=VARCHAR}, #{nxslc,jdbcType=DECIMAL}, 
+      #{dscrq,jdbcType=TIMESTAMP}, #{dlzrq,jdbcType=TIMESTAMP}, #{dzhwxrq,jdbcType=TIMESTAMP}, 
+      #{cpzh,jdbcType=CHAR}, #{cysdm,jdbcType=CHAR}, #{clxr,jdbcType=CHAR}, #{clxrdh,jdbcType=CHAR}, 
+      #{ccp,jdbcType=CHAR}, #{ltybs,jdbcType=BIT}, #{dtyrq,jdbcType=TIMESTAMP}, #{lbgssc,jdbcType=BIT}, 
+      #{cxsdbh,jdbcType=CHAR}, #{lfqfk,jdbcType=BIT}, #{djdrq,jdbcType=TIMESTAMP}, #{ckhdz,jdbcType=VARCHAR}, 
+      #{cyb,jdbcType=CHAR}, #{ckhh,jdbcType=VARCHAR}, #{csh,jdbcType=VARCHAR}, #{cyhzh,jdbcType=VARCHAR}, 
+      #{csyjmm,jdbcType=CHAR}, #{ccpdm,jdbcType=VARCHAR}, #{cfph,jdbcType=CHAR}, #{nckdj,jdbcType=DECIMAL}, 
+      #{ckhjb,jdbcType=CHAR}, #{nwxcslj,jdbcType=INTEGER}, #{nljje,jdbcType=DECIMAL}, 
+      #{dscbyrq,jdbcType=TIMESTAMP}, #{nbycs,jdbcType=INTEGER}, #{npjbyts,jdbcType=INTEGER}, 
+      #{dtzbyrq,jdbcType=TIMESTAMP}, #{cscdw,jdbcType=VARCHAR}, #{nmfwxcs,jdbcType=INTEGER}, 
+      #{ngs,jdbcType=DECIMAL}, #{nrpjlc,jdbcType=DECIMAL}, #{csqdm,jdbcType=CHAR}, #{csxdm,jdbcType=CHAR}, 
+      #{cbz,jdbcType=VARCHAR}, #{lscbs,jdbcType=BIT}, #{lbgstb,jdbcType=BIT}, #{ckhlb,jdbcType=CHAR}, 
+      #{ldyhbs,jdbcType=BIT}, #{nbfd,jdbcType=DECIMAL}, #{clxryddh,jdbcType=CHAR}, #{cdh,jdbcType=CHAR}, 
+      #{cyddh,jdbcType=CHAR}, #{ckhpjlb,jdbcType=CHAR}, #{dgcrq,jdbcType=TIMESTAMP}, 
+      #{dsbrq,jdbcType=TIMESTAMP}, #{cfdlsh,jdbcType=CHAR}, #{cjszh,jdbcType=CHAR}, #{ctssm,jdbcType=VARCHAR}, 
+      #{cfplxdm,jdbcType=CHAR}, #{cdkhsph,jdbcType=CHAR}, #{cbxgsmc,jdbcType=CHAR}, #{dbxqsrq,jdbcType=TIMESTAMP}, 
+      #{dbxjzrq,jdbcType=TIMESTAMP}, #{cclgs,jdbcType=CHAR}, #{lescbs,jdbcType=BIT}, 
+      #{nsynx,jdbcType=DECIMAL}, #{cckms,jdbcType=VARCHAR}, #{cdjzbh,jdbcType=CHAR}, 
+      #{cnsms,jdbcType=VARCHAR}, #{state,jdbcType=SMALLINT}, #{status,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_crmc04" >
+    insert into R3_crmc04
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="ckhdm != null" >
+        ckhdm,
+      </if>
+      <if test="ckhmc != null" >
+        ckhmc,
+      </if>
+      <if test="ccxdm != null" >
+        ccxdm,
+      </if>
+      <if test="cdph != null" >
+        cdph,
+      </if>
+      <if test="cfdjh != null" >
+        cfdjh,
+      </if>
+      <if test="nxslc != null" >
+        nxslc,
+      </if>
+      <if test="dscrq != null" >
+        dscrq,
+      </if>
+      <if test="dlzrq != null" >
+        dlzrq,
+      </if>
+      <if test="dzhwxrq != null" >
+        dzhwxrq,
+      </if>
+      <if test="cpzh != null" >
+        cpzh,
+      </if>
+      <if test="cysdm != null" >
+        cysdm,
+      </if>
+      <if test="clxr != null" >
+        clxr,
+      </if>
+      <if test="clxrdh != null" >
+        clxrdh,
+      </if>
+      <if test="ccp != null" >
+        ccp,
+      </if>
+      <if test="ltybs != null" >
+        ltybs,
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq,
+      </if>
+      <if test="lbgssc != null" >
+        lbgssc,
+      </if>
+      <if test="cxsdbh != null" >
+        cxsdbh,
+      </if>
+      <if test="lfqfk != null" >
+        lfqfk,
+      </if>
+      <if test="djdrq != null" >
+        djdrq,
+      </if>
+      <if test="ckhdz != null" >
+        ckhdz,
+      </if>
+      <if test="cyb != null" >
+        cyb,
+      </if>
+      <if test="ckhh != null" >
+        ckhh,
+      </if>
+      <if test="csh != null" >
+        csh,
+      </if>
+      <if test="cyhzh != null" >
+        cyhzh,
+      </if>
+      <if test="csyjmm != null" >
+        csyjmm,
+      </if>
+      <if test="ccpdm != null" >
+        ccpdm,
+      </if>
+      <if test="cfph != null" >
+        cfph,
+      </if>
+      <if test="nckdj != null" >
+        nckdj,
+      </if>
+      <if test="ckhjb != null" >
+        ckhjb,
+      </if>
+      <if test="nwxcslj != null" >
+        nwxcslj,
+      </if>
+      <if test="nljje != null" >
+        nljje,
+      </if>
+      <if test="dscbyrq != null" >
+        dscbyrq,
+      </if>
+      <if test="nbycs != null" >
+        nbycs,
+      </if>
+      <if test="npjbyts != null" >
+        npjbyts,
+      </if>
+      <if test="dtzbyrq != null" >
+        dtzbyrq,
+      </if>
+      <if test="cscdw != null" >
+        cscdw,
+      </if>
+      <if test="nmfwxcs != null" >
+        nmfwxcs,
+      </if>
+      <if test="ngs != null" >
+        ngs,
+      </if>
+      <if test="nrpjlc != null" >
+        nrpjlc,
+      </if>
+      <if test="csqdm != null" >
+        csqdm,
+      </if>
+      <if test="csxdm != null" >
+        csxdm,
+      </if>
+      <if test="cbz != null" >
+        cbz,
+      </if>
+      <if test="lscbs != null" >
+        lscbs,
+      </if>
+      <if test="lbgstb != null" >
+        lbgstb,
+      </if>
+      <if test="ckhlb != null" >
+        ckhlb,
+      </if>
+      <if test="ldyhbs != null" >
+        ldyhbs,
+      </if>
+      <if test="nbfd != null" >
+        nbfd,
+      </if>
+      <if test="clxryddh != null" >
+        clxryddh,
+      </if>
+      <if test="cdh != null" >
+        cdh,
+      </if>
+      <if test="cyddh != null" >
+        cyddh,
+      </if>
+      <if test="ckhpjlb != null" >
+        ckhpjlb,
+      </if>
+      <if test="dgcrq != null" >
+        dgcrq,
+      </if>
+      <if test="dsbrq != null" >
+        dsbrq,
+      </if>
+      <if test="cfdlsh != null" >
+        cfdlsh,
+      </if>
+      <if test="cjszh != null" >
+        cjszh,
+      </if>
+      <if test="ctssm != null" >
+        ctssm,
+      </if>
+      <if test="cfplxdm != null" >
+        cfplxdm,
+      </if>
+      <if test="cdkhsph != null" >
+        cdkhsph,
+      </if>
+      <if test="cbxgsmc != null" >
+        cbxgsmc,
+      </if>
+      <if test="dbxqsrq != null" >
+        dbxqsrq,
+      </if>
+      <if test="dbxjzrq != null" >
+        dbxjzrq,
+      </if>
+      <if test="cclgs != null" >
+        cclgs,
+      </if>
+      <if test="lescbs != null" >
+        lescbs,
+      </if>
+      <if test="nsynx != null" >
+        nsynx,
+      </if>
+      <if test="cckms != null" >
+        cckms,
+      </if>
+      <if test="cdjzbh != null" >
+        cdjzbh,
+      </if>
+      <if test="cnsms != null" >
+        cnsms,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ckhdm != null" >
+        #{ckhdm,jdbcType=CHAR},
+      </if>
+      <if test="ckhmc != null" >
+        #{ckhmc,jdbcType=VARCHAR},
+      </if>
+      <if test="ccxdm != null" >
+        #{ccxdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cdph != null" >
+        #{cdph,jdbcType=CHAR},
+      </if>
+      <if test="cfdjh != null" >
+        #{cfdjh,jdbcType=VARCHAR},
+      </if>
+      <if test="nxslc != null" >
+        #{nxslc,jdbcType=DECIMAL},
+      </if>
+      <if test="dscrq != null" >
+        #{dscrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dlzrq != null" >
+        #{dlzrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dzhwxrq != null" >
+        #{dzhwxrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cpzh != null" >
+        #{cpzh,jdbcType=CHAR},
+      </if>
+      <if test="cysdm != null" >
+        #{cysdm,jdbcType=CHAR},
+      </if>
+      <if test="clxr != null" >
+        #{clxr,jdbcType=CHAR},
+      </if>
+      <if test="clxrdh != null" >
+        #{clxrdh,jdbcType=CHAR},
+      </if>
+      <if test="ccp != null" >
+        #{ccp,jdbcType=CHAR},
+      </if>
+      <if test="ltybs != null" >
+        #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lbgssc != null" >
+        #{lbgssc,jdbcType=BIT},
+      </if>
+      <if test="cxsdbh != null" >
+        #{cxsdbh,jdbcType=CHAR},
+      </if>
+      <if test="lfqfk != null" >
+        #{lfqfk,jdbcType=BIT},
+      </if>
+      <if test="djdrq != null" >
+        #{djdrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ckhdz != null" >
+        #{ckhdz,jdbcType=VARCHAR},
+      </if>
+      <if test="cyb != null" >
+        #{cyb,jdbcType=CHAR},
+      </if>
+      <if test="ckhh != null" >
+        #{ckhh,jdbcType=VARCHAR},
+      </if>
+      <if test="csh != null" >
+        #{csh,jdbcType=VARCHAR},
+      </if>
+      <if test="cyhzh != null" >
+        #{cyhzh,jdbcType=VARCHAR},
+      </if>
+      <if test="csyjmm != null" >
+        #{csyjmm,jdbcType=CHAR},
+      </if>
+      <if test="ccpdm != null" >
+        #{ccpdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cfph != null" >
+        #{cfph,jdbcType=CHAR},
+      </if>
+      <if test="nckdj != null" >
+        #{nckdj,jdbcType=DECIMAL},
+      </if>
+      <if test="ckhjb != null" >
+        #{ckhjb,jdbcType=CHAR},
+      </if>
+      <if test="nwxcslj != null" >
+        #{nwxcslj,jdbcType=INTEGER},
+      </if>
+      <if test="nljje != null" >
+        #{nljje,jdbcType=DECIMAL},
+      </if>
+      <if test="dscbyrq != null" >
+        #{dscbyrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nbycs != null" >
+        #{nbycs,jdbcType=INTEGER},
+      </if>
+      <if test="npjbyts != null" >
+        #{npjbyts,jdbcType=INTEGER},
+      </if>
+      <if test="dtzbyrq != null" >
+        #{dtzbyrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cscdw != null" >
+        #{cscdw,jdbcType=VARCHAR},
+      </if>
+      <if test="nmfwxcs != null" >
+        #{nmfwxcs,jdbcType=INTEGER},
+      </if>
+      <if test="ngs != null" >
+        #{ngs,jdbcType=DECIMAL},
+      </if>
+      <if test="nrpjlc != null" >
+        #{nrpjlc,jdbcType=DECIMAL},
+      </if>
+      <if test="csqdm != null" >
+        #{csqdm,jdbcType=CHAR},
+      </if>
+      <if test="csxdm != null" >
+        #{csxdm,jdbcType=CHAR},
+      </if>
+      <if test="cbz != null" >
+        #{cbz,jdbcType=VARCHAR},
+      </if>
+      <if test="lscbs != null" >
+        #{lscbs,jdbcType=BIT},
+      </if>
+      <if test="lbgstb != null" >
+        #{lbgstb,jdbcType=BIT},
+      </if>
+      <if test="ckhlb != null" >
+        #{ckhlb,jdbcType=CHAR},
+      </if>
+      <if test="ldyhbs != null" >
+        #{ldyhbs,jdbcType=BIT},
+      </if>
+      <if test="nbfd != null" >
+        #{nbfd,jdbcType=DECIMAL},
+      </if>
+      <if test="clxryddh != null" >
+        #{clxryddh,jdbcType=CHAR},
+      </if>
+      <if test="cdh != null" >
+        #{cdh,jdbcType=CHAR},
+      </if>
+      <if test="cyddh != null" >
+        #{cyddh,jdbcType=CHAR},
+      </if>
+      <if test="ckhpjlb != null" >
+        #{ckhpjlb,jdbcType=CHAR},
+      </if>
+      <if test="dgcrq != null" >
+        #{dgcrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dsbrq != null" >
+        #{dsbrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cfdlsh != null" >
+        #{cfdlsh,jdbcType=CHAR},
+      </if>
+      <if test="cjszh != null" >
+        #{cjszh,jdbcType=CHAR},
+      </if>
+      <if test="ctssm != null" >
+        #{ctssm,jdbcType=VARCHAR},
+      </if>
+      <if test="cfplxdm != null" >
+        #{cfplxdm,jdbcType=CHAR},
+      </if>
+      <if test="cdkhsph != null" >
+        #{cdkhsph,jdbcType=CHAR},
+      </if>
+      <if test="cbxgsmc != null" >
+        #{cbxgsmc,jdbcType=CHAR},
+      </if>
+      <if test="dbxqsrq != null" >
+        #{dbxqsrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dbxjzrq != null" >
+        #{dbxjzrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cclgs != null" >
+        #{cclgs,jdbcType=CHAR},
+      </if>
+      <if test="lescbs != null" >
+        #{lescbs,jdbcType=BIT},
+      </if>
+      <if test="nsynx != null" >
+        #{nsynx,jdbcType=DECIMAL},
+      </if>
+      <if test="cckms != null" >
+        #{cckms,jdbcType=VARCHAR},
+      </if>
+      <if test="cdjzbh != null" >
+        #{cdjzbh,jdbcType=CHAR},
+      </if>
+      <if test="cnsms != null" >
+        #{cnsms,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=SMALLINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

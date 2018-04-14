@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.TT_jz_billMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.TT_jz_bill" >
+    <id column="bill_nunber" property="billNunber" jdbcType="CHAR" />
+    <id column="Chassis_number" property="chassisNumber" jdbcType="CHAR" />
+    <result column="Engine_number" property="engineNumber" jdbcType="VARCHAR" />
+    <result column="Demio_name" property="demioName" jdbcType="VARCHAR" />
+    <result column="Model_name" property="modelName" jdbcType="VARCHAR" />
+    <result column="config" property="config" jdbcType="VARCHAR" />
+    <result column="Cus_code" property="cusCode" jdbcType="VARCHAR" />
+    <result column="Cus_name  " property="cusName" jdbcType="VARCHAR" />
+    <result column="Cus_type" property="cusType" jdbcType="VARCHAR" />
+    <result column="Identify_type" property="identifyType" jdbcType="VARCHAR" />
+    <result column="Identify_id" property="identifyId" jdbcType="VARCHAR" />
+    <result column="mobilephone" property="mobilephone" jdbcType="CHAR" />
+    <result column="operator" property="operator" jdbcType="VARCHAR" />
+    <result column="Creat_date" property="creatDate" jdbcType="TIMESTAMP" />
+    <result column="Expect_date" property="expectDate" jdbcType="TIMESTAMP" />
+    <result column="Salesman_id" property="salesmanId" jdbcType="CHAR" />
+    <result column="Salesman_name" property="salesmanName" jdbcType="CHAR" />
+    <result column="Used_jz_amount" property="usedJzAmount" jdbcType="DECIMAL" />
+    <result column="remark" property="remark" jdbcType="CHAR" />
+    <result column="JZ_type" property="jzType" jdbcType="VARCHAR" />
+    <result column="Is_Promotion" property="isPromotion" jdbcType="BIT" />
+    <result column="Pay_way" property="payWay" jdbcType="CHAR" />
+    <result column="Invoice_number" property="invoiceNumber" jdbcType="CHAR" />
+    <result column="Invoice_amount" property="invoiceAmount" jdbcType="DECIMAL" />
+    <result column="Amount_receivable" property="amountReceivable" jdbcType="DECIMAL" />
+    <result column="Amount_collected" property="amountCollected" jdbcType="DECIMAL" />
+    <result column="Settle_flag" property="settleFlag" jdbcType="BIT" />
+    <result column="Settle_way" property="settleWay" jdbcType="CHAR" />
+    <result column="Settle_man" property="settleMan" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    bill_nunber, Chassis_number, Engine_number, Demio_name, Model_name, config, Cus_code, 
+    "Cus_name  ", Cus_type, Identify_type, Identify_id, mobilephone, operator, Creat_date, 
+    Expect_date, Salesman_id, Salesman_name, Used_jz_amount, remark, JZ_type, Is_Promotion, 
+    Pay_way, Invoice_number, Invoice_amount, Amount_receivable, Amount_collected, Settle_flag, 
+    Settle_way, Settle_man
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.tt_ms.domain.TT_jz_billKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from TT_jz_bill
+    where bill_nunber = #{billNunber,jdbcType=CHAR}
+      and Chassis_number = #{chassisNumber,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tt_ms.domain.TT_jz_billKey" >
+    delete from TT_jz_bill
+    where bill_nunber = #{billNunber,jdbcType=CHAR}
+      and Chassis_number = #{chassisNumber,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.TT_jz_bill" >
+    insert into TT_jz_bill (bill_nunber, Chassis_number, Engine_number, 
+      Demio_name, Model_name, config, 
+      Cus_code, "Cus_name  ", Cus_type, 
+      Identify_type, Identify_id, mobilephone, 
+      operator, Creat_date, Expect_date, 
+      Salesman_id, Salesman_name, Used_jz_amount, 
+      remark, JZ_type, Is_Promotion, 
+      Pay_way, Invoice_number, Invoice_amount, 
+      Amount_receivable, Amount_collected, Settle_flag, 
+      Settle_way, Settle_man)
+    values (#{billNunber,jdbcType=CHAR}, #{chassisNumber,jdbcType=CHAR}, #{engineNumber,jdbcType=VARCHAR}, 
+      #{demioName,jdbcType=VARCHAR}, #{modelName,jdbcType=VARCHAR}, #{config,jdbcType=VARCHAR}, 
+      #{cusCode,jdbcType=VARCHAR}, #{cusName,jdbcType=VARCHAR}, #{cusType,jdbcType=VARCHAR}, 
+      #{identifyType,jdbcType=VARCHAR}, #{identifyId,jdbcType=VARCHAR}, #{mobilephone,jdbcType=CHAR}, 
+      #{operator,jdbcType=VARCHAR}, #{creatDate,jdbcType=TIMESTAMP}, #{expectDate,jdbcType=TIMESTAMP}, 
+      #{salesmanId,jdbcType=CHAR}, #{salesmanName,jdbcType=CHAR}, #{usedJzAmount,jdbcType=DECIMAL}, 
+      #{remark,jdbcType=CHAR}, #{jzType,jdbcType=VARCHAR}, #{isPromotion,jdbcType=BIT}, 
+      #{payWay,jdbcType=CHAR}, #{invoiceNumber,jdbcType=CHAR}, #{invoiceAmount,jdbcType=DECIMAL}, 
+      #{amountReceivable,jdbcType=DECIMAL}, #{amountCollected,jdbcType=DECIMAL}, #{settleFlag,jdbcType=BIT}, 
+      #{settleWay,jdbcType=CHAR}, #{settleMan,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.TT_jz_bill" >
+    insert into TT_jz_bill
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="billNunber != null" >
+        bill_nunber,
+      </if>
+      <if test="chassisNumber != null" >
+        Chassis_number,
+      </if>
+      <if test="engineNumber != null" >
+        Engine_number,
+      </if>
+      <if test="demioName != null" >
+        Demio_name,
+      </if>
+      <if test="modelName != null" >
+        Model_name,
+      </if>
+      <if test="config != null" >
+        config,
+      </if>
+      <if test="cusCode != null" >
+        Cus_code,
+      </if>
+      <if test="cusName != null" >
+        "Cus_name  ",
+      </if>
+      <if test="cusType != null" >
+        Cus_type,
+      </if>
+      <if test="identifyType != null" >
+        Identify_type,
+      </if>
+      <if test="identifyId != null" >
+        Identify_id,
+      </if>
+      <if test="mobilephone != null" >
+        mobilephone,
+      </if>
+      <if test="operator != null" >
+        operator,
+      </if>
+      <if test="creatDate != null" >
+        Creat_date,
+      </if>
+      <if test="expectDate != null" >
+        Expect_date,
+      </if>
+      <if test="salesmanId != null" >
+        Salesman_id,
+      </if>
+      <if test="salesmanName != null" >
+        Salesman_name,
+      </if>
+      <if test="usedJzAmount != null" >
+        Used_jz_amount,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="jzType != null" >
+        JZ_type,
+      </if>
+      <if test="isPromotion != null" >
+        Is_Promotion,
+      </if>
+      <if test="payWay != null" >
+        Pay_way,
+      </if>
+      <if test="invoiceNumber != null" >
+        Invoice_number,
+      </if>
+      <if test="invoiceAmount != null" >
+        Invoice_amount,
+      </if>
+      <if test="amountReceivable != null" >
+        Amount_receivable,
+      </if>
+      <if test="amountCollected != null" >
+        Amount_collected,
+      </if>
+      <if test="settleFlag != null" >
+        Settle_flag,
+      </if>
+      <if test="settleWay != null" >
+        Settle_way,
+      </if>
+      <if test="settleMan != null" >
+        Settle_man,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="billNunber != null" >
+        #{billNunber,jdbcType=CHAR},
+      </if>
+      <if test="chassisNumber != null" >
+        #{chassisNumber,jdbcType=CHAR},
+      </if>
+      <if test="engineNumber != null" >
+        #{engineNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="demioName != null" >
+        #{demioName,jdbcType=VARCHAR},
+      </if>
+      <if test="modelName != null" >
+        #{modelName,jdbcType=VARCHAR},
+      </if>
+      <if test="config != null" >
+        #{config,jdbcType=VARCHAR},
+      </if>
+      <if test="cusCode != null" >
+        #{cusCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cusName != null" >
+        #{cusName,jdbcType=VARCHAR},
+      </if>
+      <if test="cusType != null" >
+        #{cusType,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyType != null" >
+        #{identifyType,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyId != null" >
+        #{identifyId,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilephone != null" >
+        #{mobilephone,jdbcType=CHAR},
+      </if>
+      <if test="operator != null" >
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatDate != null" >
+        #{creatDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expectDate != null" >
+        #{expectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="salesmanId != null" >
+        #{salesmanId,jdbcType=CHAR},
+      </if>
+      <if test="salesmanName != null" >
+        #{salesmanName,jdbcType=CHAR},
+      </if>
+      <if test="usedJzAmount != null" >
+        #{usedJzAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=CHAR},
+      </if>
+      <if test="jzType != null" >
+        #{jzType,jdbcType=VARCHAR},
+      </if>
+      <if test="isPromotion != null" >
+        #{isPromotion,jdbcType=BIT},
+      </if>
+      <if test="payWay != null" >
+        #{payWay,jdbcType=CHAR},
+      </if>
+      <if test="invoiceNumber != null" >
+        #{invoiceNumber,jdbcType=CHAR},
+      </if>
+      <if test="invoiceAmount != null" >
+        #{invoiceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="amountReceivable != null" >
+        #{amountReceivable,jdbcType=DECIMAL},
+      </if>
+      <if test="amountCollected != null" >
+        #{amountCollected,jdbcType=DECIMAL},
+      </if>
+      <if test="settleFlag != null" >
+        #{settleFlag,jdbcType=BIT},
+      </if>
+      <if test="settleWay != null" >
+        #{settleWay,jdbcType=CHAR},
+      </if>
+      <if test="settleMan != null" >
+        #{settleMan,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.TT_jz_bill" >
+    update TT_jz_bill
+    <set >
+      <if test="engineNumber != null" >
+        Engine_number = #{engineNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="demioName != null" >
+        Demio_name = #{demioName,jdbcType=VARCHAR},
+      </if>
+      <if test="modelName != null" >
+        Model_name = #{modelName,jdbcType=VARCHAR},
+      </if>
+      <if test="config != null" >
+        config = #{config,jdbcType=VARCHAR},
+      </if>
+      <if test="cusCode != null" >
+        Cus_code = #{cusCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cusName != null" >
+        "Cus_name  " = #{cusName,jdbcType=VARCHAR},
+      </if>
+      <if test="cusType != null" >
+        Cus_type = #{cusType,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyType != null" >
+        Identify_type = #{identifyType,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyId != null" >
+        Identify_id = #{identifyId,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilephone != null" >
+        mobilephone = #{mobilephone,jdbcType=CHAR},
+      </if>
+      <if test="operator != null" >
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatDate != null" >
+        Creat_date = #{creatDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expectDate != null" >
+        Expect_date = #{expectDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="salesmanId != null" >
+        Salesman_id = #{salesmanId,jdbcType=CHAR},
+      </if>
+      <if test="salesmanName != null" >
+        Salesman_name = #{salesmanName,jdbcType=CHAR},
+      </if>
+      <if test="usedJzAmount != null" >
+        Used_jz_amount = #{usedJzAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=CHAR},
+      </if>
+      <if test="jzType != null" >
+        JZ_type = #{jzType,jdbcType=VARCHAR},
+      </if>
+      <if test="isPromotion != null" >
+        Is_Promotion = #{isPromotion,jdbcType=BIT},
+      </if>
+      <if test="payWay != null" >
+        Pay_way = #{payWay,jdbcType=CHAR},
+      </if>
+      <if test="invoiceNumber != null" >
+        Invoice_number = #{invoiceNumber,jdbcType=CHAR},
+      </if>
+      <if test="invoiceAmount != null" >
+        Invoice_amount = #{invoiceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="amountReceivable != null" >
+        Amount_receivable = #{amountReceivable,jdbcType=DECIMAL},
+      </if>
+      <if test="amountCollected != null" >
+        Amount_collected = #{amountCollected,jdbcType=DECIMAL},
+      </if>
+      <if test="settleFlag != null" >
+        Settle_flag = #{settleFlag,jdbcType=BIT},
+      </if>
+      <if test="settleWay != null" >
+        Settle_way = #{settleWay,jdbcType=CHAR},
+      </if>
+      <if test="settleMan != null" >
+        Settle_man = #{settleMan,jdbcType=CHAR},
+      </if>
+    </set>
+    where bill_nunber = #{billNunber,jdbcType=CHAR}
+      and Chassis_number = #{chassisNumber,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.TT_jz_bill" >
+    update TT_jz_bill
+    set Engine_number = #{engineNumber,jdbcType=VARCHAR},
+      Demio_name = #{demioName,jdbcType=VARCHAR},
+      Model_name = #{modelName,jdbcType=VARCHAR},
+      config = #{config,jdbcType=VARCHAR},
+      Cus_code = #{cusCode,jdbcType=VARCHAR},
+      "Cus_name  " = #{cusName,jdbcType=VARCHAR},
+      Cus_type = #{cusType,jdbcType=VARCHAR},
+      Identify_type = #{identifyType,jdbcType=VARCHAR},
+      Identify_id = #{identifyId,jdbcType=VARCHAR},
+      mobilephone = #{mobilephone,jdbcType=CHAR},
+      operator = #{operator,jdbcType=VARCHAR},
+      Creat_date = #{creatDate,jdbcType=TIMESTAMP},
+      Expect_date = #{expectDate,jdbcType=TIMESTAMP},
+      Salesman_id = #{salesmanId,jdbcType=CHAR},
+      Salesman_name = #{salesmanName,jdbcType=CHAR},
+      Used_jz_amount = #{usedJzAmount,jdbcType=DECIMAL},
+      remark = #{remark,jdbcType=CHAR},
+      JZ_type = #{jzType,jdbcType=VARCHAR},
+      Is_Promotion = #{isPromotion,jdbcType=BIT},
+      Pay_way = #{payWay,jdbcType=CHAR},
+      Invoice_number = #{invoiceNumber,jdbcType=CHAR},
+      Invoice_amount = #{invoiceAmount,jdbcType=DECIMAL},
+      Amount_receivable = #{amountReceivable,jdbcType=DECIMAL},
+      Amount_collected = #{amountCollected,jdbcType=DECIMAL},
+      Settle_flag = #{settleFlag,jdbcType=BIT},
+      Settle_way = #{settleWay,jdbcType=CHAR},
+      Settle_man = #{settleMan,jdbcType=CHAR}
+    where bill_nunber = #{billNunber,jdbcType=CHAR}
+      and Chassis_number = #{chassisNumber,jdbcType=CHAR}
+  </update>
+</mapper>

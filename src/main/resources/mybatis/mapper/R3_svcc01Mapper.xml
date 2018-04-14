@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_svcc01Mapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_svcc01" >
+    <id column="cysdm" property="cysdm" jdbcType="CHAR" />
+    <result column="cyssm" property="cyssm" jdbcType="CHAR" />
+    <result column="ltybs" property="ltybs" jdbcType="BIT" />
+    <result column="dtyrq" property="dtyrq" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cysdm, cyssm, ltybs, dtyrq
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_svcc01
+    where cysdm = #{cysdm,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from R3_svcc01
+    where cysdm = #{cysdm,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_svcc01" >
+    insert into R3_svcc01 (cysdm, cyssm, ltybs, dtyrq
+      )
+    values (#{cysdm,jdbcType=CHAR}, #{cyssm,jdbcType=CHAR}, #{ltybs,jdbcType=BIT}, #{dtyrq,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_svcc01" >
+    insert into R3_svcc01
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cysdm != null" >
+        cysdm,
+      </if>
+      <if test="cyssm != null" >
+        cyssm,
+      </if>
+      <if test="ltybs != null" >
+        ltybs,
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cysdm != null" >
+        #{cysdm,jdbcType=CHAR},
+      </if>
+      <if test="cyssm != null" >
+        #{cyssm,jdbcType=CHAR},
+      </if>
+      <if test="ltybs != null" >
+        #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_svcc01" >
+    update R3_svcc01
+    <set >
+      <if test="cyssm != null" >
+        cyssm = #{cyssm,jdbcType=CHAR},
+      </if>
+      <if test="ltybs != null" >
+        ltybs = #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq = #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where cysdm = #{cysdm,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_svcc01" >
+    update R3_svcc01
+    set cyssm = #{cyssm,jdbcType=CHAR},
+      ltybs = #{ltybs,jdbcType=BIT},
+      dtyrq = #{dtyrq,jdbcType=TIMESTAMP}
+    where cysdm = #{cysdm,jdbcType=CHAR}
+  </update>
+</mapper>

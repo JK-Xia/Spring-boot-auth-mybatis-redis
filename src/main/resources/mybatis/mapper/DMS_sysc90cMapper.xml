@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.DMS_sysc90cMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.DMS_sysc90c" >
+    <id column="PKey" property="pkey" jdbcType="BIGINT" />
+    <result column="iD" property="id" jdbcType="CHAR" />
+    <result column="nCusGroupID" property="ncusgroupid" jdbcType="CHAR" />
+    <result column="vDict" property="vdict" jdbcType="VARCHAR" />
+    <result column="vDictName" property="vdictname" jdbcType="VARCHAR" />
+    <result column="cExtand" property="cextand" jdbcType="BIT" />
+    <result column="cVisible" property="cvisible" jdbcType="BIT" />
+    <result column="nLen" property="nlen" jdbcType="INTEGER" />
+    <result column="vModule" property="vmodule" jdbcType="VARCHAR" />
+    <result column="vComment" property="vcomment" jdbcType="VARCHAR" />
+    <result column="CreateBy" property="createby" jdbcType="VARCHAR" />
+    <result column="CreateOn" property="createon" jdbcType="TIMESTAMP" />
+    <result column="UpdateBy" property="updateby" jdbcType="VARCHAR" />
+    <result column="UpdateOn" property="updateon" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PKey, iD, nCusGroupID, vDict, vDictName, cExtand, cVisible, nLen, vModule, vComment, 
+    CreateBy, CreateOn, UpdateBy, UpdateOn
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from DMS_sysc90c
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from DMS_sysc90c
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.DMS_sysc90c" >
+    insert into DMS_sysc90c (PKey, iD, nCusGroupID, 
+      vDict, vDictName, cExtand, 
+      cVisible, nLen, vModule, 
+      vComment, CreateBy, CreateOn, 
+      UpdateBy, UpdateOn)
+    values (#{pkey,jdbcType=BIGINT}, #{id,jdbcType=CHAR}, #{ncusgroupid,jdbcType=CHAR}, 
+      #{vdict,jdbcType=VARCHAR}, #{vdictname,jdbcType=VARCHAR}, #{cextand,jdbcType=BIT}, 
+      #{cvisible,jdbcType=BIT}, #{nlen,jdbcType=INTEGER}, #{vmodule,jdbcType=VARCHAR}, 
+      #{vcomment,jdbcType=VARCHAR}, #{createby,jdbcType=VARCHAR}, #{createon,jdbcType=TIMESTAMP}, 
+      #{updateby,jdbcType=VARCHAR}, #{updateon,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.DMS_sysc90c" >
+    insert into DMS_sysc90c
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pkey != null" >
+        PKey,
+      </if>
+      <if test="id != null" >
+        iD,
+      </if>
+      <if test="ncusgroupid != null" >
+        nCusGroupID,
+      </if>
+      <if test="vdict != null" >
+        vDict,
+      </if>
+      <if test="vdictname != null" >
+        vDictName,
+      </if>
+      <if test="cextand != null" >
+        cExtand,
+      </if>
+      <if test="cvisible != null" >
+        cVisible,
+      </if>
+      <if test="nlen != null" >
+        nLen,
+      </if>
+      <if test="vmodule != null" >
+        vModule,
+      </if>
+      <if test="vcomment != null" >
+        vComment,
+      </if>
+      <if test="createby != null" >
+        CreateBy,
+      </if>
+      <if test="createon != null" >
+        CreateOn,
+      </if>
+      <if test="updateby != null" >
+        UpdateBy,
+      </if>
+      <if test="updateon != null" >
+        UpdateOn,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pkey != null" >
+        #{pkey,jdbcType=BIGINT},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="ncusgroupid != null" >
+        #{ncusgroupid,jdbcType=CHAR},
+      </if>
+      <if test="vdict != null" >
+        #{vdict,jdbcType=VARCHAR},
+      </if>
+      <if test="vdictname != null" >
+        #{vdictname,jdbcType=VARCHAR},
+      </if>
+      <if test="cextand != null" >
+        #{cextand,jdbcType=BIT},
+      </if>
+      <if test="cvisible != null" >
+        #{cvisible,jdbcType=BIT},
+      </if>
+      <if test="nlen != null" >
+        #{nlen,jdbcType=INTEGER},
+      </if>
+      <if test="vmodule != null" >
+        #{vmodule,jdbcType=VARCHAR},
+      </if>
+      <if test="vcomment != null" >
+        #{vcomment,jdbcType=VARCHAR},
+      </if>
+      <if test="createby != null" >
+        #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createon != null" >
+        #{createon,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateby != null" >
+        #{updateby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateon != null" >
+        #{updateon,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.DMS_sysc90c" >
+    update DMS_sysc90c
+    <set >
+      <if test="id != null" >
+        iD = #{id,jdbcType=CHAR},
+      </if>
+      <if test="ncusgroupid != null" >
+        nCusGroupID = #{ncusgroupid,jdbcType=CHAR},
+      </if>
+      <if test="vdict != null" >
+        vDict = #{vdict,jdbcType=VARCHAR},
+      </if>
+      <if test="vdictname != null" >
+        vDictName = #{vdictname,jdbcType=VARCHAR},
+      </if>
+      <if test="cextand != null" >
+        cExtand = #{cextand,jdbcType=BIT},
+      </if>
+      <if test="cvisible != null" >
+        cVisible = #{cvisible,jdbcType=BIT},
+      </if>
+      <if test="nlen != null" >
+        nLen = #{nlen,jdbcType=INTEGER},
+      </if>
+      <if test="vmodule != null" >
+        vModule = #{vmodule,jdbcType=VARCHAR},
+      </if>
+      <if test="vcomment != null" >
+        vComment = #{vcomment,jdbcType=VARCHAR},
+      </if>
+      <if test="createby != null" >
+        CreateBy = #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createon != null" >
+        CreateOn = #{createon,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateby != null" >
+        UpdateBy = #{updateby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateon != null" >
+        UpdateOn = #{updateon,jdbcType=BIGINT},
+      </if>
+    </set>
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.DMS_sysc90c" >
+    update DMS_sysc90c
+    set iD = #{id,jdbcType=CHAR},
+      nCusGroupID = #{ncusgroupid,jdbcType=CHAR},
+      vDict = #{vdict,jdbcType=VARCHAR},
+      vDictName = #{vdictname,jdbcType=VARCHAR},
+      cExtand = #{cextand,jdbcType=BIT},
+      cVisible = #{cvisible,jdbcType=BIT},
+      nLen = #{nlen,jdbcType=INTEGER},
+      vModule = #{vmodule,jdbcType=VARCHAR},
+      vComment = #{vcomment,jdbcType=VARCHAR},
+      CreateBy = #{createby,jdbcType=VARCHAR},
+      CreateOn = #{createon,jdbcType=TIMESTAMP},
+      UpdateBy = #{updateby,jdbcType=VARCHAR},
+      UpdateOn = #{updateon,jdbcType=BIGINT}
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </update>
+</mapper>

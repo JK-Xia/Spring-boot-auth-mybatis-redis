@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.TT_preorder_jzMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.TT_preorder_jz" >
+    <id column="Preorder_number" property="preorderNumber" jdbcType="VARCHAR" />
+    <id column="jz_code" property="jzCode" jdbcType="VARCHAR" />
+    <result column="jz_name" property="jzName" jdbcType="VARCHAR" />
+    <result column="Cost_price" property="costPrice" jdbcType="DECIMAL" />
+    <result column="Out_inventory_price" property="outInventoryPrice" jdbcType="DECIMAL" />
+    <result column="Accounting_price" property="accountingPrice" jdbcType="DECIMAL" />
+    <result column="Amount_receivable" property="amountReceivable" jdbcType="DECIMAL" />
+    <result column="Amount_collected" property="amountCollected" jdbcType="DECIMAL" />
+    <result column="number" property="number" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Preorder_number, jz_code, jz_name, Cost_price, Out_inventory_price, Accounting_price, 
+    Amount_receivable, Amount_collected, number
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.tt_ms.domain.TT_preorder_jzKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from TT_preorder_jz
+    where Preorder_number = #{preorderNumber,jdbcType=VARCHAR}
+      and jz_code = #{jzCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tt_ms.domain.TT_preorder_jzKey" >
+    delete from TT_preorder_jz
+    where Preorder_number = #{preorderNumber,jdbcType=VARCHAR}
+      and jz_code = #{jzCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.TT_preorder_jz" >
+    insert into TT_preorder_jz (Preorder_number, jz_code, jz_name, 
+      Cost_price, Out_inventory_price, Accounting_price, 
+      Amount_receivable, Amount_collected, number
+      )
+    values (#{preorderNumber,jdbcType=VARCHAR}, #{jzCode,jdbcType=VARCHAR}, #{jzName,jdbcType=VARCHAR}, 
+      #{costPrice,jdbcType=DECIMAL}, #{outInventoryPrice,jdbcType=DECIMAL}, #{accountingPrice,jdbcType=DECIMAL}, 
+      #{amountReceivable,jdbcType=DECIMAL}, #{amountCollected,jdbcType=DECIMAL}, #{number,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.TT_preorder_jz" >
+    insert into TT_preorder_jz
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="preorderNumber != null" >
+        Preorder_number,
+      </if>
+      <if test="jzCode != null" >
+        jz_code,
+      </if>
+      <if test="jzName != null" >
+        jz_name,
+      </if>
+      <if test="costPrice != null" >
+        Cost_price,
+      </if>
+      <if test="outInventoryPrice != null" >
+        Out_inventory_price,
+      </if>
+      <if test="accountingPrice != null" >
+        Accounting_price,
+      </if>
+      <if test="amountReceivable != null" >
+        Amount_receivable,
+      </if>
+      <if test="amountCollected != null" >
+        Amount_collected,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="preorderNumber != null" >
+        #{preorderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="jzCode != null" >
+        #{jzCode,jdbcType=VARCHAR},
+      </if>
+      <if test="jzName != null" >
+        #{jzName,jdbcType=VARCHAR},
+      </if>
+      <if test="costPrice != null" >
+        #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="outInventoryPrice != null" >
+        #{outInventoryPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="accountingPrice != null" >
+        #{accountingPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="amountReceivable != null" >
+        #{amountReceivable,jdbcType=DECIMAL},
+      </if>
+      <if test="amountCollected != null" >
+        #{amountCollected,jdbcType=DECIMAL},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.TT_preorder_jz" >
+    update TT_preorder_jz
+    <set >
+      <if test="jzName != null" >
+        jz_name = #{jzName,jdbcType=VARCHAR},
+      </if>
+      <if test="costPrice != null" >
+        Cost_price = #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="outInventoryPrice != null" >
+        Out_inventory_price = #{outInventoryPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="accountingPrice != null" >
+        Accounting_price = #{accountingPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="amountReceivable != null" >
+        Amount_receivable = #{amountReceivable,jdbcType=DECIMAL},
+      </if>
+      <if test="amountCollected != null" >
+        Amount_collected = #{amountCollected,jdbcType=DECIMAL},
+      </if>
+      <if test="number != null" >
+        number = #{number,jdbcType=INTEGER},
+      </if>
+    </set>
+    where Preorder_number = #{preorderNumber,jdbcType=VARCHAR}
+      and jz_code = #{jzCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.TT_preorder_jz" >
+    update TT_preorder_jz
+    set jz_name = #{jzName,jdbcType=VARCHAR},
+      Cost_price = #{costPrice,jdbcType=DECIMAL},
+      Out_inventory_price = #{outInventoryPrice,jdbcType=DECIMAL},
+      Accounting_price = #{accountingPrice,jdbcType=DECIMAL},
+      Amount_receivable = #{amountReceivable,jdbcType=DECIMAL},
+      Amount_collected = #{amountCollected,jdbcType=DECIMAL},
+      number = #{number,jdbcType=INTEGER}
+    where Preorder_number = #{preorderNumber,jdbcType=VARCHAR}
+      and jz_code = #{jzCode,jdbcType=VARCHAR}
+  </update>
+</mapper>

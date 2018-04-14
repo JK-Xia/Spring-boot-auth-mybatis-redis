@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_salc02Mapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_salc02" >
+    <id column="czcfldm" property="czcfldm" jdbcType="CHAR" />
+    <result column="czcflsm" property="czcflsm" jdbcType="CHAR" />
+    <result column="ltybs" property="ltybs" jdbcType="BIT" />
+    <result column="dtyrq" property="dtyrq" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    czcfldm, czcflsm, ltybs, dtyrq
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_salc02
+    where czcfldm = #{czcfldm,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from R3_salc02
+    where czcfldm = #{czcfldm,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_salc02" >
+    insert into R3_salc02 (czcfldm, czcflsm, ltybs, 
+      dtyrq)
+    values (#{czcfldm,jdbcType=CHAR}, #{czcflsm,jdbcType=CHAR}, #{ltybs,jdbcType=BIT}, 
+      #{dtyrq,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_salc02" >
+    insert into R3_salc02
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="czcfldm != null" >
+        czcfldm,
+      </if>
+      <if test="czcflsm != null" >
+        czcflsm,
+      </if>
+      <if test="ltybs != null" >
+        ltybs,
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="czcfldm != null" >
+        #{czcfldm,jdbcType=CHAR},
+      </if>
+      <if test="czcflsm != null" >
+        #{czcflsm,jdbcType=CHAR},
+      </if>
+      <if test="ltybs != null" >
+        #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_salc02" >
+    update R3_salc02
+    <set >
+      <if test="czcflsm != null" >
+        czcflsm = #{czcflsm,jdbcType=CHAR},
+      </if>
+      <if test="ltybs != null" >
+        ltybs = #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq = #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where czcfldm = #{czcfldm,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_salc02" >
+    update R3_salc02
+    set czcflsm = #{czcflsm,jdbcType=CHAR},
+      ltybs = #{ltybs,jdbcType=BIT},
+      dtyrq = #{dtyrq,jdbcType=TIMESTAMP}
+    where czcfldm = #{czcfldm,jdbcType=CHAR}
+  </update>
+</mapper>

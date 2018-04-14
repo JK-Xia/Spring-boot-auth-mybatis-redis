@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_svcc04Mapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_svcc04" >
+    <id column="ccxdm" property="ccxdm" jdbcType="VARCHAR" />
+    <result column="ccxmc" property="ccxmc" jdbcType="VARCHAR" />
+    <result column="ccp" property="ccp" jdbcType="CHAR" />
+    <result column="cgsde" property="cgsde" jdbcType="CHAR" />
+    <result column="ltybs" property="ltybs" jdbcType="BIT" />
+    <result column="dtyrq" property="dtyrq" jdbcType="TIMESTAMP" />
+    <result column="ID" property="id" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ccxdm, ccxmc, ccp, cgsde, ltybs, dtyrq, ID, status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_svcc04
+    where ccxdm = #{ccxdm,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from R3_svcc04
+    where ccxdm = #{ccxdm,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_svcc04" >
+    insert into R3_svcc04 (ccxdm, ccxmc, ccp, 
+      cgsde, ltybs, dtyrq, ID, 
+      status)
+    values (#{ccxdm,jdbcType=VARCHAR}, #{ccxmc,jdbcType=VARCHAR}, #{ccp,jdbcType=CHAR}, 
+      #{cgsde,jdbcType=CHAR}, #{ltybs,jdbcType=BIT}, #{dtyrq,jdbcType=TIMESTAMP}, #{id,jdbcType=INTEGER}, 
+      #{status,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_svcc04" >
+    insert into R3_svcc04
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ccxdm != null" >
+        ccxdm,
+      </if>
+      <if test="ccxmc != null" >
+        ccxmc,
+      </if>
+      <if test="ccp != null" >
+        ccp,
+      </if>
+      <if test="cgsde != null" >
+        cgsde,
+      </if>
+      <if test="ltybs != null" >
+        ltybs,
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq,
+      </if>
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ccxdm != null" >
+        #{ccxdm,jdbcType=VARCHAR},
+      </if>
+      <if test="ccxmc != null" >
+        #{ccxmc,jdbcType=VARCHAR},
+      </if>
+      <if test="ccp != null" >
+        #{ccp,jdbcType=CHAR},
+      </if>
+      <if test="cgsde != null" >
+        #{cgsde,jdbcType=CHAR},
+      </if>
+      <if test="ltybs != null" >
+        #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_svcc04" >
+    update R3_svcc04
+    <set >
+      <if test="ccxmc != null" >
+        ccxmc = #{ccxmc,jdbcType=VARCHAR},
+      </if>
+      <if test="ccp != null" >
+        ccp = #{ccp,jdbcType=CHAR},
+      </if>
+      <if test="cgsde != null" >
+        cgsde = #{cgsde,jdbcType=CHAR},
+      </if>
+      <if test="ltybs != null" >
+        ltybs = #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq = #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="id != null" >
+        ID = #{id,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIT},
+      </if>
+    </set>
+    where ccxdm = #{ccxdm,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_svcc04" >
+    update R3_svcc04
+    set ccxmc = #{ccxmc,jdbcType=VARCHAR},
+      ccp = #{ccp,jdbcType=CHAR},
+      cgsde = #{cgsde,jdbcType=CHAR},
+      ltybs = #{ltybs,jdbcType=BIT},
+      dtyrq = #{dtyrq,jdbcType=TIMESTAMP},
+      ID = #{id,jdbcType=INTEGER},
+      status = #{status,jdbcType=BIT}
+    where ccxdm = #{ccxdm,jdbcType=VARCHAR}
+  </update>
+</mapper>

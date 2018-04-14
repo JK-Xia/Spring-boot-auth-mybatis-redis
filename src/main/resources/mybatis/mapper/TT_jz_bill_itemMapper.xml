@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.TT_jz_bill_itemMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.TT_jz_bill_item" >
+    <id column="Bill_number" property="billNumber" jdbcType="VARCHAR" />
+    <id column="Jz_number" property="jzNumber" jdbcType="VARCHAR" />
+    <result column="Jz_name" property="jzName" jdbcType="VARCHAR" />
+    <result column="Sales_number" property="salesNumber" jdbcType="INTEGER" />
+    <result column="unit" property="unit" jdbcType="VARCHAR" />
+    <result column="Cost_price" property="costPrice" jdbcType="DECIMAL" />
+    <result column="Tax_buy_price" property="taxBuyPrice" jdbcType="DECIMAL" />
+    <result column="Out_inventory_price" property="outInventoryPrice" jdbcType="DECIMAL" />
+    <result column="Accounting_price" property="accountingPrice" jdbcType="DECIMAL" />
+    <result column="Amount_receivable" property="amountReceivable" jdbcType="DECIMAL" />
+    <result column="Amount_collected" property="amountCollected" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Bill_number, Jz_number, Jz_name, Sales_number, unit, Cost_price, Tax_buy_price, Out_inventory_price, 
+    Accounting_price, Amount_receivable, Amount_collected
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.tt_ms.domain.TT_jz_bill_itemKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from TT_jz_bill_item
+    where Bill_number = #{billNumber,jdbcType=VARCHAR}
+      and Jz_number = #{jzNumber,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tt_ms.domain.TT_jz_bill_itemKey" >
+    delete from TT_jz_bill_item
+    where Bill_number = #{billNumber,jdbcType=VARCHAR}
+      and Jz_number = #{jzNumber,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.TT_jz_bill_item" >
+    insert into TT_jz_bill_item (Bill_number, Jz_number, Jz_name, 
+      Sales_number, unit, Cost_price, 
+      Tax_buy_price, Out_inventory_price, Accounting_price, 
+      Amount_receivable, Amount_collected)
+    values (#{billNumber,jdbcType=VARCHAR}, #{jzNumber,jdbcType=VARCHAR}, #{jzName,jdbcType=VARCHAR}, 
+      #{salesNumber,jdbcType=INTEGER}, #{unit,jdbcType=VARCHAR}, #{costPrice,jdbcType=DECIMAL}, 
+      #{taxBuyPrice,jdbcType=DECIMAL}, #{outInventoryPrice,jdbcType=DECIMAL}, #{accountingPrice,jdbcType=DECIMAL}, 
+      #{amountReceivable,jdbcType=DECIMAL}, #{amountCollected,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.TT_jz_bill_item" >
+    insert into TT_jz_bill_item
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="billNumber != null" >
+        Bill_number,
+      </if>
+      <if test="jzNumber != null" >
+        Jz_number,
+      </if>
+      <if test="jzName != null" >
+        Jz_name,
+      </if>
+      <if test="salesNumber != null" >
+        Sales_number,
+      </if>
+      <if test="unit != null" >
+        unit,
+      </if>
+      <if test="costPrice != null" >
+        Cost_price,
+      </if>
+      <if test="taxBuyPrice != null" >
+        Tax_buy_price,
+      </if>
+      <if test="outInventoryPrice != null" >
+        Out_inventory_price,
+      </if>
+      <if test="accountingPrice != null" >
+        Accounting_price,
+      </if>
+      <if test="amountReceivable != null" >
+        Amount_receivable,
+      </if>
+      <if test="amountCollected != null" >
+        Amount_collected,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="billNumber != null" >
+        #{billNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="jzNumber != null" >
+        #{jzNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="jzName != null" >
+        #{jzName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesNumber != null" >
+        #{salesNumber,jdbcType=INTEGER},
+      </if>
+      <if test="unit != null" >
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="costPrice != null" >
+        #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="taxBuyPrice != null" >
+        #{taxBuyPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="outInventoryPrice != null" >
+        #{outInventoryPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="accountingPrice != null" >
+        #{accountingPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="amountReceivable != null" >
+        #{amountReceivable,jdbcType=DECIMAL},
+      </if>
+      <if test="amountCollected != null" >
+        #{amountCollected,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.TT_jz_bill_item" >
+    update TT_jz_bill_item
+    <set >
+      <if test="jzName != null" >
+        Jz_name = #{jzName,jdbcType=VARCHAR},
+      </if>
+      <if test="salesNumber != null" >
+        Sales_number = #{salesNumber,jdbcType=INTEGER},
+      </if>
+      <if test="unit != null" >
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="costPrice != null" >
+        Cost_price = #{costPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="taxBuyPrice != null" >
+        Tax_buy_price = #{taxBuyPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="outInventoryPrice != null" >
+        Out_inventory_price = #{outInventoryPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="accountingPrice != null" >
+        Accounting_price = #{accountingPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="amountReceivable != null" >
+        Amount_receivable = #{amountReceivable,jdbcType=DECIMAL},
+      </if>
+      <if test="amountCollected != null" >
+        Amount_collected = #{amountCollected,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where Bill_number = #{billNumber,jdbcType=VARCHAR}
+      and Jz_number = #{jzNumber,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.TT_jz_bill_item" >
+    update TT_jz_bill_item
+    set Jz_name = #{jzName,jdbcType=VARCHAR},
+      Sales_number = #{salesNumber,jdbcType=INTEGER},
+      unit = #{unit,jdbcType=VARCHAR},
+      Cost_price = #{costPrice,jdbcType=DECIMAL},
+      Tax_buy_price = #{taxBuyPrice,jdbcType=DECIMAL},
+      Out_inventory_price = #{outInventoryPrice,jdbcType=DECIMAL},
+      Accounting_price = #{accountingPrice,jdbcType=DECIMAL},
+      Amount_receivable = #{amountReceivable,jdbcType=DECIMAL},
+      Amount_collected = #{amountCollected,jdbcType=DECIMAL}
+    where Bill_number = #{billNumber,jdbcType=VARCHAR}
+      and Jz_number = #{jzNumber,jdbcType=VARCHAR}
+  </update>
+</mapper>

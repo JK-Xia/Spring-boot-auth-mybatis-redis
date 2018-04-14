@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_salb30dMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_salb30d" >
+    <id column="cxsdbh" property="cxsdbh" jdbcType="CHAR" />
+    <id column="cdph" property="cdph" jdbcType="CHAR" />
+    <result column="ccpdm" property="ccpdm" jdbcType="VARCHAR" />
+    <result column="cfdjh" property="cfdjh" jdbcType="VARCHAR" />
+    <result column="chgzh" property="chgzh" jdbcType="VARCHAR" />
+    <result column="nxsdj" property="nxsdj" jdbcType="DECIMAL" />
+    <result column="nse" property="nse" jdbcType="DECIMAL" />
+    <result column="ncbdj" property="ncbdj" jdbcType="DECIMAL" />
+    <result column="ndysl" property="ndysl" jdbcType="TINYINT" />
+    <result column="cfdlsh" property="cfdlsh" jdbcType="CHAR" />
+    <result column="csyjmm" property="csyjmm" jdbcType="CHAR" />
+    <result column="dscrq" property="dscrq" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cxsdbh, cdph, ccpdm, cfdjh, chgzh, nxsdj, nse, ncbdj, ndysl, cfdlsh, csyjmm, dscrq
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.tt_ms.domain.R3_salb30dKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_salb30d
+    where cxsdbh = #{cxsdbh,jdbcType=CHAR}
+      and cdph = #{cdph,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tt_ms.domain.R3_salb30dKey" >
+    delete from R3_salb30d
+    where cxsdbh = #{cxsdbh,jdbcType=CHAR}
+      and cdph = #{cdph,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_salb30d" >
+    insert into R3_salb30d (cxsdbh, cdph, ccpdm, 
+      cfdjh, chgzh, nxsdj, 
+      nse, ncbdj, ndysl, 
+      cfdlsh, csyjmm, dscrq)
+    values (#{cxsdbh,jdbcType=CHAR}, #{cdph,jdbcType=CHAR}, #{ccpdm,jdbcType=VARCHAR}, 
+      #{cfdjh,jdbcType=VARCHAR}, #{chgzh,jdbcType=VARCHAR}, #{nxsdj,jdbcType=DECIMAL}, 
+      #{nse,jdbcType=DECIMAL}, #{ncbdj,jdbcType=DECIMAL}, #{ndysl,jdbcType=TINYINT}, 
+      #{cfdlsh,jdbcType=CHAR}, #{csyjmm,jdbcType=CHAR}, #{dscrq,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_salb30d" >
+    insert into R3_salb30d
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cxsdbh != null" >
+        cxsdbh,
+      </if>
+      <if test="cdph != null" >
+        cdph,
+      </if>
+      <if test="ccpdm != null" >
+        ccpdm,
+      </if>
+      <if test="cfdjh != null" >
+        cfdjh,
+      </if>
+      <if test="chgzh != null" >
+        chgzh,
+      </if>
+      <if test="nxsdj != null" >
+        nxsdj,
+      </if>
+      <if test="nse != null" >
+        nse,
+      </if>
+      <if test="ncbdj != null" >
+        ncbdj,
+      </if>
+      <if test="ndysl != null" >
+        ndysl,
+      </if>
+      <if test="cfdlsh != null" >
+        cfdlsh,
+      </if>
+      <if test="csyjmm != null" >
+        csyjmm,
+      </if>
+      <if test="dscrq != null" >
+        dscrq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cxsdbh != null" >
+        #{cxsdbh,jdbcType=CHAR},
+      </if>
+      <if test="cdph != null" >
+        #{cdph,jdbcType=CHAR},
+      </if>
+      <if test="ccpdm != null" >
+        #{ccpdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cfdjh != null" >
+        #{cfdjh,jdbcType=VARCHAR},
+      </if>
+      <if test="chgzh != null" >
+        #{chgzh,jdbcType=VARCHAR},
+      </if>
+      <if test="nxsdj != null" >
+        #{nxsdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nse != null" >
+        #{nse,jdbcType=DECIMAL},
+      </if>
+      <if test="ncbdj != null" >
+        #{ncbdj,jdbcType=DECIMAL},
+      </if>
+      <if test="ndysl != null" >
+        #{ndysl,jdbcType=TINYINT},
+      </if>
+      <if test="cfdlsh != null" >
+        #{cfdlsh,jdbcType=CHAR},
+      </if>
+      <if test="csyjmm != null" >
+        #{csyjmm,jdbcType=CHAR},
+      </if>
+      <if test="dscrq != null" >
+        #{dscrq,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_salb30d" >
+    update R3_salb30d
+    <set >
+      <if test="ccpdm != null" >
+        ccpdm = #{ccpdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cfdjh != null" >
+        cfdjh = #{cfdjh,jdbcType=VARCHAR},
+      </if>
+      <if test="chgzh != null" >
+        chgzh = #{chgzh,jdbcType=VARCHAR},
+      </if>
+      <if test="nxsdj != null" >
+        nxsdj = #{nxsdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nse != null" >
+        nse = #{nse,jdbcType=DECIMAL},
+      </if>
+      <if test="ncbdj != null" >
+        ncbdj = #{ncbdj,jdbcType=DECIMAL},
+      </if>
+      <if test="ndysl != null" >
+        ndysl = #{ndysl,jdbcType=TINYINT},
+      </if>
+      <if test="cfdlsh != null" >
+        cfdlsh = #{cfdlsh,jdbcType=CHAR},
+      </if>
+      <if test="csyjmm != null" >
+        csyjmm = #{csyjmm,jdbcType=CHAR},
+      </if>
+      <if test="dscrq != null" >
+        dscrq = #{dscrq,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where cxsdbh = #{cxsdbh,jdbcType=CHAR}
+      and cdph = #{cdph,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_salb30d" >
+    update R3_salb30d
+    set ccpdm = #{ccpdm,jdbcType=VARCHAR},
+      cfdjh = #{cfdjh,jdbcType=VARCHAR},
+      chgzh = #{chgzh,jdbcType=VARCHAR},
+      nxsdj = #{nxsdj,jdbcType=DECIMAL},
+      nse = #{nse,jdbcType=DECIMAL},
+      ncbdj = #{ncbdj,jdbcType=DECIMAL},
+      ndysl = #{ndysl,jdbcType=TINYINT},
+      cfdlsh = #{cfdlsh,jdbcType=CHAR},
+      csyjmm = #{csyjmm,jdbcType=CHAR},
+      dscrq = #{dscrq,jdbcType=TIMESTAMP}
+    where cxsdbh = #{cxsdbh,jdbcType=CHAR}
+      and cdph = #{cdph,jdbcType=CHAR}
+  </update>
+</mapper>

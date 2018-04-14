@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.DMS_SLLBCustomerMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.DMS_SLLBCustomer" >
+    <id column="PKey" property="pkey" jdbcType="BIGINT" />
+    <result column="UID" property="uid" jdbcType="CHAR" />
+    <result column="VCusName" property="vcusname" jdbcType="VARCHAR" />
+    <result column="VClass" property="vclass" jdbcType="VARCHAR" />
+    <result column="VMobile" property="vmobile" jdbcType="VARCHAR" />
+    <result column="VCusOtherPhone" property="vcusotherphone" jdbcType="VARCHAR" />
+    <result column="VTel" property="vtel" jdbcType="VARCHAR" />
+    <result column="VSex" property="vsex" jdbcType="VARCHAR" />
+    <result column="VQQ" property="vqq" jdbcType="VARCHAR" />
+    <result column="VQQ2" property="vqq2" jdbcType="VARCHAR" />
+    <result column="VWX" property="vwx" jdbcType="VARCHAR" />
+    <result column="VWB" property="vwb" jdbcType="VARCHAR" />
+    <result column="VCertificateType" property="vcertificatetype" jdbcType="VARCHAR" />
+    <result column="VCertificateNo" property="vcertificateno" jdbcType="VARCHAR" />
+    <result column="VConstractTime" property="vconstracttime" jdbcType="VARCHAR" />
+    <result column="VConstractType" property="vconstracttype" jdbcType="VARCHAR" />
+    <result column="BStop" property="bstop" jdbcType="BIT" />
+    <result column="VProvince" property="vprovince" jdbcType="VARCHAR" />
+    <result column="VCity" property="vcity" jdbcType="VARCHAR" />
+    <result column="VArea" property="varea" jdbcType="VARCHAR" />
+    <result column="VSubCity" property="vsubcity" jdbcType="VARCHAR" />
+    <result column="VCusAddr" property="vcusaddr" jdbcType="VARCHAR" />
+    <result column="VPostNo" property="vpostno" jdbcType="VARCHAR" />
+    <result column="VHabby1" property="vhabby1" jdbcType="VARCHAR" />
+    <result column="VVocation" property="vvocation" jdbcType="VARCHAR" />
+    <result column="VDuty" property="vduty" jdbcType="VARCHAR" />
+    <result column="VEducative" property="veducative" jdbcType="VARCHAR" />
+    <result column="DBirth" property="dbirth" jdbcType="TIMESTAMP" />
+    <result column="VCoProperty" property="vcoproperty" jdbcType="VARCHAR" />
+    <result column="VEnterpriseNum" property="venterprisenum" jdbcType="VARCHAR" />
+    <result column="VRegister" property="vregister" jdbcType="VARCHAR" />
+    <result column="VEmail" property="vemail" jdbcType="VARCHAR" />
+    <result column="VFax" property="vfax" jdbcType="VARCHAR" />
+    <result column="BNoActive" property="bnoactive" jdbcType="BIT" />
+    <result column="VReceiveSMS" property="vreceivesms" jdbcType="VARCHAR" />
+    <result column="VReceiveTel" property="vreceivetel" jdbcType="VARCHAR" />
+    <result column="VReceiveEMail" property="vreceiveemail" jdbcType="VARCHAR" />
+    <result column="VReceiveMail" property="vreceivemail" jdbcType="VARCHAR" />
+    <result column="BRecommend" property="brecommend" jdbcType="BIT" />
+    <result column="DCreate" property="dcreate" jdbcType="TIMESTAMP" />
+    <result column="DFinish" property="dfinish" jdbcType="TIMESTAMP" />
+    <result column="VMemo" property="vmemo" jdbcType="VARCHAR" />
+    <result column="VSaleMan" property="vsaleman" jdbcType="VARCHAR" />
+    <result column="VOldSaleMan" property="voldsaleman" jdbcType="VARCHAR" />
+    <result column="DDistribute" property="ddistribute" jdbcType="TIMESTAMP" />
+    <result column="DFirstDistribute" property="dfirstdistribute" jdbcType="TIMESTAMP" />
+    <result column="VCusFrom" property="vcusfrom" jdbcType="VARCHAR" />
+    <result column="BBuy" property="bbuy" jdbcType="BIT" />
+    <result column="VCus" property="vcus" jdbcType="VARCHAR" />
+    <result column="BRepair" property="brepair" jdbcType="BIT" />
+    <result column="VNowcarRemark" property="vnowcarremark" jdbcType="VARCHAR" />
+    <result column="VVieCarType" property="vviecartype" jdbcType="VARCHAR" />
+    <result column="VInfoFrom" property="vinfofrom" jdbcType="VARCHAR" />
+    <result column="BBiguser" property="bbiguser" jdbcType="BIT" />
+    <result column="VBigLevel" property="vbiglevel" jdbcType="VARCHAR" />
+    <result column="VNowBrand" property="vnowbrand" jdbcType="VARCHAR" />
+    <result column="VNowPlate" property="vnowplate" jdbcType="VARCHAR" />
+    <result column="BGroupFlag" property="bgroupflag" jdbcType="BIT" />
+    <result column="BNextBuy" property="bnextbuy" jdbcType="BIT" />
+    <result column="VRecomCus" property="vrecomcus" jdbcType="VARCHAR" />
+    <result column="BNetBuy" property="bnetbuy" jdbcType="BIT" />
+    <result column="BReplaceFlage" property="breplaceflage" jdbcType="BIT" />
+    <result column="BLoanFlag" property="bloanflag" jdbcType="BIT" />
+    <result column="BVIP" property="bvip" jdbcType="BIT" />
+    <result column="VCarPurpose" property="vcarpurpose" jdbcType="VARCHAR" />
+    <result column="VCarExperience" property="vcarexperience" jdbcType="VARCHAR" />
+    <result column="VCarStatus" property="vcarstatus" jdbcType="VARCHAR" />
+    <result column="VCusLabel" property="vcuslabel" jdbcType="VARCHAR" />
+    <result column="VCusPic" property="vcuspic" jdbcType="VARCHAR" />
+    <result column="BIsDcars" property="bisdcars" jdbcType="BIT" />
+    <result column="From_type" property="fromType" jdbcType="VARCHAR" />
+    <result column="From_id" property="fromId" jdbcType="VARCHAR" />
+    <result column="VCusStatus" property="vcusstatus" jdbcType="VARCHAR" />
+    <result column="CreateBy" property="createby" jdbcType="VARCHAR" />
+    <result column="CreateOn" property="createon" jdbcType="TIMESTAMP" />
+    <result column="UpdateBy" property="updateby" jdbcType="VARCHAR" />
+    <result column="UpdateOn" property="updateon" jdbcType="BIGINT" />
+    <result column="VCareMan" property="vcareman" jdbcType="VARCHAR" />
+    <result column="VOldCareMan" property="voldcareman" jdbcType="VARCHAR" />
+    <result column="VSvrMan" property="vsvrman" jdbcType="VARCHAR" />
+    <result column="VOldSvrMan" property="voldsvrman" jdbcType="VARCHAR" />
+    <result column="ID" property="id" jdbcType="CHAR" />
+    <result column="VMarriage" property="vmarriage" jdbcType="VARCHAR" />
+    <result column="VNational" property="vnational" jdbcType="VARCHAR" />
+    <result column="BBigRepair" property="bbigrepair" jdbcType="BIT" />
+    <result column="BLoss" property="bloss" jdbcType="BIT" />
+    <result column="BDisable" property="bdisable" jdbcType="BIT" />
+    <result column="BPicky" property="bpicky" jdbcType="BIT" />
+    <result column="VLunarBirthDay" property="vlunarbirthday" jdbcType="VARCHAR" />
+    <result column="NDID" property="ndid" jdbcType="VARCHAR" />
+    <result column="NBID" property="nbid" jdbcType="VARCHAR" />
+    <result column="NBelongOn" property="nbelongon" jdbcType="INTEGER" />
+    <result column="VCusEvaClass" property="vcusevaclass" jdbcType="VARCHAR" />
+    <result column="NCityID" property="ncityid" jdbcType="CHAR" />
+    <result column="DStop" property="dstop" jdbcType="TIMESTAMP" />
+    <result column="NDisRate" property="ndisrate" jdbcType="DECIMAL" />
+    <result column="NMarkupRate" property="nmarkuprate" jdbcType="DECIMAL" />
+    <result column="NCreditDegree" property="ncreditdegree" jdbcType="DECIMAL" />
+    <result column="VTaxNO" property="vtaxno" jdbcType="VARCHAR" />
+    <result column="VArtificial" property="vartificial" jdbcType="VARCHAR" />
+    <result column="VArtificialID" property="vartificialid" jdbcType="VARCHAR" />
+    <result column="VCorSupplyCode" property="vcorsupplycode" jdbcType="VARCHAR" />
+    <result column="VCorCusCode" property="vcorcuscode" jdbcType="VARCHAR" />
+    <result column="VMailAddr" property="vmailaddr" jdbcType="VARCHAR" />
+    <result column="VUrl" property="vurl" jdbcType="VARCHAR" />
+    <result column="VBank" property="vbank" jdbcType="VARCHAR" />
+    <result column="VBankAcount" property="vbankacount" jdbcType="VARCHAR" />
+    <result column="VMarrige" property="vmarrige" jdbcType="VARCHAR" />
+    <result column="VLoverName" property="vlovername" jdbcType="VARCHAR" />
+    <result column="VLoverHobby" property="vloverhobby" jdbcType="VARCHAR" />
+    <result column="VLoverDuty" property="vloverduty" jdbcType="VARCHAR" />
+    <result column="VLoverTel" property="vlovertel" jdbcType="VARCHAR" />
+    <result column="VKidsName" property="vkidsname" jdbcType="VARCHAR" />
+    <result column="VCurrentType" property="vcurrenttype" jdbcType="VARCHAR" />
+    <result column="VFinancialType" property="vfinancialtype" jdbcType="VARCHAR" />
+    <result column="VUse" property="vuse" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PKey, UID, VCusName, VClass, VMobile, VCusOtherPhone, VTel, VSex, VQQ, VQQ2, VWX, 
+    VWB, VCertificateType, VCertificateNo, VConstractTime, VConstractType, BStop, VProvince, 
+    VCity, VArea, VSubCity, VCusAddr, VPostNo, VHabby1, VVocation, VDuty, VEducative, 
+    DBirth, VCoProperty, VEnterpriseNum, VRegister, VEmail, VFax, BNoActive, VReceiveSMS, 
+    VReceiveTel, VReceiveEMail, VReceiveMail, BRecommend, DCreate, DFinish, VMemo, VSaleMan, 
+    VOldSaleMan, DDistribute, DFirstDistribute, VCusFrom, BBuy, VCus, BRepair, VNowcarRemark, 
+    VVieCarType, VInfoFrom, BBiguser, VBigLevel, VNowBrand, VNowPlate, BGroupFlag, BNextBuy, 
+    VRecomCus, BNetBuy, BReplaceFlage, BLoanFlag, BVIP, VCarPurpose, VCarExperience, 
+    VCarStatus, VCusLabel, VCusPic, BIsDcars, From_type, From_id, VCusStatus, CreateBy, 
+    CreateOn, UpdateBy, UpdateOn, VCareMan, VOldCareMan, VSvrMan, VOldSvrMan, ID, VMarriage, 
+    VNational, BBigRepair, BLoss, BDisable, BPicky, VLunarBirthDay, NDID, NBID, NBelongOn, 
+    VCusEvaClass, NCityID, DStop, NDisRate, NMarkupRate, NCreditDegree, VTaxNO, VArtificial, 
+    VArtificialID, VCorSupplyCode, VCorCusCode, VMailAddr, VUrl, VBank, VBankAcount, 
+    VMarrige, VLoverName, VLoverHobby, VLoverDuty, VLoverTel, VKidsName, VCurrentType, 
+    VFinancialType, VUse
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from DMS_SLLBCustomer
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from DMS_SLLBCustomer
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.DMS_SLLBCustomer" >
+    insert into DMS_SLLBCustomer (PKey, UID, VCusName, 
+      VClass, VMobile, VCusOtherPhone, 
+      VTel, VSex, VQQ, VQQ2, 
+      VWX, VWB, VCertificateType, 
+      VCertificateNo, VConstractTime, VConstractType, 
+      BStop, VProvince, VCity, 
+      VArea, VSubCity, VCusAddr, 
+      VPostNo, VHabby1, VVocation, 
+      VDuty, VEducative, DBirth, 
+      VCoProperty, VEnterpriseNum, VRegister, 
+      VEmail, VFax, BNoActive, 
+      VReceiveSMS, VReceiveTel, VReceiveEMail, 
+      VReceiveMail, BRecommend, DCreate, 
+      DFinish, VMemo, VSaleMan, 
+      VOldSaleMan, DDistribute, DFirstDistribute, 
+      VCusFrom, BBuy, VCus, BRepair, 
+      VNowcarRemark, VVieCarType, VInfoFrom, 
+      BBiguser, VBigLevel, VNowBrand, 
+      VNowPlate, BGroupFlag, BNextBuy, 
+      VRecomCus, BNetBuy, BReplaceFlage, 
+      BLoanFlag, BVIP, VCarPurpose, 
+      VCarExperience, VCarStatus, VCusLabel, 
+      VCusPic, BIsDcars, From_type, 
+      From_id, VCusStatus, CreateBy, 
+      CreateOn, UpdateBy, UpdateOn, 
+      VCareMan, VOldCareMan, VSvrMan, 
+      VOldSvrMan, ID, VMarriage, 
+      VNational, BBigRepair, BLoss, 
+      BDisable, BPicky, VLunarBirthDay, 
+      NDID, NBID, NBelongOn, 
+      VCusEvaClass, NCityID, DStop, 
+      NDisRate, NMarkupRate, NCreditDegree, 
+      VTaxNO, VArtificial, VArtificialID, 
+      VCorSupplyCode, VCorCusCode, VMailAddr, 
+      VUrl, VBank, VBankAcount, 
+      VMarrige, VLoverName, VLoverHobby, 
+      VLoverDuty, VLoverTel, VKidsName, 
+      VCurrentType, VFinancialType, VUse
+      )
+    values (#{pkey,jdbcType=BIGINT}, #{uid,jdbcType=CHAR}, #{vcusname,jdbcType=VARCHAR}, 
+      #{vclass,jdbcType=VARCHAR}, #{vmobile,jdbcType=VARCHAR}, #{vcusotherphone,jdbcType=VARCHAR}, 
+      #{vtel,jdbcType=VARCHAR}, #{vsex,jdbcType=VARCHAR}, #{vqq,jdbcType=VARCHAR}, #{vqq2,jdbcType=VARCHAR}, 
+      #{vwx,jdbcType=VARCHAR}, #{vwb,jdbcType=VARCHAR}, #{vcertificatetype,jdbcType=VARCHAR}, 
+      #{vcertificateno,jdbcType=VARCHAR}, #{vconstracttime,jdbcType=VARCHAR}, #{vconstracttype,jdbcType=VARCHAR}, 
+      #{bstop,jdbcType=BIT}, #{vprovince,jdbcType=VARCHAR}, #{vcity,jdbcType=VARCHAR}, 
+      #{varea,jdbcType=VARCHAR}, #{vsubcity,jdbcType=VARCHAR}, #{vcusaddr,jdbcType=VARCHAR}, 
+      #{vpostno,jdbcType=VARCHAR}, #{vhabby1,jdbcType=VARCHAR}, #{vvocation,jdbcType=VARCHAR}, 
+      #{vduty,jdbcType=VARCHAR}, #{veducative,jdbcType=VARCHAR}, #{dbirth,jdbcType=TIMESTAMP}, 
+      #{vcoproperty,jdbcType=VARCHAR}, #{venterprisenum,jdbcType=VARCHAR}, #{vregister,jdbcType=VARCHAR}, 
+      #{vemail,jdbcType=VARCHAR}, #{vfax,jdbcType=VARCHAR}, #{bnoactive,jdbcType=BIT}, 
+      #{vreceivesms,jdbcType=VARCHAR}, #{vreceivetel,jdbcType=VARCHAR}, #{vreceiveemail,jdbcType=VARCHAR}, 
+      #{vreceivemail,jdbcType=VARCHAR}, #{brecommend,jdbcType=BIT}, #{dcreate,jdbcType=TIMESTAMP}, 
+      #{dfinish,jdbcType=TIMESTAMP}, #{vmemo,jdbcType=VARCHAR}, #{vsaleman,jdbcType=VARCHAR}, 
+      #{voldsaleman,jdbcType=VARCHAR}, #{ddistribute,jdbcType=TIMESTAMP}, #{dfirstdistribute,jdbcType=TIMESTAMP}, 
+      #{vcusfrom,jdbcType=VARCHAR}, #{bbuy,jdbcType=BIT}, #{vcus,jdbcType=VARCHAR}, #{brepair,jdbcType=BIT}, 
+      #{vnowcarremark,jdbcType=VARCHAR}, #{vviecartype,jdbcType=VARCHAR}, #{vinfofrom,jdbcType=VARCHAR}, 
+      #{bbiguser,jdbcType=BIT}, #{vbiglevel,jdbcType=VARCHAR}, #{vnowbrand,jdbcType=VARCHAR}, 
+      #{vnowplate,jdbcType=VARCHAR}, #{bgroupflag,jdbcType=BIT}, #{bnextbuy,jdbcType=BIT}, 
+      #{vrecomcus,jdbcType=VARCHAR}, #{bnetbuy,jdbcType=BIT}, #{breplaceflage,jdbcType=BIT}, 
+      #{bloanflag,jdbcType=BIT}, #{bvip,jdbcType=BIT}, #{vcarpurpose,jdbcType=VARCHAR}, 
+      #{vcarexperience,jdbcType=VARCHAR}, #{vcarstatus,jdbcType=VARCHAR}, #{vcuslabel,jdbcType=VARCHAR}, 
+      #{vcuspic,jdbcType=VARCHAR}, #{bisdcars,jdbcType=BIT}, #{fromType,jdbcType=VARCHAR}, 
+      #{fromId,jdbcType=VARCHAR}, #{vcusstatus,jdbcType=VARCHAR}, #{createby,jdbcType=VARCHAR}, 
+      #{createon,jdbcType=TIMESTAMP}, #{updateby,jdbcType=VARCHAR}, #{updateon,jdbcType=BIGINT}, 
+      #{vcareman,jdbcType=VARCHAR}, #{voldcareman,jdbcType=VARCHAR}, #{vsvrman,jdbcType=VARCHAR}, 
+      #{voldsvrman,jdbcType=VARCHAR}, #{id,jdbcType=CHAR}, #{vmarriage,jdbcType=VARCHAR}, 
+      #{vnational,jdbcType=VARCHAR}, #{bbigrepair,jdbcType=BIT}, #{bloss,jdbcType=BIT}, 
+      #{bdisable,jdbcType=BIT}, #{bpicky,jdbcType=BIT}, #{vlunarbirthday,jdbcType=VARCHAR}, 
+      #{ndid,jdbcType=VARCHAR}, #{nbid,jdbcType=VARCHAR}, #{nbelongon,jdbcType=INTEGER}, 
+      #{vcusevaclass,jdbcType=VARCHAR}, #{ncityid,jdbcType=CHAR}, #{dstop,jdbcType=TIMESTAMP}, 
+      #{ndisrate,jdbcType=DECIMAL}, #{nmarkuprate,jdbcType=DECIMAL}, #{ncreditdegree,jdbcType=DECIMAL}, 
+      #{vtaxno,jdbcType=VARCHAR}, #{vartificial,jdbcType=VARCHAR}, #{vartificialid,jdbcType=VARCHAR}, 
+      #{vcorsupplycode,jdbcType=VARCHAR}, #{vcorcuscode,jdbcType=VARCHAR}, #{vmailaddr,jdbcType=VARCHAR}, 
+      #{vurl,jdbcType=VARCHAR}, #{vbank,jdbcType=VARCHAR}, #{vbankacount,jdbcType=VARCHAR}, 
+      #{vmarrige,jdbcType=VARCHAR}, #{vlovername,jdbcType=VARCHAR}, #{vloverhobby,jdbcType=VARCHAR}, 
+      #{vloverduty,jdbcType=VARCHAR}, #{vlovertel,jdbcType=VARCHAR}, #{vkidsname,jdbcType=VARCHAR}, 
+      #{vcurrenttype,jdbcType=VARCHAR}, #{vfinancialtype,jdbcType=VARCHAR}, #{vuse,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.DMS_SLLBCustomer" >
+    insert into DMS_SLLBCustomer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pkey != null" >
+        PKey,
+      </if>
+      <if test="uid != null" >
+        UID,
+      </if>
+      <if test="vcusname != null" >
+        VCusName,
+      </if>
+      <if test="vclass != null" >
+        VClass,
+      </if>
+      <if test="vmobile != null" >
+        VMobile,
+      </if>
+      <if test="vcusotherphone != null" >
+        VCusOtherPhone,
+      </if>
+      <if test="vtel != null" >
+        VTel,
+      </if>
+      <if test="vsex != null" >
+        VSex,
+      </if>
+      <if test="vqq != null" >
+        VQQ,
+      </if>
+      <if test="vqq2 != null" >
+        VQQ2,
+      </if>
+      <if test="vwx != null" >
+        VWX,
+      </if>
+      <if test="vwb != null" >
+        VWB,
+      </if>
+      <if test="vcertificatetype != null" >
+        VCertificateType,
+      </if>
+      <if test="vcertificateno != null" >
+        VCertificateNo,
+      </if>
+      <if test="vconstracttime != null" >
+        VConstractTime,
+      </if>
+      <if test="vconstracttype != null" >
+        VConstractType,
+      </if>
+      <if test="bstop != null" >
+        BStop,
+      </if>
+      <if test="vprovince != null" >
+        VProvince,
+      </if>
+      <if test="vcity != null" >
+        VCity,
+      </if>
+      <if test="varea != null" >
+        VArea,
+      </if>
+      <if test="vsubcity != null" >
+        VSubCity,
+      </if>
+      <if test="vcusaddr != null" >
+        VCusAddr,
+      </if>
+      <if test="vpostno != null" >
+        VPostNo,
+      </if>
+      <if test="vhabby1 != null" >
+        VHabby1,
+      </if>
+      <if test="vvocation != null" >
+        VVocation,
+      </if>
+      <if test="vduty != null" >
+        VDuty,
+      </if>
+      <if test="veducative != null" >
+        VEducative,
+      </if>
+      <if test="dbirth != null" >
+        DBirth,
+      </if>
+      <if test="vcoproperty != null" >
+        VCoProperty,
+      </if>
+      <if test="venterprisenum != null" >
+        VEnterpriseNum,
+      </if>
+      <if test="vregister != null" >
+        VRegister,
+      </if>
+      <if test="vemail != null" >
+        VEmail,
+      </if>
+      <if test="vfax != null" >
+        VFax,
+      </if>
+      <if test="bnoactive != null" >
+        BNoActive,
+      </if>
+      <if test="vreceivesms != null" >
+        VReceiveSMS,
+      </if>
+      <if test="vreceivetel != null" >
+        VReceiveTel,
+      </if>
+      <if test="vreceiveemail != null" >
+        VReceiveEMail,
+      </if>
+      <if test="vreceivemail != null" >
+        VReceiveMail,
+      </if>
+      <if test="brecommend != null" >
+        BRecommend,
+      </if>
+      <if test="dcreate != null" >
+        DCreate,
+      </if>
+      <if test="dfinish != null" >
+        DFinish,
+      </if>
+      <if test="vmemo != null" >
+        VMemo,
+      </if>
+      <if test="vsaleman != null" >
+        VSaleMan,
+      </if>
+      <if test="voldsaleman != null" >
+        VOldSaleMan,
+      </if>
+      <if test="ddistribute != null" >
+        DDistribute,
+      </if>
+      <if test="dfirstdistribute != null" >
+        DFirstDistribute,
+      </if>
+      <if test="vcusfrom != null" >
+        VCusFrom,
+      </if>
+      <if test="bbuy != null" >
+        BBuy,
+      </if>
+      <if test="vcus != null" >
+        VCus,
+      </if>
+      <if test="brepair != null" >
+        BRepair,
+      </if>
+      <if test="vnowcarremark != null" >
+        VNowcarRemark,
+      </if>
+      <if test="vviecartype != null" >
+        VVieCarType,
+      </if>
+      <if test="vinfofrom != null" >
+        VInfoFrom,
+      </if>
+      <if test="bbiguser != null" >
+        BBiguser,
+      </if>
+      <if test="vbiglevel != null" >
+        VBigLevel,
+      </if>
+      <if test="vnowbrand != null" >
+        VNowBrand,
+      </if>
+      <if test="vnowplate != null" >
+        VNowPlate,
+      </if>
+      <if test="bgroupflag != null" >
+        BGroupFlag,
+      </if>
+      <if test="bnextbuy != null" >
+        BNextBuy,
+      </if>
+      <if test="vrecomcus != null" >
+        VRecomCus,
+      </if>
+      <if test="bnetbuy != null" >
+        BNetBuy,
+      </if>
+      <if test="breplaceflage != null" >
+        BReplaceFlage,
+      </if>
+      <if test="bloanflag != null" >
+        BLoanFlag,
+      </if>
+      <if test="bvip != null" >
+        BVIP,
+      </if>
+      <if test="vcarpurpose != null" >
+        VCarPurpose,
+      </if>
+      <if test="vcarexperience != null" >
+        VCarExperience,
+      </if>
+      <if test="vcarstatus != null" >
+        VCarStatus,
+      </if>
+      <if test="vcuslabel != null" >
+        VCusLabel,
+      </if>
+      <if test="vcuspic != null" >
+        VCusPic,
+      </if>
+      <if test="bisdcars != null" >
+        BIsDcars,
+      </if>
+      <if test="fromType != null" >
+        From_type,
+      </if>
+      <if test="fromId != null" >
+        From_id,
+      </if>
+      <if test="vcusstatus != null" >
+        VCusStatus,
+      </if>
+      <if test="createby != null" >
+        CreateBy,
+      </if>
+      <if test="createon != null" >
+        CreateOn,
+      </if>
+      <if test="updateby != null" >
+        UpdateBy,
+      </if>
+      <if test="updateon != null" >
+        UpdateOn,
+      </if>
+      <if test="vcareman != null" >
+        VCareMan,
+      </if>
+      <if test="voldcareman != null" >
+        VOldCareMan,
+      </if>
+      <if test="vsvrman != null" >
+        VSvrMan,
+      </if>
+      <if test="voldsvrman != null" >
+        VOldSvrMan,
+      </if>
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="vmarriage != null" >
+        VMarriage,
+      </if>
+      <if test="vnational != null" >
+        VNational,
+      </if>
+      <if test="bbigrepair != null" >
+        BBigRepair,
+      </if>
+      <if test="bloss != null" >
+        BLoss,
+      </if>
+      <if test="bdisable != null" >
+        BDisable,
+      </if>
+      <if test="bpicky != null" >
+        BPicky,
+      </if>
+      <if test="vlunarbirthday != null" >
+        VLunarBirthDay,
+      </if>
+      <if test="ndid != null" >
+        NDID,
+      </if>
+      <if test="nbid != null" >
+        NBID,
+      </if>
+      <if test="nbelongon != null" >
+        NBelongOn,
+      </if>
+      <if test="vcusevaclass != null" >
+        VCusEvaClass,
+      </if>
+      <if test="ncityid != null" >
+        NCityID,
+      </if>
+      <if test="dstop != null" >
+        DStop,
+      </if>
+      <if test="ndisrate != null" >
+        NDisRate,
+      </if>
+      <if test="nmarkuprate != null" >
+        NMarkupRate,
+      </if>
+      <if test="ncreditdegree != null" >
+        NCreditDegree,
+      </if>
+      <if test="vtaxno != null" >
+        VTaxNO,
+      </if>
+      <if test="vartificial != null" >
+        VArtificial,
+      </if>
+      <if test="vartificialid != null" >
+        VArtificialID,
+      </if>
+      <if test="vcorsupplycode != null" >
+        VCorSupplyCode,
+      </if>
+      <if test="vcorcuscode != null" >
+        VCorCusCode,
+      </if>
+      <if test="vmailaddr != null" >
+        VMailAddr,
+      </if>
+      <if test="vurl != null" >
+        VUrl,
+      </if>
+      <if test="vbank != null" >
+        VBank,
+      </if>
+      <if test="vbankacount != null" >
+        VBankAcount,
+      </if>
+      <if test="vmarrige != null" >
+        VMarrige,
+      </if>
+      <if test="vlovername != null" >
+        VLoverName,
+      </if>
+      <if test="vloverhobby != null" >
+        VLoverHobby,
+      </if>
+      <if test="vloverduty != null" >
+        VLoverDuty,
+      </if>
+      <if test="vlovertel != null" >
+        VLoverTel,
+      </if>
+      <if test="vkidsname != null" >
+        VKidsName,
+      </if>
+      <if test="vcurrenttype != null" >
+        VCurrentType,
+      </if>
+      <if test="vfinancialtype != null" >
+        VFinancialType,
+      </if>
+      <if test="vuse != null" >
+        VUse,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pkey != null" >
+        #{pkey,jdbcType=BIGINT},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=CHAR},
+      </if>
+      <if test="vcusname != null" >
+        #{vcusname,jdbcType=VARCHAR},
+      </if>
+      <if test="vclass != null" >
+        #{vclass,jdbcType=VARCHAR},
+      </if>
+      <if test="vmobile != null" >
+        #{vmobile,jdbcType=VARCHAR},
+      </if>
+      <if test="vcusotherphone != null" >
+        #{vcusotherphone,jdbcType=VARCHAR},
+      </if>
+      <if test="vtel != null" >
+        #{vtel,jdbcType=VARCHAR},
+      </if>
+      <if test="vsex != null" >
+        #{vsex,jdbcType=VARCHAR},
+      </if>
+      <if test="vqq != null" >
+        #{vqq,jdbcType=VARCHAR},
+      </if>
+      <if test="vqq2 != null" >
+        #{vqq2,jdbcType=VARCHAR},
+      </if>
+      <if test="vwx != null" >
+        #{vwx,jdbcType=VARCHAR},
+      </if>
+      <if test="vwb != null" >
+        #{vwb,jdbcType=VARCHAR},
+      </if>
+      <if test="vcertificatetype != null" >
+        #{vcertificatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="vcertificateno != null" >
+        #{vcertificateno,jdbcType=VARCHAR},
+      </if>
+      <if test="vconstracttime != null" >
+        #{vconstracttime,jdbcType=VARCHAR},
+      </if>
+      <if test="vconstracttype != null" >
+        #{vconstracttype,jdbcType=VARCHAR},
+      </if>
+      <if test="bstop != null" >
+        #{bstop,jdbcType=BIT},
+      </if>
+      <if test="vprovince != null" >
+        #{vprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="vcity != null" >
+        #{vcity,jdbcType=VARCHAR},
+      </if>
+      <if test="varea != null" >
+        #{varea,jdbcType=VARCHAR},
+      </if>
+      <if test="vsubcity != null" >
+        #{vsubcity,jdbcType=VARCHAR},
+      </if>
+      <if test="vcusaddr != null" >
+        #{vcusaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="vpostno != null" >
+        #{vpostno,jdbcType=VARCHAR},
+      </if>
+      <if test="vhabby1 != null" >
+        #{vhabby1,jdbcType=VARCHAR},
+      </if>
+      <if test="vvocation != null" >
+        #{vvocation,jdbcType=VARCHAR},
+      </if>
+      <if test="vduty != null" >
+        #{vduty,jdbcType=VARCHAR},
+      </if>
+      <if test="veducative != null" >
+        #{veducative,jdbcType=VARCHAR},
+      </if>
+      <if test="dbirth != null" >
+        #{dbirth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vcoproperty != null" >
+        #{vcoproperty,jdbcType=VARCHAR},
+      </if>
+      <if test="venterprisenum != null" >
+        #{venterprisenum,jdbcType=VARCHAR},
+      </if>
+      <if test="vregister != null" >
+        #{vregister,jdbcType=VARCHAR},
+      </if>
+      <if test="vemail != null" >
+        #{vemail,jdbcType=VARCHAR},
+      </if>
+      <if test="vfax != null" >
+        #{vfax,jdbcType=VARCHAR},
+      </if>
+      <if test="bnoactive != null" >
+        #{bnoactive,jdbcType=BIT},
+      </if>
+      <if test="vreceivesms != null" >
+        #{vreceivesms,jdbcType=VARCHAR},
+      </if>
+      <if test="vreceivetel != null" >
+        #{vreceivetel,jdbcType=VARCHAR},
+      </if>
+      <if test="vreceiveemail != null" >
+        #{vreceiveemail,jdbcType=VARCHAR},
+      </if>
+      <if test="vreceivemail != null" >
+        #{vreceivemail,jdbcType=VARCHAR},
+      </if>
+      <if test="brecommend != null" >
+        #{brecommend,jdbcType=BIT},
+      </if>
+      <if test="dcreate != null" >
+        #{dcreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dfinish != null" >
+        #{dfinish,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vmemo != null" >
+        #{vmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="vsaleman != null" >
+        #{vsaleman,jdbcType=VARCHAR},
+      </if>
+      <if test="voldsaleman != null" >
+        #{voldsaleman,jdbcType=VARCHAR},
+      </if>
+      <if test="ddistribute != null" >
+        #{ddistribute,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dfirstdistribute != null" >
+        #{dfirstdistribute,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vcusfrom != null" >
+        #{vcusfrom,jdbcType=VARCHAR},
+      </if>
+      <if test="bbuy != null" >
+        #{bbuy,jdbcType=BIT},
+      </if>
+      <if test="vcus != null" >
+        #{vcus,jdbcType=VARCHAR},
+      </if>
+      <if test="brepair != null" >
+        #{brepair,jdbcType=BIT},
+      </if>
+      <if test="vnowcarremark != null" >
+        #{vnowcarremark,jdbcType=VARCHAR},
+      </if>
+      <if test="vviecartype != null" >
+        #{vviecartype,jdbcType=VARCHAR},
+      </if>
+      <if test="vinfofrom != null" >
+        #{vinfofrom,jdbcType=VARCHAR},
+      </if>
+      <if test="bbiguser != null" >
+        #{bbiguser,jdbcType=BIT},
+      </if>
+      <if test="vbiglevel != null" >
+        #{vbiglevel,jdbcType=VARCHAR},
+      </if>
+      <if test="vnowbrand != null" >
+        #{vnowbrand,jdbcType=VARCHAR},
+      </if>
+      <if test="vnowplate != null" >
+        #{vnowplate,jdbcType=VARCHAR},
+      </if>
+      <if test="bgroupflag != null" >
+        #{bgroupflag,jdbcType=BIT},
+      </if>
+      <if test="bnextbuy != null" >
+        #{bnextbuy,jdbcType=BIT},
+      </if>
+      <if test="vrecomcus != null" >
+        #{vrecomcus,jdbcType=VARCHAR},
+      </if>
+      <if test="bnetbuy != null" >
+        #{bnetbuy,jdbcType=BIT},
+      </if>
+      <if test="breplaceflage != null" >
+        #{breplaceflage,jdbcType=BIT},
+      </if>
+      <if test="bloanflag != null" >
+        #{bloanflag,jdbcType=BIT},
+      </if>
+      <if test="bvip != null" >
+        #{bvip,jdbcType=BIT},
+      </if>
+      <if test="vcarpurpose != null" >
+        #{vcarpurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="vcarexperience != null" >
+        #{vcarexperience,jdbcType=VARCHAR},
+      </if>
+      <if test="vcarstatus != null" >
+        #{vcarstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="vcuslabel != null" >
+        #{vcuslabel,jdbcType=VARCHAR},
+      </if>
+      <if test="vcuspic != null" >
+        #{vcuspic,jdbcType=VARCHAR},
+      </if>
+      <if test="bisdcars != null" >
+        #{bisdcars,jdbcType=BIT},
+      </if>
+      <if test="fromType != null" >
+        #{fromType,jdbcType=VARCHAR},
+      </if>
+      <if test="fromId != null" >
+        #{fromId,jdbcType=VARCHAR},
+      </if>
+      <if test="vcusstatus != null" >
+        #{vcusstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createby != null" >
+        #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createon != null" >
+        #{createon,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateby != null" >
+        #{updateby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateon != null" >
+        #{updateon,jdbcType=BIGINT},
+      </if>
+      <if test="vcareman != null" >
+        #{vcareman,jdbcType=VARCHAR},
+      </if>
+      <if test="voldcareman != null" >
+        #{voldcareman,jdbcType=VARCHAR},
+      </if>
+      <if test="vsvrman != null" >
+        #{vsvrman,jdbcType=VARCHAR},
+      </if>
+      <if test="voldsvrman != null" >
+        #{voldsvrman,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="vmarriage != null" >
+        #{vmarriage,jdbcType=VARCHAR},
+      </if>
+      <if test="vnational != null" >
+        #{vnational,jdbcType=VARCHAR},
+      </if>
+      <if test="bbigrepair != null" >
+        #{bbigrepair,jdbcType=BIT},
+      </if>
+      <if test="bloss != null" >
+        #{bloss,jdbcType=BIT},
+      </if>
+      <if test="bdisable != null" >
+        #{bdisable,jdbcType=BIT},
+      </if>
+      <if test="bpicky != null" >
+        #{bpicky,jdbcType=BIT},
+      </if>
+      <if test="vlunarbirthday != null" >
+        #{vlunarbirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="ndid != null" >
+        #{ndid,jdbcType=VARCHAR},
+      </if>
+      <if test="nbid != null" >
+        #{nbid,jdbcType=VARCHAR},
+      </if>
+      <if test="nbelongon != null" >
+        #{nbelongon,jdbcType=INTEGER},
+      </if>
+      <if test="vcusevaclass != null" >
+        #{vcusevaclass,jdbcType=VARCHAR},
+      </if>
+      <if test="ncityid != null" >
+        #{ncityid,jdbcType=CHAR},
+      </if>
+      <if test="dstop != null" >
+        #{dstop,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ndisrate != null" >
+        #{ndisrate,jdbcType=DECIMAL},
+      </if>
+      <if test="nmarkuprate != null" >
+        #{nmarkuprate,jdbcType=DECIMAL},
+      </if>
+      <if test="ncreditdegree != null" >
+        #{ncreditdegree,jdbcType=DECIMAL},
+      </if>
+      <if test="vtaxno != null" >
+        #{vtaxno,jdbcType=VARCHAR},
+      </if>
+      <if test="vartificial != null" >
+        #{vartificial,jdbcType=VARCHAR},
+      </if>
+      <if test="vartificialid != null" >
+        #{vartificialid,jdbcType=VARCHAR},
+      </if>
+      <if test="vcorsupplycode != null" >
+        #{vcorsupplycode,jdbcType=VARCHAR},
+      </if>
+      <if test="vcorcuscode != null" >
+        #{vcorcuscode,jdbcType=VARCHAR},
+      </if>
+      <if test="vmailaddr != null" >
+        #{vmailaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="vurl != null" >
+        #{vurl,jdbcType=VARCHAR},
+      </if>
+      <if test="vbank != null" >
+        #{vbank,jdbcType=VARCHAR},
+      </if>
+      <if test="vbankacount != null" >
+        #{vbankacount,jdbcType=VARCHAR},
+      </if>
+      <if test="vmarrige != null" >
+        #{vmarrige,jdbcType=VARCHAR},
+      </if>
+      <if test="vlovername != null" >
+        #{vlovername,jdbcType=VARCHAR},
+      </if>
+      <if test="vloverhobby != null" >
+        #{vloverhobby,jdbcType=VARCHAR},
+      </if>
+      <if test="vloverduty != null" >
+        #{vloverduty,jdbcType=VARCHAR},
+      </if>
+      <if test="vlovertel != null" >
+        #{vlovertel,jdbcType=VARCHAR},
+      </if>
+      <if test="vkidsname != null" >
+        #{vkidsname,jdbcType=VARCHAR},
+      </if>
+      <if test="vcurrenttype != null" >
+        #{vcurrenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="vfinancialtype != null" >
+        #{vfinancialtype,jdbcType=VARCHAR},
+      </if>
+      <if test="vuse != null" >
+        #{vuse,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.DMS_SLLBCustomer" >
+    update DMS_SLLBCustomer
+    <set >
+      <if test="uid != null" >
+        UID = #{uid,jdbcType=CHAR},
+      </if>
+      <if test="vcusname != null" >
+        VCusName = #{vcusname,jdbcType=VARCHAR},
+      </if>
+      <if test="vclass != null" >
+        VClass = #{vclass,jdbcType=VARCHAR},
+      </if>
+      <if test="vmobile != null" >
+        VMobile = #{vmobile,jdbcType=VARCHAR},
+      </if>
+      <if test="vcusotherphone != null" >
+        VCusOtherPhone = #{vcusotherphone,jdbcType=VARCHAR},
+      </if>
+      <if test="vtel != null" >
+        VTel = #{vtel,jdbcType=VARCHAR},
+      </if>
+      <if test="vsex != null" >
+        VSex = #{vsex,jdbcType=VARCHAR},
+      </if>
+      <if test="vqq != null" >
+        VQQ = #{vqq,jdbcType=VARCHAR},
+      </if>
+      <if test="vqq2 != null" >
+        VQQ2 = #{vqq2,jdbcType=VARCHAR},
+      </if>
+      <if test="vwx != null" >
+        VWX = #{vwx,jdbcType=VARCHAR},
+      </if>
+      <if test="vwb != null" >
+        VWB = #{vwb,jdbcType=VARCHAR},
+      </if>
+      <if test="vcertificatetype != null" >
+        VCertificateType = #{vcertificatetype,jdbcType=VARCHAR},
+      </if>
+      <if test="vcertificateno != null" >
+        VCertificateNo = #{vcertificateno,jdbcType=VARCHAR},
+      </if>
+      <if test="vconstracttime != null" >
+        VConstractTime = #{vconstracttime,jdbcType=VARCHAR},
+      </if>
+      <if test="vconstracttype != null" >
+        VConstractType = #{vconstracttype,jdbcType=VARCHAR},
+      </if>
+      <if test="bstop != null" >
+        BStop = #{bstop,jdbcType=BIT},
+      </if>
+      <if test="vprovince != null" >
+        VProvince = #{vprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="vcity != null" >
+        VCity = #{vcity,jdbcType=VARCHAR},
+      </if>
+      <if test="varea != null" >
+        VArea = #{varea,jdbcType=VARCHAR},
+      </if>
+      <if test="vsubcity != null" >
+        VSubCity = #{vsubcity,jdbcType=VARCHAR},
+      </if>
+      <if test="vcusaddr != null" >
+        VCusAddr = #{vcusaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="vpostno != null" >
+        VPostNo = #{vpostno,jdbcType=VARCHAR},
+      </if>
+      <if test="vhabby1 != null" >
+        VHabby1 = #{vhabby1,jdbcType=VARCHAR},
+      </if>
+      <if test="vvocation != null" >
+        VVocation = #{vvocation,jdbcType=VARCHAR},
+      </if>
+      <if test="vduty != null" >
+        VDuty = #{vduty,jdbcType=VARCHAR},
+      </if>
+      <if test="veducative != null" >
+        VEducative = #{veducative,jdbcType=VARCHAR},
+      </if>
+      <if test="dbirth != null" >
+        DBirth = #{dbirth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vcoproperty != null" >
+        VCoProperty = #{vcoproperty,jdbcType=VARCHAR},
+      </if>
+      <if test="venterprisenum != null" >
+        VEnterpriseNum = #{venterprisenum,jdbcType=VARCHAR},
+      </if>
+      <if test="vregister != null" >
+        VRegister = #{vregister,jdbcType=VARCHAR},
+      </if>
+      <if test="vemail != null" >
+        VEmail = #{vemail,jdbcType=VARCHAR},
+      </if>
+      <if test="vfax != null" >
+        VFax = #{vfax,jdbcType=VARCHAR},
+      </if>
+      <if test="bnoactive != null" >
+        BNoActive = #{bnoactive,jdbcType=BIT},
+      </if>
+      <if test="vreceivesms != null" >
+        VReceiveSMS = #{vreceivesms,jdbcType=VARCHAR},
+      </if>
+      <if test="vreceivetel != null" >
+        VReceiveTel = #{vreceivetel,jdbcType=VARCHAR},
+      </if>
+      <if test="vreceiveemail != null" >
+        VReceiveEMail = #{vreceiveemail,jdbcType=VARCHAR},
+      </if>
+      <if test="vreceivemail != null" >
+        VReceiveMail = #{vreceivemail,jdbcType=VARCHAR},
+      </if>
+      <if test="brecommend != null" >
+        BRecommend = #{brecommend,jdbcType=BIT},
+      </if>
+      <if test="dcreate != null" >
+        DCreate = #{dcreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dfinish != null" >
+        DFinish = #{dfinish,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vmemo != null" >
+        VMemo = #{vmemo,jdbcType=VARCHAR},
+      </if>
+      <if test="vsaleman != null" >
+        VSaleMan = #{vsaleman,jdbcType=VARCHAR},
+      </if>
+      <if test="voldsaleman != null" >
+        VOldSaleMan = #{voldsaleman,jdbcType=VARCHAR},
+      </if>
+      <if test="ddistribute != null" >
+        DDistribute = #{ddistribute,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dfirstdistribute != null" >
+        DFirstDistribute = #{dfirstdistribute,jdbcType=TIMESTAMP},
+      </if>
+      <if test="vcusfrom != null" >
+        VCusFrom = #{vcusfrom,jdbcType=VARCHAR},
+      </if>
+      <if test="bbuy != null" >
+        BBuy = #{bbuy,jdbcType=BIT},
+      </if>
+      <if test="vcus != null" >
+        VCus = #{vcus,jdbcType=VARCHAR},
+      </if>
+      <if test="brepair != null" >
+        BRepair = #{brepair,jdbcType=BIT},
+      </if>
+      <if test="vnowcarremark != null" >
+        VNowcarRemark = #{vnowcarremark,jdbcType=VARCHAR},
+      </if>
+      <if test="vviecartype != null" >
+        VVieCarType = #{vviecartype,jdbcType=VARCHAR},
+      </if>
+      <if test="vinfofrom != null" >
+        VInfoFrom = #{vinfofrom,jdbcType=VARCHAR},
+      </if>
+      <if test="bbiguser != null" >
+        BBiguser = #{bbiguser,jdbcType=BIT},
+      </if>
+      <if test="vbiglevel != null" >
+        VBigLevel = #{vbiglevel,jdbcType=VARCHAR},
+      </if>
+      <if test="vnowbrand != null" >
+        VNowBrand = #{vnowbrand,jdbcType=VARCHAR},
+      </if>
+      <if test="vnowplate != null" >
+        VNowPlate = #{vnowplate,jdbcType=VARCHAR},
+      </if>
+      <if test="bgroupflag != null" >
+        BGroupFlag = #{bgroupflag,jdbcType=BIT},
+      </if>
+      <if test="bnextbuy != null" >
+        BNextBuy = #{bnextbuy,jdbcType=BIT},
+      </if>
+      <if test="vrecomcus != null" >
+        VRecomCus = #{vrecomcus,jdbcType=VARCHAR},
+      </if>
+      <if test="bnetbuy != null" >
+        BNetBuy = #{bnetbuy,jdbcType=BIT},
+      </if>
+      <if test="breplaceflage != null" >
+        BReplaceFlage = #{breplaceflage,jdbcType=BIT},
+      </if>
+      <if test="bloanflag != null" >
+        BLoanFlag = #{bloanflag,jdbcType=BIT},
+      </if>
+      <if test="bvip != null" >
+        BVIP = #{bvip,jdbcType=BIT},
+      </if>
+      <if test="vcarpurpose != null" >
+        VCarPurpose = #{vcarpurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="vcarexperience != null" >
+        VCarExperience = #{vcarexperience,jdbcType=VARCHAR},
+      </if>
+      <if test="vcarstatus != null" >
+        VCarStatus = #{vcarstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="vcuslabel != null" >
+        VCusLabel = #{vcuslabel,jdbcType=VARCHAR},
+      </if>
+      <if test="vcuspic != null" >
+        VCusPic = #{vcuspic,jdbcType=VARCHAR},
+      </if>
+      <if test="bisdcars != null" >
+        BIsDcars = #{bisdcars,jdbcType=BIT},
+      </if>
+      <if test="fromType != null" >
+        From_type = #{fromType,jdbcType=VARCHAR},
+      </if>
+      <if test="fromId != null" >
+        From_id = #{fromId,jdbcType=VARCHAR},
+      </if>
+      <if test="vcusstatus != null" >
+        VCusStatus = #{vcusstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createby != null" >
+        CreateBy = #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createon != null" >
+        CreateOn = #{createon,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateby != null" >
+        UpdateBy = #{updateby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateon != null" >
+        UpdateOn = #{updateon,jdbcType=BIGINT},
+      </if>
+      <if test="vcareman != null" >
+        VCareMan = #{vcareman,jdbcType=VARCHAR},
+      </if>
+      <if test="voldcareman != null" >
+        VOldCareMan = #{voldcareman,jdbcType=VARCHAR},
+      </if>
+      <if test="vsvrman != null" >
+        VSvrMan = #{vsvrman,jdbcType=VARCHAR},
+      </if>
+      <if test="voldsvrman != null" >
+        VOldSvrMan = #{voldsvrman,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null" >
+        ID = #{id,jdbcType=CHAR},
+      </if>
+      <if test="vmarriage != null" >
+        VMarriage = #{vmarriage,jdbcType=VARCHAR},
+      </if>
+      <if test="vnational != null" >
+        VNational = #{vnational,jdbcType=VARCHAR},
+      </if>
+      <if test="bbigrepair != null" >
+        BBigRepair = #{bbigrepair,jdbcType=BIT},
+      </if>
+      <if test="bloss != null" >
+        BLoss = #{bloss,jdbcType=BIT},
+      </if>
+      <if test="bdisable != null" >
+        BDisable = #{bdisable,jdbcType=BIT},
+      </if>
+      <if test="bpicky != null" >
+        BPicky = #{bpicky,jdbcType=BIT},
+      </if>
+      <if test="vlunarbirthday != null" >
+        VLunarBirthDay = #{vlunarbirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="ndid != null" >
+        NDID = #{ndid,jdbcType=VARCHAR},
+      </if>
+      <if test="nbid != null" >
+        NBID = #{nbid,jdbcType=VARCHAR},
+      </if>
+      <if test="nbelongon != null" >
+        NBelongOn = #{nbelongon,jdbcType=INTEGER},
+      </if>
+      <if test="vcusevaclass != null" >
+        VCusEvaClass = #{vcusevaclass,jdbcType=VARCHAR},
+      </if>
+      <if test="ncityid != null" >
+        NCityID = #{ncityid,jdbcType=CHAR},
+      </if>
+      <if test="dstop != null" >
+        DStop = #{dstop,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ndisrate != null" >
+        NDisRate = #{ndisrate,jdbcType=DECIMAL},
+      </if>
+      <if test="nmarkuprate != null" >
+        NMarkupRate = #{nmarkuprate,jdbcType=DECIMAL},
+      </if>
+      <if test="ncreditdegree != null" >
+        NCreditDegree = #{ncreditdegree,jdbcType=DECIMAL},
+      </if>
+      <if test="vtaxno != null" >
+        VTaxNO = #{vtaxno,jdbcType=VARCHAR},
+      </if>
+      <if test="vartificial != null" >
+        VArtificial = #{vartificial,jdbcType=VARCHAR},
+      </if>
+      <if test="vartificialid != null" >
+        VArtificialID = #{vartificialid,jdbcType=VARCHAR},
+      </if>
+      <if test="vcorsupplycode != null" >
+        VCorSupplyCode = #{vcorsupplycode,jdbcType=VARCHAR},
+      </if>
+      <if test="vcorcuscode != null" >
+        VCorCusCode = #{vcorcuscode,jdbcType=VARCHAR},
+      </if>
+      <if test="vmailaddr != null" >
+        VMailAddr = #{vmailaddr,jdbcType=VARCHAR},
+      </if>
+      <if test="vurl != null" >
+        VUrl = #{vurl,jdbcType=VARCHAR},
+      </if>
+      <if test="vbank != null" >
+        VBank = #{vbank,jdbcType=VARCHAR},
+      </if>
+      <if test="vbankacount != null" >
+        VBankAcount = #{vbankacount,jdbcType=VARCHAR},
+      </if>
+      <if test="vmarrige != null" >
+        VMarrige = #{vmarrige,jdbcType=VARCHAR},
+      </if>
+      <if test="vlovername != null" >
+        VLoverName = #{vlovername,jdbcType=VARCHAR},
+      </if>
+      <if test="vloverhobby != null" >
+        VLoverHobby = #{vloverhobby,jdbcType=VARCHAR},
+      </if>
+      <if test="vloverduty != null" >
+        VLoverDuty = #{vloverduty,jdbcType=VARCHAR},
+      </if>
+      <if test="vlovertel != null" >
+        VLoverTel = #{vlovertel,jdbcType=VARCHAR},
+      </if>
+      <if test="vkidsname != null" >
+        VKidsName = #{vkidsname,jdbcType=VARCHAR},
+      </if>
+      <if test="vcurrenttype != null" >
+        VCurrentType = #{vcurrenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="vfinancialtype != null" >
+        VFinancialType = #{vfinancialtype,jdbcType=VARCHAR},
+      </if>
+      <if test="vuse != null" >
+        VUse = #{vuse,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.DMS_SLLBCustomer" >
+    update DMS_SLLBCustomer
+    set UID = #{uid,jdbcType=CHAR},
+      VCusName = #{vcusname,jdbcType=VARCHAR},
+      VClass = #{vclass,jdbcType=VARCHAR},
+      VMobile = #{vmobile,jdbcType=VARCHAR},
+      VCusOtherPhone = #{vcusotherphone,jdbcType=VARCHAR},
+      VTel = #{vtel,jdbcType=VARCHAR},
+      VSex = #{vsex,jdbcType=VARCHAR},
+      VQQ = #{vqq,jdbcType=VARCHAR},
+      VQQ2 = #{vqq2,jdbcType=VARCHAR},
+      VWX = #{vwx,jdbcType=VARCHAR},
+      VWB = #{vwb,jdbcType=VARCHAR},
+      VCertificateType = #{vcertificatetype,jdbcType=VARCHAR},
+      VCertificateNo = #{vcertificateno,jdbcType=VARCHAR},
+      VConstractTime = #{vconstracttime,jdbcType=VARCHAR},
+      VConstractType = #{vconstracttype,jdbcType=VARCHAR},
+      BStop = #{bstop,jdbcType=BIT},
+      VProvince = #{vprovince,jdbcType=VARCHAR},
+      VCity = #{vcity,jdbcType=VARCHAR},
+      VArea = #{varea,jdbcType=VARCHAR},
+      VSubCity = #{vsubcity,jdbcType=VARCHAR},
+      VCusAddr = #{vcusaddr,jdbcType=VARCHAR},
+      VPostNo = #{vpostno,jdbcType=VARCHAR},
+      VHabby1 = #{vhabby1,jdbcType=VARCHAR},
+      VVocation = #{vvocation,jdbcType=VARCHAR},
+      VDuty = #{vduty,jdbcType=VARCHAR},
+      VEducative = #{veducative,jdbcType=VARCHAR},
+      DBirth = #{dbirth,jdbcType=TIMESTAMP},
+      VCoProperty = #{vcoproperty,jdbcType=VARCHAR},
+      VEnterpriseNum = #{venterprisenum,jdbcType=VARCHAR},
+      VRegister = #{vregister,jdbcType=VARCHAR},
+      VEmail = #{vemail,jdbcType=VARCHAR},
+      VFax = #{vfax,jdbcType=VARCHAR},
+      BNoActive = #{bnoactive,jdbcType=BIT},
+      VReceiveSMS = #{vreceivesms,jdbcType=VARCHAR},
+      VReceiveTel = #{vreceivetel,jdbcType=VARCHAR},
+      VReceiveEMail = #{vreceiveemail,jdbcType=VARCHAR},
+      VReceiveMail = #{vreceivemail,jdbcType=VARCHAR},
+      BRecommend = #{brecommend,jdbcType=BIT},
+      DCreate = #{dcreate,jdbcType=TIMESTAMP},
+      DFinish = #{dfinish,jdbcType=TIMESTAMP},
+      VMemo = #{vmemo,jdbcType=VARCHAR},
+      VSaleMan = #{vsaleman,jdbcType=VARCHAR},
+      VOldSaleMan = #{voldsaleman,jdbcType=VARCHAR},
+      DDistribute = #{ddistribute,jdbcType=TIMESTAMP},
+      DFirstDistribute = #{dfirstdistribute,jdbcType=TIMESTAMP},
+      VCusFrom = #{vcusfrom,jdbcType=VARCHAR},
+      BBuy = #{bbuy,jdbcType=BIT},
+      VCus = #{vcus,jdbcType=VARCHAR},
+      BRepair = #{brepair,jdbcType=BIT},
+      VNowcarRemark = #{vnowcarremark,jdbcType=VARCHAR},
+      VVieCarType = #{vviecartype,jdbcType=VARCHAR},
+      VInfoFrom = #{vinfofrom,jdbcType=VARCHAR},
+      BBiguser = #{bbiguser,jdbcType=BIT},
+      VBigLevel = #{vbiglevel,jdbcType=VARCHAR},
+      VNowBrand = #{vnowbrand,jdbcType=VARCHAR},
+      VNowPlate = #{vnowplate,jdbcType=VARCHAR},
+      BGroupFlag = #{bgroupflag,jdbcType=BIT},
+      BNextBuy = #{bnextbuy,jdbcType=BIT},
+      VRecomCus = #{vrecomcus,jdbcType=VARCHAR},
+      BNetBuy = #{bnetbuy,jdbcType=BIT},
+      BReplaceFlage = #{breplaceflage,jdbcType=BIT},
+      BLoanFlag = #{bloanflag,jdbcType=BIT},
+      BVIP = #{bvip,jdbcType=BIT},
+      VCarPurpose = #{vcarpurpose,jdbcType=VARCHAR},
+      VCarExperience = #{vcarexperience,jdbcType=VARCHAR},
+      VCarStatus = #{vcarstatus,jdbcType=VARCHAR},
+      VCusLabel = #{vcuslabel,jdbcType=VARCHAR},
+      VCusPic = #{vcuspic,jdbcType=VARCHAR},
+      BIsDcars = #{bisdcars,jdbcType=BIT},
+      From_type = #{fromType,jdbcType=VARCHAR},
+      From_id = #{fromId,jdbcType=VARCHAR},
+      VCusStatus = #{vcusstatus,jdbcType=VARCHAR},
+      CreateBy = #{createby,jdbcType=VARCHAR},
+      CreateOn = #{createon,jdbcType=TIMESTAMP},
+      UpdateBy = #{updateby,jdbcType=VARCHAR},
+      UpdateOn = #{updateon,jdbcType=BIGINT},
+      VCareMan = #{vcareman,jdbcType=VARCHAR},
+      VOldCareMan = #{voldcareman,jdbcType=VARCHAR},
+      VSvrMan = #{vsvrman,jdbcType=VARCHAR},
+      VOldSvrMan = #{voldsvrman,jdbcType=VARCHAR},
+      ID = #{id,jdbcType=CHAR},
+      VMarriage = #{vmarriage,jdbcType=VARCHAR},
+      VNational = #{vnational,jdbcType=VARCHAR},
+      BBigRepair = #{bbigrepair,jdbcType=BIT},
+      BLoss = #{bloss,jdbcType=BIT},
+      BDisable = #{bdisable,jdbcType=BIT},
+      BPicky = #{bpicky,jdbcType=BIT},
+      VLunarBirthDay = #{vlunarbirthday,jdbcType=VARCHAR},
+      NDID = #{ndid,jdbcType=VARCHAR},
+      NBID = #{nbid,jdbcType=VARCHAR},
+      NBelongOn = #{nbelongon,jdbcType=INTEGER},
+      VCusEvaClass = #{vcusevaclass,jdbcType=VARCHAR},
+      NCityID = #{ncityid,jdbcType=CHAR},
+      DStop = #{dstop,jdbcType=TIMESTAMP},
+      NDisRate = #{ndisrate,jdbcType=DECIMAL},
+      NMarkupRate = #{nmarkuprate,jdbcType=DECIMAL},
+      NCreditDegree = #{ncreditdegree,jdbcType=DECIMAL},
+      VTaxNO = #{vtaxno,jdbcType=VARCHAR},
+      VArtificial = #{vartificial,jdbcType=VARCHAR},
+      VArtificialID = #{vartificialid,jdbcType=VARCHAR},
+      VCorSupplyCode = #{vcorsupplycode,jdbcType=VARCHAR},
+      VCorCusCode = #{vcorcuscode,jdbcType=VARCHAR},
+      VMailAddr = #{vmailaddr,jdbcType=VARCHAR},
+      VUrl = #{vurl,jdbcType=VARCHAR},
+      VBank = #{vbank,jdbcType=VARCHAR},
+      VBankAcount = #{vbankacount,jdbcType=VARCHAR},
+      VMarrige = #{vmarrige,jdbcType=VARCHAR},
+      VLoverName = #{vlovername,jdbcType=VARCHAR},
+      VLoverHobby = #{vloverhobby,jdbcType=VARCHAR},
+      VLoverDuty = #{vloverduty,jdbcType=VARCHAR},
+      VLoverTel = #{vlovertel,jdbcType=VARCHAR},
+      VKidsName = #{vkidsname,jdbcType=VARCHAR},
+      VCurrentType = #{vcurrenttype,jdbcType=VARCHAR},
+      VFinancialType = #{vfinancialtype,jdbcType=VARCHAR},
+      VUse = #{vuse,jdbcType=VARCHAR}
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </update>
+</mapper>

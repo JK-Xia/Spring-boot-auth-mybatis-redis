@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_salc90Mapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_salc90" >
+    <id column="cfsdm" property="cfsdm" jdbcType="CHAR" />
+    <result column="cfsmc" property="cfsmc" jdbcType="CHAR" />
+    <result column="ctjbs" property="ctjbs" jdbcType="CHAR" />
+    <result column="ctjdm" property="ctjdm" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cfsdm, cfsmc, ctjbs, ctjdm
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_salc90
+    where cfsdm = #{cfsdm,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from R3_salc90
+    where cfsdm = #{cfsdm,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_salc90" >
+    insert into R3_salc90 (cfsdm, cfsmc, ctjbs, ctjdm
+      )
+    values (#{cfsdm,jdbcType=CHAR}, #{cfsmc,jdbcType=CHAR}, #{ctjbs,jdbcType=CHAR}, #{ctjdm,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_salc90" >
+    insert into R3_salc90
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cfsdm != null" >
+        cfsdm,
+      </if>
+      <if test="cfsmc != null" >
+        cfsmc,
+      </if>
+      <if test="ctjbs != null" >
+        ctjbs,
+      </if>
+      <if test="ctjdm != null" >
+        ctjdm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cfsdm != null" >
+        #{cfsdm,jdbcType=CHAR},
+      </if>
+      <if test="cfsmc != null" >
+        #{cfsmc,jdbcType=CHAR},
+      </if>
+      <if test="ctjbs != null" >
+        #{ctjbs,jdbcType=CHAR},
+      </if>
+      <if test="ctjdm != null" >
+        #{ctjdm,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_salc90" >
+    update R3_salc90
+    <set >
+      <if test="cfsmc != null" >
+        cfsmc = #{cfsmc,jdbcType=CHAR},
+      </if>
+      <if test="ctjbs != null" >
+        ctjbs = #{ctjbs,jdbcType=CHAR},
+      </if>
+      <if test="ctjdm != null" >
+        ctjdm = #{ctjdm,jdbcType=CHAR},
+      </if>
+    </set>
+    where cfsdm = #{cfsdm,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_salc90" >
+    update R3_salc90
+    set cfsmc = #{cfsmc,jdbcType=CHAR},
+      ctjbs = #{ctjbs,jdbcType=CHAR},
+      ctjdm = #{ctjdm,jdbcType=CHAR}
+    where cfsdm = #{cfsdm,jdbcType=CHAR}
+  </update>
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_crmc21cMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_crmc21c" >
+    <id column="csqdm" property="csqdm" jdbcType="CHAR" />
+    <result column="csqmc" property="csqmc" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    csqdm, csqmc
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_crmc21c
+    where csqdm = #{csqdm,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from R3_crmc21c
+    where csqdm = #{csqdm,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_crmc21c" >
+    insert into R3_crmc21c (csqdm, csqmc)
+    values (#{csqdm,jdbcType=CHAR}, #{csqmc,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_crmc21c" >
+    insert into R3_crmc21c
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="csqdm != null" >
+        csqdm,
+      </if>
+      <if test="csqmc != null" >
+        csqmc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="csqdm != null" >
+        #{csqdm,jdbcType=CHAR},
+      </if>
+      <if test="csqmc != null" >
+        #{csqmc,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_crmc21c" >
+    update R3_crmc21c
+    <set >
+      <if test="csqmc != null" >
+        csqmc = #{csqmc,jdbcType=CHAR},
+      </if>
+    </set>
+    where csqdm = #{csqdm,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_crmc21c" >
+    update R3_crmc21c
+    set csqmc = #{csqmc,jdbcType=CHAR}
+    where csqdm = #{csqdm,jdbcType=CHAR}
+  </update>
+</mapper>

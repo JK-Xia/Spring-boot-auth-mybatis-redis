@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.DMS_sysc07Mapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.DMS_sysc07" >
+    <id column="PKey" property="pkey" jdbcType="BIGINT" />
+    <result column="CreateBy" property="createby" jdbcType="VARCHAR" />
+    <result column="CreateOn" property="createon" jdbcType="TIMESTAMP" />
+    <result column="UpdateBy" property="updateby" jdbcType="VARCHAR" />
+    <result column="UpdateOn" property="updateon" jdbcType="BIGINT" />
+    <result column="VCode" property="vcode" jdbcType="VARCHAR" />
+    <result column="VName" property="vname" jdbcType="VARCHAR" />
+    <result column="VPinYin" property="vpinyin" jdbcType="VARCHAR" />
+    <result column="VSort" property="vsort" jdbcType="VARCHAR" />
+    <result column="NParentID" property="nparentid" jdbcType="CHAR" />
+    <result column="VDesc" property="vdesc" jdbcType="VARCHAR" />
+    <result column="VLevel" property="vlevel" jdbcType="VARCHAR" />
+    <result column="VProvince" property="vprovince" jdbcType="VARCHAR" />
+    <result column="VProvinceName" property="vprovincename" jdbcType="VARCHAR" />
+    <result column="VCity" property="vcity" jdbcType="VARCHAR" />
+    <result column="VCityName" property="vcityname" jdbcType="VARCHAR" />
+    <result column="VCountry" property="vcountry" jdbcType="VARCHAR" />
+    <result column="VCountryName" property="vcountryname" jdbcType="VARCHAR" />
+    <result column="VPostNo" property="vpostno" jdbcType="VARCHAR" />
+    <result column="CStop" property="cstop" jdbcType="BIT" />
+    <result column="DStop" property="dstop" jdbcType="TIMESTAMP" />
+    <result column="NCusGroupID" property="ncusgroupid" jdbcType="CHAR" />
+    <result column="ID" property="id" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PKey, CreateBy, CreateOn, UpdateBy, UpdateOn, VCode, VName, VPinYin, VSort, NParentID, 
+    VDesc, VLevel, VProvince, VProvinceName, VCity, VCityName, VCountry, VCountryName, 
+    VPostNo, CStop, DStop, NCusGroupID, ID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from DMS_sysc07
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from DMS_sysc07
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.DMS_sysc07" >
+    insert into DMS_sysc07 (PKey, CreateBy, CreateOn, 
+      UpdateBy, UpdateOn, VCode, 
+      VName, VPinYin, VSort, 
+      NParentID, VDesc, VLevel, 
+      VProvince, VProvinceName, VCity, 
+      VCityName, VCountry, VCountryName, 
+      VPostNo, CStop, DStop, 
+      NCusGroupID, ID)
+    values (#{pkey,jdbcType=BIGINT}, #{createby,jdbcType=VARCHAR}, #{createon,jdbcType=TIMESTAMP}, 
+      #{updateby,jdbcType=VARCHAR}, #{updateon,jdbcType=BIGINT}, #{vcode,jdbcType=VARCHAR}, 
+      #{vname,jdbcType=VARCHAR}, #{vpinyin,jdbcType=VARCHAR}, #{vsort,jdbcType=VARCHAR}, 
+      #{nparentid,jdbcType=CHAR}, #{vdesc,jdbcType=VARCHAR}, #{vlevel,jdbcType=VARCHAR}, 
+      #{vprovince,jdbcType=VARCHAR}, #{vprovincename,jdbcType=VARCHAR}, #{vcity,jdbcType=VARCHAR}, 
+      #{vcityname,jdbcType=VARCHAR}, #{vcountry,jdbcType=VARCHAR}, #{vcountryname,jdbcType=VARCHAR}, 
+      #{vpostno,jdbcType=VARCHAR}, #{cstop,jdbcType=BIT}, #{dstop,jdbcType=TIMESTAMP}, 
+      #{ncusgroupid,jdbcType=CHAR}, #{id,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.DMS_sysc07" >
+    insert into DMS_sysc07
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pkey != null" >
+        PKey,
+      </if>
+      <if test="createby != null" >
+        CreateBy,
+      </if>
+      <if test="createon != null" >
+        CreateOn,
+      </if>
+      <if test="updateby != null" >
+        UpdateBy,
+      </if>
+      <if test="updateon != null" >
+        UpdateOn,
+      </if>
+      <if test="vcode != null" >
+        VCode,
+      </if>
+      <if test="vname != null" >
+        VName,
+      </if>
+      <if test="vpinyin != null" >
+        VPinYin,
+      </if>
+      <if test="vsort != null" >
+        VSort,
+      </if>
+      <if test="nparentid != null" >
+        NParentID,
+      </if>
+      <if test="vdesc != null" >
+        VDesc,
+      </if>
+      <if test="vlevel != null" >
+        VLevel,
+      </if>
+      <if test="vprovince != null" >
+        VProvince,
+      </if>
+      <if test="vprovincename != null" >
+        VProvinceName,
+      </if>
+      <if test="vcity != null" >
+        VCity,
+      </if>
+      <if test="vcityname != null" >
+        VCityName,
+      </if>
+      <if test="vcountry != null" >
+        VCountry,
+      </if>
+      <if test="vcountryname != null" >
+        VCountryName,
+      </if>
+      <if test="vpostno != null" >
+        VPostNo,
+      </if>
+      <if test="cstop != null" >
+        CStop,
+      </if>
+      <if test="dstop != null" >
+        DStop,
+      </if>
+      <if test="ncusgroupid != null" >
+        NCusGroupID,
+      </if>
+      <if test="id != null" >
+        ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pkey != null" >
+        #{pkey,jdbcType=BIGINT},
+      </if>
+      <if test="createby != null" >
+        #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createon != null" >
+        #{createon,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateby != null" >
+        #{updateby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateon != null" >
+        #{updateon,jdbcType=BIGINT},
+      </if>
+      <if test="vcode != null" >
+        #{vcode,jdbcType=VARCHAR},
+      </if>
+      <if test="vname != null" >
+        #{vname,jdbcType=VARCHAR},
+      </if>
+      <if test="vpinyin != null" >
+        #{vpinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="vsort != null" >
+        #{vsort,jdbcType=VARCHAR},
+      </if>
+      <if test="nparentid != null" >
+        #{nparentid,jdbcType=CHAR},
+      </if>
+      <if test="vdesc != null" >
+        #{vdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="vlevel != null" >
+        #{vlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="vprovince != null" >
+        #{vprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="vprovincename != null" >
+        #{vprovincename,jdbcType=VARCHAR},
+      </if>
+      <if test="vcity != null" >
+        #{vcity,jdbcType=VARCHAR},
+      </if>
+      <if test="vcityname != null" >
+        #{vcityname,jdbcType=VARCHAR},
+      </if>
+      <if test="vcountry != null" >
+        #{vcountry,jdbcType=VARCHAR},
+      </if>
+      <if test="vcountryname != null" >
+        #{vcountryname,jdbcType=VARCHAR},
+      </if>
+      <if test="vpostno != null" >
+        #{vpostno,jdbcType=VARCHAR},
+      </if>
+      <if test="cstop != null" >
+        #{cstop,jdbcType=BIT},
+      </if>
+      <if test="dstop != null" >
+        #{dstop,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ncusgroupid != null" >
+        #{ncusgroupid,jdbcType=CHAR},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.DMS_sysc07" >
+    update DMS_sysc07
+    <set >
+      <if test="createby != null" >
+        CreateBy = #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createon != null" >
+        CreateOn = #{createon,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateby != null" >
+        UpdateBy = #{updateby,jdbcType=VARCHAR},
+      </if>
+      <if test="updateon != null" >
+        UpdateOn = #{updateon,jdbcType=BIGINT},
+      </if>
+      <if test="vcode != null" >
+        VCode = #{vcode,jdbcType=VARCHAR},
+      </if>
+      <if test="vname != null" >
+        VName = #{vname,jdbcType=VARCHAR},
+      </if>
+      <if test="vpinyin != null" >
+        VPinYin = #{vpinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="vsort != null" >
+        VSort = #{vsort,jdbcType=VARCHAR},
+      </if>
+      <if test="nparentid != null" >
+        NParentID = #{nparentid,jdbcType=CHAR},
+      </if>
+      <if test="vdesc != null" >
+        VDesc = #{vdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="vlevel != null" >
+        VLevel = #{vlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="vprovince != null" >
+        VProvince = #{vprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="vprovincename != null" >
+        VProvinceName = #{vprovincename,jdbcType=VARCHAR},
+      </if>
+      <if test="vcity != null" >
+        VCity = #{vcity,jdbcType=VARCHAR},
+      </if>
+      <if test="vcityname != null" >
+        VCityName = #{vcityname,jdbcType=VARCHAR},
+      </if>
+      <if test="vcountry != null" >
+        VCountry = #{vcountry,jdbcType=VARCHAR},
+      </if>
+      <if test="vcountryname != null" >
+        VCountryName = #{vcountryname,jdbcType=VARCHAR},
+      </if>
+      <if test="vpostno != null" >
+        VPostNo = #{vpostno,jdbcType=VARCHAR},
+      </if>
+      <if test="cstop != null" >
+        CStop = #{cstop,jdbcType=BIT},
+      </if>
+      <if test="dstop != null" >
+        DStop = #{dstop,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ncusgroupid != null" >
+        NCusGroupID = #{ncusgroupid,jdbcType=CHAR},
+      </if>
+      <if test="id != null" >
+        ID = #{id,jdbcType=CHAR},
+      </if>
+    </set>
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.DMS_sysc07" >
+    update DMS_sysc07
+    set CreateBy = #{createby,jdbcType=VARCHAR},
+      CreateOn = #{createon,jdbcType=TIMESTAMP},
+      UpdateBy = #{updateby,jdbcType=VARCHAR},
+      UpdateOn = #{updateon,jdbcType=BIGINT},
+      VCode = #{vcode,jdbcType=VARCHAR},
+      VName = #{vname,jdbcType=VARCHAR},
+      VPinYin = #{vpinyin,jdbcType=VARCHAR},
+      VSort = #{vsort,jdbcType=VARCHAR},
+      NParentID = #{nparentid,jdbcType=CHAR},
+      VDesc = #{vdesc,jdbcType=VARCHAR},
+      VLevel = #{vlevel,jdbcType=VARCHAR},
+      VProvince = #{vprovince,jdbcType=VARCHAR},
+      VProvinceName = #{vprovincename,jdbcType=VARCHAR},
+      VCity = #{vcity,jdbcType=VARCHAR},
+      VCityName = #{vcityname,jdbcType=VARCHAR},
+      VCountry = #{vcountry,jdbcType=VARCHAR},
+      VCountryName = #{vcountryname,jdbcType=VARCHAR},
+      VPostNo = #{vpostno,jdbcType=VARCHAR},
+      CStop = #{cstop,jdbcType=BIT},
+      DStop = #{dstop,jdbcType=TIMESTAMP},
+      NCusGroupID = #{ncusgroupid,jdbcType=CHAR},
+      ID = #{id,jdbcType=CHAR}
+    where PKey = #{pkey,jdbcType=BIGINT}
+  </update>
+</mapper>

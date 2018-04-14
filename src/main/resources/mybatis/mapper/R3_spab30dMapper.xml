@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_spab30dMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_spab30d" >
+    <result column="cxsdbh" property="cxsdbh" jdbcType="CHAR" />
+    <result column="cbjdm" property="cbjdm" jdbcType="VARCHAR" />
+    <result column="cph" property="cph" jdbcType="CHAR" />
+    <result column="nxsdj" property="nxsdj" jdbcType="DECIMAL" />
+    <result column="ncbdj" property="ncbdj" jdbcType="DECIMAL" />
+    <result column="nxssl" property="nxssl" jdbcType="DECIMAL" />
+    <result column="ckqdm" property="ckqdm" jdbcType="CHAR" />
+    <result column="ckwbh" property="ckwbh" jdbcType="CHAR" />
+    <result column="nrkdj" property="nrkdj" jdbcType="DECIMAL" />
+    <result column="nrkje" property="nrkje" jdbcType="DECIMAL" />
+    <result column="njexj" property="njexj" jdbcType="DECIMAL" />
+    <result column="nsexj" property="nsexj" jdbcType="DECIMAL" />
+    <result column="ndysl" property="ndysl" jdbcType="DECIMAL" />
+    <result column="nxsqdj" property="nxsqdj" jdbcType="DECIMAL" />
+    <result column="nyhl" property="nyhl" jdbcType="DECIMAL" />
+  </resultMap>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_spab30d" >
+    insert into R3_spab30d (cxsdbh, cbjdm, cph, 
+      nxsdj, ncbdj, nxssl, 
+      ckqdm, ckwbh, nrkdj, nrkje, 
+      njexj, nsexj, ndysl, 
+      nxsqdj, nyhl)
+    values (#{cxsdbh,jdbcType=CHAR}, #{cbjdm,jdbcType=VARCHAR}, #{cph,jdbcType=CHAR}, 
+      #{nxsdj,jdbcType=DECIMAL}, #{ncbdj,jdbcType=DECIMAL}, #{nxssl,jdbcType=DECIMAL}, 
+      #{ckqdm,jdbcType=CHAR}, #{ckwbh,jdbcType=CHAR}, #{nrkdj,jdbcType=DECIMAL}, #{nrkje,jdbcType=DECIMAL}, 
+      #{njexj,jdbcType=DECIMAL}, #{nsexj,jdbcType=DECIMAL}, #{ndysl,jdbcType=DECIMAL}, 
+      #{nxsqdj,jdbcType=DECIMAL}, #{nyhl,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_spab30d" >
+    insert into R3_spab30d
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cxsdbh != null" >
+        cxsdbh,
+      </if>
+      <if test="cbjdm != null" >
+        cbjdm,
+      </if>
+      <if test="cph != null" >
+        cph,
+      </if>
+      <if test="nxsdj != null" >
+        nxsdj,
+      </if>
+      <if test="ncbdj != null" >
+        ncbdj,
+      </if>
+      <if test="nxssl != null" >
+        nxssl,
+      </if>
+      <if test="ckqdm != null" >
+        ckqdm,
+      </if>
+      <if test="ckwbh != null" >
+        ckwbh,
+      </if>
+      <if test="nrkdj != null" >
+        nrkdj,
+      </if>
+      <if test="nrkje != null" >
+        nrkje,
+      </if>
+      <if test="njexj != null" >
+        njexj,
+      </if>
+      <if test="nsexj != null" >
+        nsexj,
+      </if>
+      <if test="ndysl != null" >
+        ndysl,
+      </if>
+      <if test="nxsqdj != null" >
+        nxsqdj,
+      </if>
+      <if test="nyhl != null" >
+        nyhl,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cxsdbh != null" >
+        #{cxsdbh,jdbcType=CHAR},
+      </if>
+      <if test="cbjdm != null" >
+        #{cbjdm,jdbcType=VARCHAR},
+      </if>
+      <if test="cph != null" >
+        #{cph,jdbcType=CHAR},
+      </if>
+      <if test="nxsdj != null" >
+        #{nxsdj,jdbcType=DECIMAL},
+      </if>
+      <if test="ncbdj != null" >
+        #{ncbdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nxssl != null" >
+        #{nxssl,jdbcType=DECIMAL},
+      </if>
+      <if test="ckqdm != null" >
+        #{ckqdm,jdbcType=CHAR},
+      </if>
+      <if test="ckwbh != null" >
+        #{ckwbh,jdbcType=CHAR},
+      </if>
+      <if test="nrkdj != null" >
+        #{nrkdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nrkje != null" >
+        #{nrkje,jdbcType=DECIMAL},
+      </if>
+      <if test="njexj != null" >
+        #{njexj,jdbcType=DECIMAL},
+      </if>
+      <if test="nsexj != null" >
+        #{nsexj,jdbcType=DECIMAL},
+      </if>
+      <if test="ndysl != null" >
+        #{ndysl,jdbcType=DECIMAL},
+      </if>
+      <if test="nxsqdj != null" >
+        #{nxsqdj,jdbcType=DECIMAL},
+      </if>
+      <if test="nyhl != null" >
+        #{nyhl,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_salb01dMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_salb01d" >
+    <id column="cdph" property="cdph" jdbcType="CHAR" />
+    <id column="cfydm" property="cfydm" jdbcType="CHAR" />
+    <result column="cckdm" property="cckdm" jdbcType="CHAR" />
+    <result column="ccpdm" property="ccpdm" jdbcType="VARCHAR" />
+    <result column="nfyje" property="nfyje" jdbcType="DECIMAL" />
+    <result column="dlrrq" property="dlrrq" jdbcType="TIMESTAMP" />
+    <result column="cczydm" property="cczydm" jdbcType="CHAR" />
+    <result column="cbz" property="cbz" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cdph, cfydm, cckdm, ccpdm, nfyje, dlrrq, cczydm, cbz
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.tt_ms.domain.R3_salb01dKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_salb01d
+    where cdph = #{cdph,jdbcType=CHAR}
+      and cfydm = #{cfydm,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.tt_ms.domain.R3_salb01dKey" >
+    delete from R3_salb01d
+    where cdph = #{cdph,jdbcType=CHAR}
+      and cfydm = #{cfydm,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_salb01d" >
+    insert into R3_salb01d (cdph, cfydm, cckdm, ccpdm, 
+      nfyje, dlrrq, cczydm, 
+      cbz)
+    values (#{cdph,jdbcType=CHAR}, #{cfydm,jdbcType=CHAR}, #{cckdm,jdbcType=CHAR}, #{ccpdm,jdbcType=VARCHAR}, 
+      #{nfyje,jdbcType=DECIMAL}, #{dlrrq,jdbcType=TIMESTAMP}, #{cczydm,jdbcType=CHAR}, 
+      #{cbz,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_salb01d" >
+    insert into R3_salb01d
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cdph != null" >
+        cdph,
+      </if>
+      <if test="cfydm != null" >
+        cfydm,
+      </if>
+      <if test="cckdm != null" >
+        cckdm,
+      </if>
+      <if test="ccpdm != null" >
+        ccpdm,
+      </if>
+      <if test="nfyje != null" >
+        nfyje,
+      </if>
+      <if test="dlrrq != null" >
+        dlrrq,
+      </if>
+      <if test="cczydm != null" >
+        cczydm,
+      </if>
+      <if test="cbz != null" >
+        cbz,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cdph != null" >
+        #{cdph,jdbcType=CHAR},
+      </if>
+      <if test="cfydm != null" >
+        #{cfydm,jdbcType=CHAR},
+      </if>
+      <if test="cckdm != null" >
+        #{cckdm,jdbcType=CHAR},
+      </if>
+      <if test="ccpdm != null" >
+        #{ccpdm,jdbcType=VARCHAR},
+      </if>
+      <if test="nfyje != null" >
+        #{nfyje,jdbcType=DECIMAL},
+      </if>
+      <if test="dlrrq != null" >
+        #{dlrrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cczydm != null" >
+        #{cczydm,jdbcType=CHAR},
+      </if>
+      <if test="cbz != null" >
+        #{cbz,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_salb01d" >
+    update R3_salb01d
+    <set >
+      <if test="cckdm != null" >
+        cckdm = #{cckdm,jdbcType=CHAR},
+      </if>
+      <if test="ccpdm != null" >
+        ccpdm = #{ccpdm,jdbcType=VARCHAR},
+      </if>
+      <if test="nfyje != null" >
+        nfyje = #{nfyje,jdbcType=DECIMAL},
+      </if>
+      <if test="dlrrq != null" >
+        dlrrq = #{dlrrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cczydm != null" >
+        cczydm = #{cczydm,jdbcType=CHAR},
+      </if>
+      <if test="cbz != null" >
+        cbz = #{cbz,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cdph = #{cdph,jdbcType=CHAR}
+      and cfydm = #{cfydm,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_salb01d" >
+    update R3_salb01d
+    set cckdm = #{cckdm,jdbcType=CHAR},
+      ccpdm = #{ccpdm,jdbcType=VARCHAR},
+      nfyje = #{nfyje,jdbcType=DECIMAL},
+      dlrrq = #{dlrrq,jdbcType=TIMESTAMP},
+      cczydm = #{cczydm,jdbcType=CHAR},
+      cbz = #{cbz,jdbcType=VARCHAR}
+    where cdph = #{cdph,jdbcType=CHAR}
+      and cfydm = #{cfydm,jdbcType=CHAR}
+  </update>
+</mapper>

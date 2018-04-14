@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_sysc10Mapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_sysc10" >
+    <id column="cckdm" property="cckdm" jdbcType="CHAR" />
+    <result column="ccksm" property="ccksm" jdbcType="CHAR" />
+    <result column="ccksx" property="ccksx" jdbcType="CHAR" />
+    <result column="cckjjfa" property="cckjjfa" jdbcType="CHAR" />
+    <result column="lpdbs" property="lpdbs" jdbcType="BIT" />
+    <result column="ltybs" property="ltybs" jdbcType="BIT" />
+    <result column="dtyrq" property="dtyrq" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cckdm, ccksm, ccksx, cckjjfa, lpdbs, ltybs, dtyrq
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from R3_sysc10
+    where cckdm = #{cckdm,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from R3_sysc10
+    where cckdm = #{cckdm,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_sysc10" >
+    insert into R3_sysc10 (cckdm, ccksm, ccksx, cckjjfa, 
+      lpdbs, ltybs, dtyrq)
+    values (#{cckdm,jdbcType=CHAR}, #{ccksm,jdbcType=CHAR}, #{ccksx,jdbcType=CHAR}, #{cckjjfa,jdbcType=CHAR}, 
+      #{lpdbs,jdbcType=BIT}, #{ltybs,jdbcType=BIT}, #{dtyrq,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_sysc10" >
+    insert into R3_sysc10
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cckdm != null" >
+        cckdm,
+      </if>
+      <if test="ccksm != null" >
+        ccksm,
+      </if>
+      <if test="ccksx != null" >
+        ccksx,
+      </if>
+      <if test="cckjjfa != null" >
+        cckjjfa,
+      </if>
+      <if test="lpdbs != null" >
+        lpdbs,
+      </if>
+      <if test="ltybs != null" >
+        ltybs,
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cckdm != null" >
+        #{cckdm,jdbcType=CHAR},
+      </if>
+      <if test="ccksm != null" >
+        #{ccksm,jdbcType=CHAR},
+      </if>
+      <if test="ccksx != null" >
+        #{ccksx,jdbcType=CHAR},
+      </if>
+      <if test="cckjjfa != null" >
+        #{cckjjfa,jdbcType=CHAR},
+      </if>
+      <if test="lpdbs != null" >
+        #{lpdbs,jdbcType=BIT},
+      </if>
+      <if test="ltybs != null" >
+        #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.R3_sysc10" >
+    update R3_sysc10
+    <set >
+      <if test="ccksm != null" >
+        ccksm = #{ccksm,jdbcType=CHAR},
+      </if>
+      <if test="ccksx != null" >
+        ccksx = #{ccksx,jdbcType=CHAR},
+      </if>
+      <if test="cckjjfa != null" >
+        cckjjfa = #{cckjjfa,jdbcType=CHAR},
+      </if>
+      <if test="lpdbs != null" >
+        lpdbs = #{lpdbs,jdbcType=BIT},
+      </if>
+      <if test="ltybs != null" >
+        ltybs = #{ltybs,jdbcType=BIT},
+      </if>
+      <if test="dtyrq != null" >
+        dtyrq = #{dtyrq,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where cckdm = #{cckdm,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.R3_sysc10" >
+    update R3_sysc10
+    set ccksm = #{ccksm,jdbcType=CHAR},
+      ccksx = #{ccksx,jdbcType=CHAR},
+      cckjjfa = #{cckjjfa,jdbcType=CHAR},
+      lpdbs = #{lpdbs,jdbcType=BIT},
+      ltybs = #{ltybs,jdbcType=BIT},
+      dtyrq = #{dtyrq,jdbcType=TIMESTAMP}
+    where cckdm = #{cckdm,jdbcType=CHAR}
+  </update>
+</mapper>

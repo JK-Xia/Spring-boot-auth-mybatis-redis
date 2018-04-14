@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.R3_spab30cMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.R3_spab30c" >
+    <result column="cxsdbh" property="cxsdbh" jdbcType="CHAR" />
+    <result column="cdydbh" property="cdydbh" jdbcType="CHAR" />
+    <result column="cckdm" property="cckdm" jdbcType="CHAR" />
+    <result column="ckhdm" property="ckhdm" jdbcType="CHAR" />
+    <result column="ckhmc" property="ckhmc" jdbcType="VARCHAR" />
+    <result column="ckhh" property="ckhh" jdbcType="VARCHAR" />
+    <result column="cyhzh" property="cyhzh" jdbcType="VARCHAR" />
+    <result column="csh" property="csh" jdbcType="VARCHAR" />
+    <result column="cfph" property="cfph" jdbcType="CHAR" />
+    <result column="dfprq" property="dfprq" jdbcType="TIMESTAMP" />
+    <result column="cfplxdm" property="cfplxdm" jdbcType="CHAR" />
+    <result column="dkdrq" property="dkdrq" jdbcType="TIMESTAMP" />
+    <result column="dyxrq" property="dyxrq" jdbcType="TIMESTAMP" />
+    <result column="dfkrq" property="dfkrq" jdbcType="TIMESTAMP" />
+    <result column="nhjje" property="nhjje" jdbcType="DECIMAL" />
+    <result column="nhjse" property="nhjse" jdbcType="DECIMAL" />
+    <result column="nbjxjsl" property="nbjxjsl" jdbcType="DECIMAL" />
+    <result column="nbjcgsl" property="nbjcgsl" jdbcType="DECIMAL" />
+    <result column="nzsje" property="nzsje" jdbcType="DECIMAL" />
+    <result column="cdbr" property="cdbr" jdbcType="CHAR" />
+    <result column="cjszt" property="cjszt" jdbcType="CHAR" />
+    <result column="cjsfs" property="cjsfs" jdbcType="CHAR" />
+    <result column="lthqr" property="lthqr" jdbcType="BIT" />
+    <result column="cczydm" property="cczydm" jdbcType="CHAR" />
+    <result column="lqqbs" property="lqqbs" jdbcType="BIT" />
+    <result column="npljsxh" property="npljsxh" jdbcType="INTEGER" />
+    <result column="cjsydm" property="cjsydm" jdbcType="CHAR" />
+    <result column="cxsfs" property="cxsfs" jdbcType="CHAR" />
+    <result column="cgysdm" property="cgysdm" jdbcType="CHAR" />
+    <result column="cgysmc" property="cgysmc" jdbcType="VARCHAR" />
+    <result column="ltdbs" property="ltdbs" jdbcType="BIT" />
+    <result column="npzid" property="npzid" jdbcType="INTEGER" />
+    <result column="dscjsrq" property="dscjsrq" jdbcType="TIMESTAMP" />
+    <result column="lcwskwb" property="lcwskwb" jdbcType="BIT" />
+    <result column="cyszkkm" property="cyszkkm" jdbcType="CHAR" />
+    <result column="nljsk" property="nljsk" jdbcType="DECIMAL" />
+    <result column="cfpkh" property="cfpkh" jdbcType="VARCHAR" />
+    <result column="nhjyhje" property="nhjyhje" jdbcType="DECIMAL" />
+    <result column="cbz" property="cbz" jdbcType="VARCHAR" />
+    <result column="cczydm1" property="cczydm1" jdbcType="CHAR" />
+    <result column="nqtf1" property="nqtf1" jdbcType="DECIMAL" />
+    <result column="nqtf2" property="nqtf2" jdbcType="DECIMAL" />
+    <result column="nqtf3" property="nqtf3" jdbcType="DECIMAL" />
+    <result column="nysje" property="nysje" jdbcType="DECIMAL" />
+    <result column="njsyhl" property="njsyhl" jdbcType="DECIMAL" />
+  </resultMap>
+  <insert id="insert" parameterType="com.tt_ms.domain.R3_spab30c" >
+    insert into R3_spab30c (cxsdbh, cdydbh, cckdm, 
+      ckhdm, ckhmc, ckhh, cyhzh, 
+      csh, cfph, dfprq, cfplxdm, 
+      dkdrq, dyxrq, dfkrq, 
+      nhjje, nhjse, nbjxjsl, 
+      nbjcgsl, nzsje, cdbr, 
+      cjszt, cjsfs, lthqr, cczydm, 
+      lqqbs, npljsxh, cjsydm, cxsfs, 
+      cgysdm, cgysmc, ltdbs, npzid, 
+      dscjsrq, lcwskwb, cyszkkm, 
+      nljsk, cfpkh, nhjyhje, 
+      cbz, cczydm1, nqtf1, nqtf2, 
+      nqtf3, nysje, njsyhl
+      )
+    values (#{cxsdbh,jdbcType=CHAR}, #{cdydbh,jdbcType=CHAR}, #{cckdm,jdbcType=CHAR}, 
+      #{ckhdm,jdbcType=CHAR}, #{ckhmc,jdbcType=VARCHAR}, #{ckhh,jdbcType=VARCHAR}, #{cyhzh,jdbcType=VARCHAR}, 
+      #{csh,jdbcType=VARCHAR}, #{cfph,jdbcType=CHAR}, #{dfprq,jdbcType=TIMESTAMP}, #{cfplxdm,jdbcType=CHAR}, 
+      #{dkdrq,jdbcType=TIMESTAMP}, #{dyxrq,jdbcType=TIMESTAMP}, #{dfkrq,jdbcType=TIMESTAMP}, 
+      #{nhjje,jdbcType=DECIMAL}, #{nhjse,jdbcType=DECIMAL}, #{nbjxjsl,jdbcType=DECIMAL}, 
+      #{nbjcgsl,jdbcType=DECIMAL}, #{nzsje,jdbcType=DECIMAL}, #{cdbr,jdbcType=CHAR}, 
+      #{cjszt,jdbcType=CHAR}, #{cjsfs,jdbcType=CHAR}, #{lthqr,jdbcType=BIT}, #{cczydm,jdbcType=CHAR}, 
+      #{lqqbs,jdbcType=BIT}, #{npljsxh,jdbcType=INTEGER}, #{cjsydm,jdbcType=CHAR}, #{cxsfs,jdbcType=CHAR}, 
+      #{cgysdm,jdbcType=CHAR}, #{cgysmc,jdbcType=VARCHAR}, #{ltdbs,jdbcType=BIT}, #{npzid,jdbcType=INTEGER}, 
+      #{dscjsrq,jdbcType=TIMESTAMP}, #{lcwskwb,jdbcType=BIT}, #{cyszkkm,jdbcType=CHAR}, 
+      #{nljsk,jdbcType=DECIMAL}, #{cfpkh,jdbcType=VARCHAR}, #{nhjyhje,jdbcType=DECIMAL}, 
+      #{cbz,jdbcType=VARCHAR}, #{cczydm1,jdbcType=CHAR}, #{nqtf1,jdbcType=DECIMAL}, #{nqtf2,jdbcType=DECIMAL}, 
+      #{nqtf3,jdbcType=DECIMAL}, #{nysje,jdbcType=DECIMAL}, #{njsyhl,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.R3_spab30c" >
+    insert into R3_spab30c
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cxsdbh != null" >
+        cxsdbh,
+      </if>
+      <if test="cdydbh != null" >
+        cdydbh,
+      </if>
+      <if test="cckdm != null" >
+        cckdm,
+      </if>
+      <if test="ckhdm != null" >
+        ckhdm,
+      </if>
+      <if test="ckhmc != null" >
+        ckhmc,
+      </if>
+      <if test="ckhh != null" >
+        ckhh,
+      </if>
+      <if test="cyhzh != null" >
+        cyhzh,
+      </if>
+      <if test="csh != null" >
+        csh,
+      </if>
+      <if test="cfph != null" >
+        cfph,
+      </if>
+      <if test="dfprq != null" >
+        dfprq,
+      </if>
+      <if test="cfplxdm != null" >
+        cfplxdm,
+      </if>
+      <if test="dkdrq != null" >
+        dkdrq,
+      </if>
+      <if test="dyxrq != null" >
+        dyxrq,
+      </if>
+      <if test="dfkrq != null" >
+        dfkrq,
+      </if>
+      <if test="nhjje != null" >
+        nhjje,
+      </if>
+      <if test="nhjse != null" >
+        nhjse,
+      </if>
+      <if test="nbjxjsl != null" >
+        nbjxjsl,
+      </if>
+      <if test="nbjcgsl != null" >
+        nbjcgsl,
+      </if>
+      <if test="nzsje != null" >
+        nzsje,
+      </if>
+      <if test="cdbr != null" >
+        cdbr,
+      </if>
+      <if test="cjszt != null" >
+        cjszt,
+      </if>
+      <if test="cjsfs != null" >
+        cjsfs,
+      </if>
+      <if test="lthqr != null" >
+        lthqr,
+      </if>
+      <if test="cczydm != null" >
+        cczydm,
+      </if>
+      <if test="lqqbs != null" >
+        lqqbs,
+      </if>
+      <if test="npljsxh != null" >
+        npljsxh,
+      </if>
+      <if test="cjsydm != null" >
+        cjsydm,
+      </if>
+      <if test="cxsfs != null" >
+        cxsfs,
+      </if>
+      <if test="cgysdm != null" >
+        cgysdm,
+      </if>
+      <if test="cgysmc != null" >
+        cgysmc,
+      </if>
+      <if test="ltdbs != null" >
+        ltdbs,
+      </if>
+      <if test="npzid != null" >
+        npzid,
+      </if>
+      <if test="dscjsrq != null" >
+        dscjsrq,
+      </if>
+      <if test="lcwskwb != null" >
+        lcwskwb,
+      </if>
+      <if test="cyszkkm != null" >
+        cyszkkm,
+      </if>
+      <if test="nljsk != null" >
+        nljsk,
+      </if>
+      <if test="cfpkh != null" >
+        cfpkh,
+      </if>
+      <if test="nhjyhje != null" >
+        nhjyhje,
+      </if>
+      <if test="cbz != null" >
+        cbz,
+      </if>
+      <if test="cczydm1 != null" >
+        cczydm1,
+      </if>
+      <if test="nqtf1 != null" >
+        nqtf1,
+      </if>
+      <if test="nqtf2 != null" >
+        nqtf2,
+      </if>
+      <if test="nqtf3 != null" >
+        nqtf3,
+      </if>
+      <if test="nysje != null" >
+        nysje,
+      </if>
+      <if test="njsyhl != null" >
+        njsyhl,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cxsdbh != null" >
+        #{cxsdbh,jdbcType=CHAR},
+      </if>
+      <if test="cdydbh != null" >
+        #{cdydbh,jdbcType=CHAR},
+      </if>
+      <if test="cckdm != null" >
+        #{cckdm,jdbcType=CHAR},
+      </if>
+      <if test="ckhdm != null" >
+        #{ckhdm,jdbcType=CHAR},
+      </if>
+      <if test="ckhmc != null" >
+        #{ckhmc,jdbcType=VARCHAR},
+      </if>
+      <if test="ckhh != null" >
+        #{ckhh,jdbcType=VARCHAR},
+      </if>
+      <if test="cyhzh != null" >
+        #{cyhzh,jdbcType=VARCHAR},
+      </if>
+      <if test="csh != null" >
+        #{csh,jdbcType=VARCHAR},
+      </if>
+      <if test="cfph != null" >
+        #{cfph,jdbcType=CHAR},
+      </if>
+      <if test="dfprq != null" >
+        #{dfprq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cfplxdm != null" >
+        #{cfplxdm,jdbcType=CHAR},
+      </if>
+      <if test="dkdrq != null" >
+        #{dkdrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dyxrq != null" >
+        #{dyxrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dfkrq != null" >
+        #{dfkrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nhjje != null" >
+        #{nhjje,jdbcType=DECIMAL},
+      </if>
+      <if test="nhjse != null" >
+        #{nhjse,jdbcType=DECIMAL},
+      </if>
+      <if test="nbjxjsl != null" >
+        #{nbjxjsl,jdbcType=DECIMAL},
+      </if>
+      <if test="nbjcgsl != null" >
+        #{nbjcgsl,jdbcType=DECIMAL},
+      </if>
+      <if test="nzsje != null" >
+        #{nzsje,jdbcType=DECIMAL},
+      </if>
+      <if test="cdbr != null" >
+        #{cdbr,jdbcType=CHAR},
+      </if>
+      <if test="cjszt != null" >
+        #{cjszt,jdbcType=CHAR},
+      </if>
+      <if test="cjsfs != null" >
+        #{cjsfs,jdbcType=CHAR},
+      </if>
+      <if test="lthqr != null" >
+        #{lthqr,jdbcType=BIT},
+      </if>
+      <if test="cczydm != null" >
+        #{cczydm,jdbcType=CHAR},
+      </if>
+      <if test="lqqbs != null" >
+        #{lqqbs,jdbcType=BIT},
+      </if>
+      <if test="npljsxh != null" >
+        #{npljsxh,jdbcType=INTEGER},
+      </if>
+      <if test="cjsydm != null" >
+        #{cjsydm,jdbcType=CHAR},
+      </if>
+      <if test="cxsfs != null" >
+        #{cxsfs,jdbcType=CHAR},
+      </if>
+      <if test="cgysdm != null" >
+        #{cgysdm,jdbcType=CHAR},
+      </if>
+      <if test="cgysmc != null" >
+        #{cgysmc,jdbcType=VARCHAR},
+      </if>
+      <if test="ltdbs != null" >
+        #{ltdbs,jdbcType=BIT},
+      </if>
+      <if test="npzid != null" >
+        #{npzid,jdbcType=INTEGER},
+      </if>
+      <if test="dscjsrq != null" >
+        #{dscjsrq,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lcwskwb != null" >
+        #{lcwskwb,jdbcType=BIT},
+      </if>
+      <if test="cyszkkm != null" >
+        #{cyszkkm,jdbcType=CHAR},
+      </if>
+      <if test="nljsk != null" >
+        #{nljsk,jdbcType=DECIMAL},
+      </if>
+      <if test="cfpkh != null" >
+        #{cfpkh,jdbcType=VARCHAR},
+      </if>
+      <if test="nhjyhje != null" >
+        #{nhjyhje,jdbcType=DECIMAL},
+      </if>
+      <if test="cbz != null" >
+        #{cbz,jdbcType=VARCHAR},
+      </if>
+      <if test="cczydm1 != null" >
+        #{cczydm1,jdbcType=CHAR},
+      </if>
+      <if test="nqtf1 != null" >
+        #{nqtf1,jdbcType=DECIMAL},
+      </if>
+      <if test="nqtf2 != null" >
+        #{nqtf2,jdbcType=DECIMAL},
+      </if>
+      <if test="nqtf3 != null" >
+        #{nqtf3,jdbcType=DECIMAL},
+      </if>
+      <if test="nysje != null" >
+        #{nysje,jdbcType=DECIMAL},
+      </if>
+      <if test="njsyhl != null" >
+        #{njsyhl,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

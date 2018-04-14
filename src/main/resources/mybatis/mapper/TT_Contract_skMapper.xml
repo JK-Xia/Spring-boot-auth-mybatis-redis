@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tt_ms.dao.TT_Contract_skMapper" >
+  <resultMap id="BaseResultMap" type="com.tt_ms.domain.TT_Contract_sk" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="Contract_id" property="contractId" jdbcType="CHAR" />
+    <result column="Cus_name " property="cusName" jdbcType="CHAR" />
+    <result column="Create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="Pay_bill_id" property="payBillId" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="Settle_man" property="settleMan" jdbcType="CHAR" />
+    <result column="Pay_way" property="payWay" jdbcType="VARCHAR" />
+    <result column="Take_back_flag" property="takeBackFlag" jdbcType="CHAR" />
+    <result column="Pay_man" property="payMan" jdbcType="VARCHAR" />
+    <result column="collected_amount" property="collectedAmount" jdbcType="DECIMAL" />
+    <result column="Invoice_flag" property="invoiceFlag" jdbcType="CHAR" />
+    <result column="status" property="status" jdbcType="BIT" />
+    <result column="Bank_info" property="bankInfo" jdbcType="VARCHAR" />
+    <result column="Finance_remark" property="financeRemark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, Contract_id, "Cus_name ", Create_date, Pay_bill_id, remark, Settle_man, Pay_way, 
+    Take_back_flag, Pay_man, collected_amount, Invoice_flag, status, Bank_info, Finance_remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from TT_Contract_sk
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from TT_Contract_sk
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.tt_ms.domain.TT_Contract_sk" >
+    insert into TT_Contract_sk (ID, Contract_id, "Cus_name ", 
+      Create_date, Pay_bill_id, remark, 
+      Settle_man, Pay_way, Take_back_flag, 
+      Pay_man, collected_amount, Invoice_flag, 
+      status, Bank_info, Finance_remark
+      )
+    values (#{id,jdbcType=INTEGER}, #{contractId,jdbcType=CHAR}, #{cusName,jdbcType=CHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{payBillId,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{settleMan,jdbcType=CHAR}, #{payWay,jdbcType=VARCHAR}, #{takeBackFlag,jdbcType=CHAR}, 
+      #{payMan,jdbcType=VARCHAR}, #{collectedAmount,jdbcType=DECIMAL}, #{invoiceFlag,jdbcType=CHAR}, 
+      #{status,jdbcType=BIT}, #{bankInfo,jdbcType=VARCHAR}, #{financeRemark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.tt_ms.domain.TT_Contract_sk" >
+    insert into TT_Contract_sk
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="contractId != null" >
+        Contract_id,
+      </if>
+      <if test="cusName != null" >
+        "Cus_name ",
+      </if>
+      <if test="createDate != null" >
+        Create_date,
+      </if>
+      <if test="payBillId != null" >
+        Pay_bill_id,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="settleMan != null" >
+        Settle_man,
+      </if>
+      <if test="payWay != null" >
+        Pay_way,
+      </if>
+      <if test="takeBackFlag != null" >
+        Take_back_flag,
+      </if>
+      <if test="payMan != null" >
+        Pay_man,
+      </if>
+      <if test="collectedAmount != null" >
+        collected_amount,
+      </if>
+      <if test="invoiceFlag != null" >
+        Invoice_flag,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="bankInfo != null" >
+        Bank_info,
+      </if>
+      <if test="financeRemark != null" >
+        Finance_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="contractId != null" >
+        #{contractId,jdbcType=CHAR},
+      </if>
+      <if test="cusName != null" >
+        #{cusName,jdbcType=CHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payBillId != null" >
+        #{payBillId,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="settleMan != null" >
+        #{settleMan,jdbcType=CHAR},
+      </if>
+      <if test="payWay != null" >
+        #{payWay,jdbcType=VARCHAR},
+      </if>
+      <if test="takeBackFlag != null" >
+        #{takeBackFlag,jdbcType=CHAR},
+      </if>
+      <if test="payMan != null" >
+        #{payMan,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedAmount != null" >
+        #{collectedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="invoiceFlag != null" >
+        #{invoiceFlag,jdbcType=CHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="bankInfo != null" >
+        #{bankInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="financeRemark != null" >
+        #{financeRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tt_ms.domain.TT_Contract_sk" >
+    update TT_Contract_sk
+    <set >
+      <if test="contractId != null" >
+        Contract_id = #{contractId,jdbcType=CHAR},
+      </if>
+      <if test="cusName != null" >
+        "Cus_name " = #{cusName,jdbcType=CHAR},
+      </if>
+      <if test="createDate != null" >
+        Create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payBillId != null" >
+        Pay_bill_id = #{payBillId,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="settleMan != null" >
+        Settle_man = #{settleMan,jdbcType=CHAR},
+      </if>
+      <if test="payWay != null" >
+        Pay_way = #{payWay,jdbcType=VARCHAR},
+      </if>
+      <if test="takeBackFlag != null" >
+        Take_back_flag = #{takeBackFlag,jdbcType=CHAR},
+      </if>
+      <if test="payMan != null" >
+        Pay_man = #{payMan,jdbcType=VARCHAR},
+      </if>
+      <if test="collectedAmount != null" >
+        collected_amount = #{collectedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="invoiceFlag != null" >
+        Invoice_flag = #{invoiceFlag,jdbcType=CHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="bankInfo != null" >
+        Bank_info = #{bankInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="financeRemark != null" >
+        Finance_remark = #{financeRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tt_ms.domain.TT_Contract_sk" >
+    update TT_Contract_sk
+    set Contract_id = #{contractId,jdbcType=CHAR},
+      "Cus_name " = #{cusName,jdbcType=CHAR},
+      Create_date = #{createDate,jdbcType=TIMESTAMP},
+      Pay_bill_id = #{payBillId,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      Settle_man = #{settleMan,jdbcType=CHAR},
+      Pay_way = #{payWay,jdbcType=VARCHAR},
+      Take_back_flag = #{takeBackFlag,jdbcType=CHAR},
+      Pay_man = #{payMan,jdbcType=VARCHAR},
+      collected_amount = #{collectedAmount,jdbcType=DECIMAL},
+      Invoice_flag = #{invoiceFlag,jdbcType=CHAR},
+      status = #{status,jdbcType=BIT},
+      Bank_info = #{bankInfo,jdbcType=VARCHAR},
+      Finance_remark = #{financeRemark,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
