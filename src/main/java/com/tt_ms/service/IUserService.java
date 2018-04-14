@@ -7,4 +7,7 @@ import com.tt_ms.domain.User;
  */
 public interface IUserService {
     User findUser(User user);
+    void setToken(String token,User user);
+    String getToken(String token);
+
 }
