@@ -3,7 +3,6 @@ package com.tt_ms.controller;
 
 import com.tt_ms.common.IpUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,7 +32,9 @@ public class BaseController implements Filter{
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse res = (HttpServletResponse) servletResponse;
         HttpSession session = req.getSession();
-        boolean isLogin = false ;
+
+        filterChain.doFilter(servletRequest, servletResponse);
+      /*  boolean isLogin = false ;
         if(StringUtils.isEmpty(session.getAttribute("isLogin"))){
             session.setAttribute("isLogin",false);
         }
@@ -42,7 +43,7 @@ public class BaseController implements Filter{
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }
-        req.getRequestDispatcher("/user/index").forward(req, res);
+        req.getRequestDispatcher("/user/index").forward(req, res);*/
     }
 
     @Override

@@ -5,7 +5,6 @@ import com.tt_ms.common.JsonUtils;
 import com.tt_ms.common.redis.IRedisService;
 import com.tt_ms.dao.TT1_userMapper;
 import com.tt_ms.domain.TT1_user;
-import com.tt_ms.domain.User;
 import com.tt_ms.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,11 +36,11 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public TT1_user findUser(User user) {
-        TT1_user catchUser = JsonUtils.toBean(redisService.get(user.getUserName()), TT1_user.class);
+    public TT1_user findUser(TT1_user user) {
+        TT1_user catchUser = JsonUtils.toBean(redisService.get(user.getName()), TT1_user.class);
         try {
             if (StringUtils.isEmpty(catchUser)) {
-                TT1_user dbUser = userMapper.selectByPrimaryKey(String.valueOf(user.getId()));
+                TT1_user dbUser = userMapper.selectByPrimaryKey(String.valueOf(user.getUserId()));
                 if (!StringUtils.isEmpty(dbUser)) {
                     redisService.set(dbUser.getName(), JsonUtils.toJSONString(dbUser));
                     return dbUser;

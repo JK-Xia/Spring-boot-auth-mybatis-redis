@@ -2,7 +2,6 @@
 package com.tt_ms.controller;
 
 import com.tt_ms.domain.TT1_user;
-import com.tt_ms.domain.User;
 import com.tt_ms.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,14 +27,15 @@ public class UserController extends BaseController{
 
     @RequestMapping(value="/login",method= RequestMethod.POST)
 
-    public String login(String username, String password,String vcode,Boolean rememberMe,HttpServletRequest request){
+    public String login(String username, String password,String vcode,Boolean rememberMe,String userId,HttpServletRequest request){
         log.info("当前客户端：" + getClientIp(request) +" 的用户 ： " + username+ " 在服务 ：" +getServerIp() + "尝试登录系统..." );
         TT1_user dbuser;
         try{
           /*  UsernamePasswordToken token = new UsernamePasswordToken(username, password,rememberMe);
             SecurityUtils.getSubject().login(token);*/
-            User user = new User();
-            user.setUserName(username);
+            TT1_user user = new TT1_user();
+            user.setUserId(userId);
+            user.setName(username);
             user.setPassword(password);
             dbuser =userService.findUser(user);
             String token = UUID.randomUUID().toString();
