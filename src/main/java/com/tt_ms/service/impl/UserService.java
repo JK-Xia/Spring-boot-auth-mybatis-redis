@@ -1,10 +1,10 @@
-<<<<<<< HEAD
 package com.tt_ms.service.impl;
 
 
 import com.tt_ms.common.JsonUtils;
 import com.tt_ms.common.redis.IRedisService;
-import com.tt_ms.dao.UserDao;
+import com.tt_ms.dao.TT1_userMapper;
+import com.tt_ms.domain.TT1_user;
 import com.tt_ms.domain.User;
 import com.tt_ms.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
@@ -19,35 +19,36 @@ import javax.annotation.Resource;
  */
 @Slf4j
 @Service
-public class UserService implements IUserService{
+public class UserService implements IUserService {
 
     @Resource
-    private UserDao userDao;
+    private TT1_userMapper userMapper;
 
     @Autowired
     private IRedisService redisService;
 
-    public void setToken(String token,User user){
-        redisService.set(token,user.toString());
-        redisService.expire(token,10);
+    public void setToken(String token, TT1_user user) {
+        redisService.set(token, user.toString());
+        redisService.expire(token, 10);
     }
-    public String getToken(String token){
+
+    public String getToken(String token) {
         return redisService.get(token);
     }
 
     @Override
-    public User findUser(User user){
-        User catchUser =JsonUtils.toBean(redisService.get(user.getUserName()),User.class);
+    public TT1_user findUser(User user) {
+        TT1_user catchUser = JsonUtils.toBean(redisService.get(user.getUserName()), TT1_user.class);
         try {
-            if(StringUtils.isEmpty(catchUser)){
-                User dbUser = userDao.findUser(user);
-                if(!StringUtils.isEmpty(dbUser)){
-                    redisService.set(dbUser.getUserName(),JsonUtils.toJSONString(dbUser));
+            if (StringUtils.isEmpty(catchUser)) {
+                TT1_user dbUser = userMapper.selectByPrimaryKey(String.valueOf(user.getId()));
+                if (!StringUtils.isEmpty(dbUser)) {
+                    redisService.set(dbUser.getName(), JsonUtils.toJSONString(dbUser));
                     return dbUser;
                 }
                 return null;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             log.error(e.getMessage());
         }
 
@@ -55,46 +56,3 @@ public class UserService implements IUserService{
     }
 
 }
-=======
-package com.tt_ms.service.impl;
-
-
-import com.tt_ms.common.redis.IRedisService;
-import com.tt_ms.common.JsonUtils;
-import com.tt_ms.dao.UserDao;
-import com.tt_ms.domain.User;
-import com.tt_ms.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-
-import javax.annotation.Resource;
-
-/**
- * Created by mm on 2018/4/9.
- */
-
-@Service
-public class UserService implements IUserService{
-
-    @Resource
-    private UserDao userDao;
-
-    @Autowired
-    private IRedisService redisService;
-
-    @Override
-    public User findUser(User user){
-        User catchUser =JsonUtils.toBean(redisService.get(user.getUserName()),User.class);
-        if(StringUtils.isEmpty(catchUser)){
-            User dbUser = userDao.findUser(user);
-            if(!StringUtils.isEmpty(dbUser)){
-                redisService.set(dbUser.getUserName(),JsonUtils.toJSONString(dbUser));
-                return dbUser;
-            }
-            return null;
-        }
-        return catchUser;
-    }
-}
->>>>>>> 7bf5eb6c27f9d9393d6a32861b53d17e6215c8f3

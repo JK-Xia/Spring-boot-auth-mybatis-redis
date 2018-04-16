@@ -2,6 +2,9 @@ package com.tt_ms.dao;
 
 import com.tt_ms.domain.TT1_user;
 
+import javax.annotation.Resource;
+
+@Resource
 public interface TT1_userMapper {
     int deleteByPrimaryKey(String userId);
 
